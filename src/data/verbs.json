@@ -1,0 +1,532 @@
+{
+  "families": [
+    {
+      "id": 1,
+      "name": "모양이 그대로예요",
+      "rule": "바꿀 게 없어요! read만 소리가 '레드'로 달라져요."
+    },
+    {
+      "id": 2,
+      "name": "-ought / -aught 가족",
+      "rule": "'오-트' 소리로 끝나요."
+    },
+    {
+      "id": 3,
+      "name": "d가 t로 바뀌어요",
+      "rule": "끝의 d만 t로 바꿔요."
+    },
+    {
+      "id": 4,
+      "name": "짧아지고 -t가 붙어요",
+      "rule": "길게 읽던 소리가 짧아지고 끝에 t."
+    },
+    {
+      "id": 5,
+      "name": "-d로 끝나요",
+      "rule": "과거형이 d로 끝나요."
+    },
+    {
+      "id": 6,
+      "name": "a로 바뀌어요",
+      "rule": "가운데 모음이 a가 돼요."
+    },
+    {
+      "id": 7,
+      "name": "-ew로 바뀌어요",
+      "rule": "끝이 '-우' 소리 ew가 돼요."
+    },
+    {
+      "id": 8,
+      "name": "oo가 들어가요",
+      "rule": "가운데가 oo로 바뀌어요."
+    },
+    {
+      "id": 9,
+      "name": "o로 바뀌어요",
+      "rule": "가운데 모음이 o가 돼요."
+    },
+    {
+      "id": 10,
+      "name": "통째로 외워요",
+      "rule": "규칙이 없어요. 소리 내어 여러 번 읽어요."
+    }
+  ],
+  "words": [
+    {
+      "no": 1,
+      "present": "cost",
+      "past": "cost",
+      "meaning": "비용이 들다",
+      "family": 1
+    },
+    {
+      "no": 2,
+      "present": "hit",
+      "past": "hit",
+      "meaning": "치다, 때리다",
+      "family": 1
+    },
+    {
+      "no": 3,
+      "present": "let",
+      "past": "let",
+      "meaning": "~하게 하다",
+      "family": 1
+    },
+    {
+      "no": 4,
+      "present": "put",
+      "past": "put",
+      "meaning": "놓다, 두다",
+      "family": 1
+    },
+    {
+      "no": 5,
+      "present": "read",
+      "past": "read",
+      "meaning": "읽다",
+      "family": 1
+    },
+    {
+      "no": 6,
+      "present": "set",
+      "past": "set",
+      "meaning": "놓다, 정하다",
+      "family": 1
+    },
+    {
+      "no": 7,
+      "present": "cut",
+      "past": "cut",
+      "meaning": "자르다",
+      "family": 1
+    },
+    {
+      "no": 8,
+      "present": "hurt",
+      "past": "hurt",
+      "meaning": "다치게 하다",
+      "family": 1
+    },
+    {
+      "no": 9,
+      "present": "bring",
+      "past": "brought",
+      "meaning": "가져오다",
+      "family": 2
+    },
+    {
+      "no": 10,
+      "present": "build",
+      "past": "built",
+      "meaning": "짓다, 만들다",
+      "family": 3
+    },
+    {
+      "no": 11,
+      "present": "buy",
+      "past": "bought",
+      "meaning": "사다",
+      "family": 2
+    },
+    {
+      "no": 12,
+      "present": "catch",
+      "past": "caught",
+      "meaning": "잡다",
+      "family": 2
+    },
+    {
+      "no": 13,
+      "present": "feel",
+      "past": "felt",
+      "meaning": "느끼다",
+      "family": 4
+    },
+    {
+      "no": 14,
+      "present": "fight",
+      "past": "fought",
+      "meaning": "싸우다",
+      "family": 2
+    },
+    {
+      "no": 15,
+      "present": "find",
+      "past": "found",
+      "meaning": "찾다, 발견하다",
+      "family": 5
+    },
+    {
+      "no": 16,
+      "present": "get",
+      "past": "got",
+      "meaning": "얻다, 받다",
+      "family": 9
+    },
+    {
+      "no": 17,
+      "present": "have",
+      "past": "had",
+      "meaning": "가지다, 먹다",
+      "family": 5
+    },
+    {
+      "no": 18,
+      "present": "hear",
+      "past": "heard",
+      "meaning": "듣다",
+      "family": 5
+    },
+    {
+      "no": 19,
+      "present": "hold",
+      "past": "held",
+      "meaning": "잡다, 들다",
+      "family": 5
+    },
+    {
+      "no": 20,
+      "present": "keep",
+      "past": "kept",
+      "meaning": "유지하다, 지키다",
+      "family": 4
+    },
+    {
+      "no": 21,
+      "present": "lead",
+      "past": "led",
+      "meaning": "이끌다",
+      "family": 5
+    },
+    {
+      "no": 22,
+      "present": "leave",
+      "past": "left",
+      "meaning": "떠나다, 남기다",
+      "family": 4
+    },
+    {
+      "no": 23,
+      "present": "lose",
+      "past": "lost",
+      "meaning": "잃다, 지다",
+      "family": 4
+    },
+    {
+      "no": 24,
+      "present": "make",
+      "past": "made",
+      "meaning": "만들다",
+      "family": 5
+    },
+    {
+      "no": 25,
+      "present": "meet",
+      "past": "met",
+      "meaning": "만나다",
+      "family": 4
+    },
+    {
+      "no": 26,
+      "present": "pay",
+      "past": "paid",
+      "meaning": "지불하다",
+      "family": 5
+    },
+    {
+      "no": 27,
+      "present": "say",
+      "past": "said",
+      "meaning": "말하다",
+      "family": 5
+    },
+    {
+      "no": 28,
+      "present": "sell",
+      "past": "sold",
+      "meaning": "팔다",
+      "family": 5
+    },
+    {
+      "no": 29,
+      "present": "send",
+      "past": "sent",
+      "meaning": "보내다",
+      "family": 3
+    },
+    {
+      "no": 30,
+      "present": "sit",
+      "past": "sat",
+      "meaning": "앉다",
+      "family": 6
+    },
+    {
+      "no": 31,
+      "present": "spend",
+      "past": "spent",
+      "meaning": "(돈, 시간을) 쓰다",
+      "family": 3
+    },
+    {
+      "no": 32,
+      "present": "teach",
+      "past": "taught",
+      "meaning": "가르치다",
+      "family": 2
+    },
+    {
+      "no": 33,
+      "present": "tell",
+      "past": "told",
+      "meaning": "말하다, 알려 주다",
+      "family": 5
+    },
+    {
+      "no": 34,
+      "present": "think",
+      "past": "thought",
+      "meaning": "생각하다",
+      "family": 2
+    },
+    {
+      "no": 35,
+      "present": "understand",
+      "past": "understood",
+      "meaning": "이해하다",
+      "family": 8
+    },
+    {
+      "no": 36,
+      "present": "win",
+      "past": "won",
+      "meaning": "이기다",
+      "family": 9
+    },
+    {
+      "no": 37,
+      "present": "stand",
+      "past": "stood",
+      "meaning": "서다",
+      "family": 8
+    },
+    {
+      "no": 38,
+      "present": "be",
+      "past": "was / were",
+      "meaning": "~이다, 있다",
+      "family": 10
+    },
+    {
+      "no": 39,
+      "present": "begin",
+      "past": "began",
+      "meaning": "시작하다",
+      "family": 6
+    },
+    {
+      "no": 40,
+      "present": "break",
+      "past": "broke",
+      "meaning": "깨다, 부수다",
+      "family": 9
+    },
+    {
+      "no": 41,
+      "present": "choose",
+      "past": "chose",
+      "meaning": "고르다",
+      "family": 9
+    },
+    {
+      "no": 42,
+      "present": "do",
+      "past": "did",
+      "meaning": "하다",
+      "family": 10
+    },
+    {
+      "no": 43,
+      "present": "drive",
+      "past": "drove",
+      "meaning": "운전하다",
+      "family": 9
+    },
+    {
+      "no": 44,
+      "present": "eat",
+      "past": "ate",
+      "meaning": "먹다",
+      "family": 10
+    },
+    {
+      "no": 45,
+      "present": "fall",
+      "past": "fell",
+      "meaning": "떨어지다, 넘어지다",
+      "family": 10
+    },
+    {
+      "no": 46,
+      "present": "forget",
+      "past": "forgot",
+      "meaning": "잊다",
+      "family": 9
+    },
+    {
+      "no": 47,
+      "present": "give",
+      "past": "gave",
+      "meaning": "주다",
+      "family": 6
+    },
+    {
+      "no": 48,
+      "present": "go",
+      "past": "went",
+      "meaning": "가다",
+      "family": 10
+    },
+    {
+      "no": 49,
+      "present": "know",
+      "past": "knew",
+      "meaning": "알다",
+      "family": 7
+    },
+    {
+      "no": 50,
+      "present": "see",
+      "past": "saw",
+      "meaning": "보다",
+      "family": 10
+    },
+    {
+      "no": 51,
+      "present": "sing",
+      "past": "sang",
+      "meaning": "노래하다",
+      "family": 6
+    },
+    {
+      "no": 52,
+      "present": "speak",
+      "past": "spoke",
+      "meaning": "말하다",
+      "family": 9
+    },
+    {
+      "no": 53,
+      "present": "swim",
+      "past": "swam",
+      "meaning": "수영하다",
+      "family": 6
+    },
+    {
+      "no": 54,
+      "present": "take",
+      "past": "took",
+      "meaning": "가져가다, 타다",
+      "family": 8
+    },
+    {
+      "no": 55,
+      "present": "throw",
+      "past": "threw",
+      "meaning": "던지다",
+      "family": 7
+    },
+    {
+      "no": 56,
+      "present": "wear",
+      "past": "wore",
+      "meaning": "입다",
+      "family": 9
+    },
+    {
+      "no": 57,
+      "present": "write",
+      "past": "wrote",
+      "meaning": "쓰다",
+      "family": 9
+    },
+    {
+      "no": 58,
+      "present": "bear",
+      "past": "bore",
+      "meaning": "낳다, 견디다",
+      "family": 9
+    },
+    {
+      "no": 59,
+      "present": "become",
+      "past": "became",
+      "meaning": "~이 되다",
+      "family": 6
+    },
+    {
+      "no": 60,
+      "present": "come",
+      "past": "came",
+      "meaning": "오다",
+      "family": 6
+    },
+    {
+      "no": 61,
+      "present": "run",
+      "past": "ran",
+      "meaning": "달리다",
+      "family": 6
+    },
+    {
+      "no": 62,
+      "present": "draw",
+      "past": "drew",
+      "meaning": "그리다",
+      "family": 7
+    },
+    {
+      "no": 63,
+      "present": "drink",
+      "past": "drank",
+      "meaning": "마시다",
+      "family": 6
+    },
+    {
+      "no": 64,
+      "present": "fly",
+      "past": "flew",
+      "meaning": "날다",
+      "family": 7
+    },
+    {
+      "no": 65,
+      "present": "grow",
+      "past": "grew",
+      "meaning": "자라다, 기르다",
+      "family": 7
+    },
+    {
+      "no": 66,
+      "present": "hang",
+      "past": "hung",
+      "meaning": "걸다, 매달다",
+      "family": 10
+    },
+    {
+      "no": 67,
+      "present": "ring",
+      "past": "rang",
+      "meaning": "(종이) 울리다",
+      "family": 6
+    },
+    {
+      "no": 68,
+      "present": "sleep",
+      "past": "slept",
+      "meaning": "자다",
+      "family": 4
+    }
+  ]
+}

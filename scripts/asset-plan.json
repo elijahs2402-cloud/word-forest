@@ -1,0 +1,317 @@
+[
+  {
+    "file": "char/base.png",
+    "prompt": "baby squirrel wearing tiny acorn cap, round eyes, full body front view, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "char/happy.png",
+    "prompt": "baby squirrel wearing tiny acorn cap, happy, consistent brown fur and round eyes, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "char/cheer.png",
+    "prompt": "baby squirrel wearing tiny acorn cap, cheer, consistent brown fur and round eyes, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "char/think.png",
+    "prompt": "baby squirrel wearing tiny acorn cap, think, consistent brown fur and round eyes, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "char/oops.png",
+    "prompt": "baby squirrel wearing tiny acorn cap, oops, consistent brown fur and round eyes, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "char/sleep.png",
+    "prompt": "baby squirrel wearing tiny acorn cap, sleep, consistent brown fur and round eyes, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "char/wave.png",
+    "prompt": "baby squirrel wearing tiny acorn cap, wave, consistent brown fur and round eyes, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "zone/zone-01.png",
+    "prompt": "forest clearing, sunny meadow, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-02.png",
+    "prompt": "forest clearing, mushroom grove, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-03.png",
+    "prompt": "forest clearing, river stones, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-04.png",
+    "prompt": "forest clearing, flower hill, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-05.png",
+    "prompt": "forest clearing, tall pine path, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-06.png",
+    "prompt": "forest clearing, pond with lily pads, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-07.png",
+    "prompt": "forest clearing, windy hilltop, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-08.png",
+    "prompt": "forest clearing, hollow tree tunnel, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-09.png",
+    "prompt": "forest clearing, fern valley, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "zone/zone-10.png",
+    "prompt": "forest clearing, starry night clearing, vertical environment illustration",
+    "ratio": "9:16"
+  },
+  {
+    "file": "tree/stage-1.png",
+    "prompt": "seed in soil, centered isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "tree/stage-2.png",
+    "prompt": "small sprout, centered isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "tree/stage-3.png",
+    "prompt": "young tree, centered isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "tree/stage-4.png",
+    "prompt": "fruit tree with acorns, centered isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/1.png",
+    "prompt": "mushroom, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/2.png",
+    "prompt": "flower patch, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/3.png",
+    "prompt": "wooden bench, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/4.png",
+    "prompt": "birdhouse, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/5.png",
+    "prompt": "lantern, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/6.png",
+    "prompt": "rock, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/7.png",
+    "prompt": "bush, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/8.png",
+    "prompt": "stump, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/9.png",
+    "prompt": "pond, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/10.png",
+    "prompt": "fence, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/11.png",
+    "prompt": "swing, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "deco/12.png",
+    "prompt": "blank signpost, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-01.png",
+    "prompt": "cute bear, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-02.png",
+    "prompt": "cute fox, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-03.png",
+    "prompt": "cute owl, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-04.png",
+    "prompt": "cute raccoon, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-05.png",
+    "prompt": "cute hedgehog, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-06.png",
+    "prompt": "cute otter, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-07.png",
+    "prompt": "cute deer, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-08.png",
+    "prompt": "cute rabbit, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-09.png",
+    "prompt": "cute turtle, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "boss/boss-10.png",
+    "prompt": "cute badger, sleepy playful pose, full body isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-01.png",
+    "prompt": "tiny ladybug peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-02.png",
+    "prompt": "tiny snail peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-03.png",
+    "prompt": "tiny frog peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-04.png",
+    "prompt": "tiny sparrow peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-05.png",
+    "prompt": "tiny butterfly peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-06.png",
+    "prompt": "tiny mole peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-07.png",
+    "prompt": "tiny firefly peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-08.png",
+    "prompt": "tiny squirrel peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-09.png",
+    "prompt": "tiny bat peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "animal/hidden-10.png",
+    "prompt": "tiny salamander peeking shyly, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-01.png",
+    "prompt": "round leaf framed medal, sunny meadow motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-02.png",
+    "prompt": "round leaf framed medal, mushroom grove motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-03.png",
+    "prompt": "round leaf framed medal, river stones motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-04.png",
+    "prompt": "round leaf framed medal, flower hill motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-05.png",
+    "prompt": "round leaf framed medal, tall pine path motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-06.png",
+    "prompt": "round leaf framed medal, pond with lily pads motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-07.png",
+    "prompt": "round leaf framed medal, windy hilltop motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-08.png",
+    "prompt": "round leaf framed medal, hollow tree tunnel motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-09.png",
+    "prompt": "round leaf framed medal, fern valley motif, isolated on white",
+    "ratio": "1:1"
+  },
+  {
+    "file": "badge/zone-10.png",
+    "prompt": "round leaf framed medal, starry night clearing motif, isolated on white",
+    "ratio": "1:1"
+  }
+]
