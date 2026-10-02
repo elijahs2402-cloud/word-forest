@@ -1,10 +1,882 @@
 [
   {
+    "file": "char/happy.png",
+    "job_id": "b37792e0-51ea-452e-bcd0-8ca6b2971d81",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      5,
+      528,
+      531
+    ],
+    "bytes": 29857,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141045_b37792e0-51ea-452e-bcd0-8ca6b2971d81.png"
+  },
+  {
+    "file": "char/cheer.png",
+    "job_id": "b37792e0-51ea-452e-bcd0-8ca6b2971d81",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      538,
+      5,
+      1062,
+      531
+    ],
+    "bytes": 32662,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141045_b37792e0-51ea-452e-bcd0-8ca6b2971d81.png"
+  },
+  {
+    "file": "char/think.png",
+    "job_id": "b37792e0-51ea-452e-bcd0-8ca6b2971d81",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1072,
+      5,
+      1595,
+      531
+    ],
+    "bytes": 32384,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141045_b37792e0-51ea-452e-bcd0-8ca6b2971d81.png"
+  },
+  {
+    "file": "char/oops.png",
+    "job_id": "b37792e0-51ea-452e-bcd0-8ca6b2971d81",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      541,
+      528,
+      1068
+    ],
+    "bytes": 34393,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141045_b37792e0-51ea-452e-bcd0-8ca6b2971d81.png"
+  },
+  {
+    "file": "char/sleep.png",
+    "job_id": "b37792e0-51ea-452e-bcd0-8ca6b2971d81",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      538,
+      541,
+      1062,
+      1068
+    ],
+    "bytes": 27112,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141045_b37792e0-51ea-452e-bcd0-8ca6b2971d81.png"
+  },
+  {
+    "file": "char/wave.png",
+    "job_id": "b37792e0-51ea-452e-bcd0-8ca6b2971d81",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1072,
+      541,
+      1595,
+      1068
+    ],
+    "bytes": 33284,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141045_b37792e0-51ea-452e-bcd0-8ca6b2971d81.png"
+  },
+  {
+    "file": "boss/boss-01.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      5,
+      315,
+      305
+    ],
+    "bytes": 28882,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-02.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      325,
+      5,
+      635,
+      305
+    ],
+    "bytes": 21185,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-03.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      645,
+      5,
+      955,
+      305
+    ],
+    "bytes": 24926,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-04.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      965,
+      5,
+      1275,
+      305
+    ],
+    "bytes": 27904,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-05.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1285,
+      5,
+      1595,
+      305
+    ],
+    "bytes": 26701,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-06.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      345,
+      315,
+      644
+    ],
+    "bytes": 22411,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-07.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      325,
+      345,
+      635,
+      644
+    ],
+    "bytes": 21742,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-08.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      645,
+      345,
+      955,
+      644
+    ],
+    "bytes": 20655,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-09.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      965,
+      345,
+      1275,
+      644
+    ],
+    "bytes": 20357,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "boss/boss-10.png",
+    "job_id": "06fd1d41-b9bc-4f59-86c4-038056a11321",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1285,
+      345,
+      1595,
+      644
+    ],
+    "bytes": 24516,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_06fd1d41-b9bc-4f59-86c4-038056a11321.png"
+  },
+  {
+    "file": "animal/hidden-01.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      5,
+      315,
+      335
+    ],
+    "bytes": 8095,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-02.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      325,
+      5,
+      635,
+      335
+    ],
+    "bytes": 13642,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-03.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      645,
+      5,
+      955,
+      335
+    ],
+    "bytes": 13783,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-04.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      965,
+      5,
+      1275,
+      335
+    ],
+    "bytes": 13078,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-05.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1285,
+      5,
+      1595,
+      335
+    ],
+    "bytes": 16854,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-06.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      345,
+      315,
+      674
+    ],
+    "bytes": 10486,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-07.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      325,
+      345,
+      635,
+      674
+    ],
+    "bytes": 11738,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-08.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      645,
+      345,
+      955,
+      674
+    ],
+    "bytes": 17075,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-09.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      965,
+      345,
+      1275,
+      674
+    ],
+    "bytes": 17612,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "animal/hidden-10.png",
+    "job_id": "1ada4761-b28d-4983-817e-b83c485f7137",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1285,
+      345,
+      1595,
+      674
+    ],
+    "bytes": 11250,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_1ada4761-b28d-4983-817e-b83c485f7137.png"
+  },
+  {
+    "file": "deco/1.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      5,
+      395,
+      393
+    ],
+    "bytes": 15688,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/2.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      405,
+      5,
+      795,
+      393
+    ],
+    "bytes": 20951,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/3.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      805,
+      5,
+      1195,
+      393
+    ],
+    "bytes": 13462,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/4.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1205,
+      5,
+      1595,
+      393
+    ],
+    "bytes": 21491,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/5.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      403,
+      395,
+      792
+    ],
+    "bytes": 17311,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/6.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      405,
+      403,
+      795,
+      792
+    ],
+    "bytes": 18630,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/7.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      805,
+      403,
+      1195,
+      792
+    ],
+    "bytes": 17648,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/8.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1205,
+      403,
+      1595,
+      792
+    ],
+    "bytes": 20059,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/9.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      802,
+      395,
+      1190
+    ],
+    "bytes": 19010,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/10.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      405,
+      802,
+      795,
+      1190
+    ],
+    "bytes": 19474,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/11.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      805,
+      802,
+      1195,
+      1190
+    ],
+    "bytes": 14592,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "deco/12.png",
+    "job_id": "abd916b1-a367-48cc-ae90-481a82fdda74",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1205,
+      802,
+      1595,
+      1190
+    ],
+    "bytes": 15044,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_abd916b1-a367-48cc-ae90-481a82fdda74.png"
+  },
+  {
+    "file": "tree/stage-1.png",
+    "job_id": "8b908864-4e7f-4347-b7a5-0191e29296b7",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      5,
+      595,
+      595
+    ],
+    "bytes": 21585,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_8b908864-4e7f-4347-b7a5-0191e29296b7.png"
+  },
+  {
+    "file": "tree/stage-2.png",
+    "job_id": "8b908864-4e7f-4347-b7a5-0191e29296b7",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      605,
+      5,
+      1195,
+      595
+    ],
+    "bytes": 13823,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_8b908864-4e7f-4347-b7a5-0191e29296b7.png"
+  },
+  {
+    "file": "tree/stage-3.png",
+    "job_id": "8b908864-4e7f-4347-b7a5-0191e29296b7",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      605,
+      595,
+      1195
+    ],
+    "bytes": 18071,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_8b908864-4e7f-4347-b7a5-0191e29296b7.png"
+  },
+  {
+    "file": "tree/stage-4.png",
+    "job_id": "8b908864-4e7f-4347-b7a5-0191e29296b7",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      605,
+      605,
+      1195,
+      1195
+    ],
+    "bytes": 26345,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_8b908864-4e7f-4347-b7a5-0191e29296b7.png"
+  },
+  {
+    "file": "badge/zone-01.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      5,
+      315,
+      335
+    ],
+    "bytes": 28946,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-02.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      325,
+      5,
+      635,
+      335
+    ],
+    "bytes": 31557,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-03.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      645,
+      5,
+      955,
+      335
+    ],
+    "bytes": 31870,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-04.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      965,
+      5,
+      1275,
+      335
+    ],
+    "bytes": 29829,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-05.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1285,
+      5,
+      1595,
+      335
+    ],
+    "bytes": 33954,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-06.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      5,
+      345,
+      315,
+      674
+    ],
+    "bytes": 31941,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-07.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      325,
+      345,
+      635,
+      674
+    ],
+    "bytes": 31140,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-08.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      645,
+      345,
+      955,
+      674
+    ],
+    "bytes": 33999,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-09.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      965,
+      345,
+      1275,
+      674
+    ],
+    "bytes": 32161,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "badge/zone-10.png",
+    "job_id": "c95a953c-f4f1-4166-b727-519e91a7bd0c",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1285,
+      345,
+      1595,
+      674
+    ],
+    "bytes": 31886,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141042_c95a953c-f4f1-4166-b727-519e91a7bd0c.png"
+  },
+  {
+    "file": "zone/zone-01.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      26,
+      26,
+      322,
+      529
+    ],
+    "bytes": 49904,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-02.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      339,
+      26,
+      635,
+      529
+    ],
+    "bytes": 56376,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-03.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      652,
+      26,
+      948,
+      529
+    ],
+    "bytes": 46200,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-04.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      965,
+      26,
+      1261,
+      529
+    ],
+    "bytes": 52898,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-05.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1278,
+      26,
+      1574,
+      529
+    ],
+    "bytes": 58098,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-06.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      26,
+      545,
+      322,
+      1048
+    ],
+    "bytes": 52864,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-07.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      339,
+      545,
+      635,
+      1048
+    ],
+    "bytes": 50243,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-08.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      652,
+      545,
+      948,
+      1048
+    ],
+    "bytes": 57069,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-09.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      965,
+      545,
+      1261,
+      1048
+    ],
+    "bytes": 72248,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
+    "file": "zone/zone-10.png",
+    "job_id": "f002f353-141e-4f93-81b1-59b004e2ef29",
+    "provider": "Higgsfield",
+    "model": "nano_banana_2",
+    "crop_box": [
+      1278,
+      545,
+      1574,
+      1048
+    ],
+    "bytes": 38010,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_141103_f002f353-141e-4f93-81b1-59b004e2ef29.png"
+  },
+  {
     "file": "char/base.png",
-    "model": "gpt_image_2_5",
-    "source": "Higgsfield plugin — user approved reuse; future assets API only",
-    "request_id": "59bf563a-a160-4e3f-94e0-d4d78427653b",
-    "generated_at": "2026-09-29",
-    "prompt": "Original baby squirrel Tori wearing acorn cap, warm picture book watercolor, white background"
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_133942_da0f80b3-3d0e-4f4d-97f0-6ce0d8d7ebd5.png",
+    "provider": "Higgsfield",
+    "bytes": 41676
+  },
+  {
+    "file": "char/side.png",
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DepJboDJYvw55r0UWaHp2J5CZB/hf_20261001_135437_f81e8dbf-31c0-4d4c-8ca0-c4d0302bfcac.png",
+    "provider": "Higgsfield",
+    "bytes": 42654
   }
 ]

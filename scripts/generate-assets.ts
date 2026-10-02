@@ -2,16 +2,10 @@ import 'dotenv/config';
 import {createHiggsfieldClient} from '@higgsfield/client/v2';
 import {mkdir,writeFile,readFile,access} from 'node:fs/promises';
 import {dirname,join} from 'node:path';
-const STYLE="cute children's picture book illustration, soft watercolor texture with clean shapes, warm sunny forest, pastel greens and warm yellow accents, rounded friendly forms, gentle lighting, no text, no letters, no logos, plain composition, high detail, consistent style. ";
-const model='flux-pro/kontext/max/text-to-image'; // Official SDK README, verified 2026-09-29.
-const poses=['happy','cheer','think','oops','sleep','wave'];
-const zones=['sunny meadow','mushroom grove','river stones','flower hill','tall pine path','pond with lily pads','windy hilltop','hollow tree tunnel','fern valley','starry night clearing'];
-const deco=['mushroom','flower patch','wooden bench','birdhouse','lantern','rock','bush','stump','pond','fence','swing','blank signpost'];
-const bosses=['bear','fox','owl','raccoon','hedgehog','otter','deer','rabbit','turtle','badger'];
-const animals=['ladybug','snail','frog','sparrow','butterfly','mole','firefly','squirrel','bat','salamander'];
-const p=(n:number)=>String(n+1).padStart(2,'0');
-const assets=[{file:'char/base.png',prompt:'baby squirrel wearing tiny acorn cap, round eyes, full body front view, isolated on white',ratio:'1:1'},...poses.map(pose=>({file:`char/${pose}.png`,prompt:`baby squirrel wearing tiny acorn cap, ${pose}, consistent brown fur and round eyes, full body isolated on white`,ratio:'1:1'})),...zones.map((z,i)=>({file:`zone/zone-${p(i)}.png`,prompt:`forest clearing, ${z}, vertical environment illustration`,ratio:'9:16'})),...['seed in soil','small sprout','young tree','fruit tree with acorns'].map((v,i)=>({file:`tree/stage-${i+1}.png`,prompt:v+', centered isolated on white',ratio:'1:1'})),...deco.map((v,i)=>({file:`deco/${i+1}.png`,prompt:v+', isolated on white',ratio:'1:1'})),...bosses.map((v,i)=>({file:`boss/boss-${p(i)}.png`,prompt:`cute ${v}, sleepy playful pose, full body isolated on white`,ratio:'1:1'})),...animals.map((v,i)=>({file:`animal/hidden-${p(i)}.png`,prompt:`tiny ${v} peeking shyly, isolated on white`,ratio:'1:1'})),...zones.map((v,i)=>({file:`badge/zone-${p(i)}.png`,prompt:`round leaf framed medal, ${v} motif, isolated on white`,ratio:'1:1'}))];
-const root='public/assets';await mkdir(root,{recursive:true});await writeFile('scripts/asset-plan.json',JSON.stringify(assets,null,2));
+const STYLE="Tactile plush and felt miniature, natural greens and browns, neutral studio light, clean white background, no text. ";
+const model='flux-pro/kontext/max/text-to-image';
+const assets: {file:string;prompt:string;ratio:string}[]=JSON.parse(await readFile('scripts/asset-plan.json','utf8'));
+const root='public/assets';await mkdir(root,{recursive:true});
 if(process.argv.includes('--plan')){console.table({planned:assets.length,generated:0,failed:0});process.exit(0)}
 if(!process.env.HF_API_KEY_ID||!process.env.HF_API_KEY_SECRET){console.error('그림 생성 대기: .env에 Higgsfield API 키를 설정한 뒤 npm run assets를 실행하세요. 앱에는 키가 포함되지 않습니다.');console.table({planned:assets.length,generated:0,skipped:0,failed:0,pending:assets.length});process.exitCode=1;}else{
  const auth=`${process.env.HF_API_KEY_ID}:${process.env.HF_API_KEY_SECRET}`;
