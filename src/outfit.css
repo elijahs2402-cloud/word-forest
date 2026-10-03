@@ -5,3 +5,5 @@
 .capy-wear .wear-scarf{left:18%;top:50%;width:58%}
 .capy-closet button{min-height:54px;padding:5px 11px;display:inline-flex;align-items:center;gap:4px}
 .capy-closet button img{width:40px;height:40px;object-fit:contain}
+.asset-char,.asset-animal,.asset-deco{background:transparent!important}
+.asset-char img,.asset-animal img,.asset-deco img{mix-blend-mode:normal}
