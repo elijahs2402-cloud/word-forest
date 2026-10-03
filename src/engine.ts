@@ -4,7 +4,7 @@ export type Word=typeof words[number];
 export type Progress={box:number;due:string;wrong:number;seen:number;lastWrong?:string};
 export type Game='choice'|'ox'|'match'|'blank'|'tiles'|'listen'|'reverse';
 export const gameNames:Record<Game,string>={choice:'둘 중 골라요',ox:'O/X 도토리',match:'짝꿍 찾기',blank:'빈칸 채우기',tiles:'뒤죽박죽 타일',listen:'듣고 골라요',reverse:'거꾸로 숲길'};
-export const allGames=Object.keys(gameNames) as Game[];
+export const allGames=(Object.keys(gameNames) as Game[]).filter(game=>game!=='match');
 export function validate(){if(words.length!==68||new Set(words.map(w=>w.present)).size!==68||words.some(w=>w.family<1||w.family>10))throw Error('학습 데이터가 올바르지 않습니다.');}
 validate();
 export const normalize=(s:string)=>s.trim().toLowerCase().replace(/\s+/g,' ');
