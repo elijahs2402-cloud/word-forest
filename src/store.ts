@@ -1,8 +1,8 @@
 import {create} from 'zustand';
 import {get,set} from 'idb-keyval';
 import {advance,dayKey,questsDone,type Progress} from './engine';
-export type Saved={progress:Record<number,Progress>;acorns:number;gold:number;unlocked:number;zoneStars:Record<number,number>;friends:number[];hidden:number[];deco:number[];decoLayout:Record<number,number>;sound:boolean;challenge:boolean;goal:number;pin:string;dates:string[];seconds:Record<string,number>;daily:Record<string,Record<string,number>>;goldDates:string[]};
-export const initial=():Saved=>({progress:{},acorns:0,gold:0,unlocked:10,zoneStars:{},friends:[],hidden:[],deco:[],decoLayout:{},sound:true,challenge:false,goal:10,pin:'',dates:[],seconds:{},daily:{},goldDates:[]});
+export type Saved={progress:Record<number,Progress>;acorns:number;gold:number;unlocked:number;zoneStars:Record<number,number>;friends:number[];hidden:number[];deco:number[];decoLayout:Record<number,number>;forestLayout:Record<number,{x:number;y:number}>;capyOutfit:string[];sound:boolean;challenge:boolean;goal:number;pin:string;dates:string[];seconds:Record<string,number>;daily:Record<string,Record<string,number>>;goldDates:string[]};
+export const initial=():Saved=>({progress:{},acorns:0,gold:0,unlocked:10,zoneStars:{},friends:[],hidden:[],deco:[],decoLayout:{},forestLayout:{},capyOutfit:[],sound:true,challenge:false,goal:10,pin:'',dates:[],seconds:{},daily:{},goldDates:[]});
 type State=Saved&{ready:boolean;saveError:string;load:()=>Promise<void>;patch:(p:Partial<Saved>)=>void;answer:(id:number,ok:boolean,combo:number)=>void;round:(zone:number,star:number,boss:boolean,passed:boolean)=>void;tick:(n:number)=>void;reset:()=>void};
 let writing=Promise.resolve();
 function save(s:State){const d:Saved=Object.fromEntries(Object.keys(initial()).map(k=>[k,s[k as keyof Saved]])) as Saved;writing=writing.catch(()=>{}).then(()=>set('forest-v1',d)).catch(()=>{useStore.setState({saveError:'기기에 저장하지 못했어요. 저장 공간과 브라우저 설정을 확인해 주세요.'});});}
