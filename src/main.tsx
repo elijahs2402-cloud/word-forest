@@ -6,7 +6,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><
 
 // Replace the legacy cache controller without touching learning records.
 if ('serviceWorker' in navigator) {
- const worker=navigator.serviceWorker.register('/forest-sw-v3.js',{scope:'/',updateViaCache:'none'});
+ const worker=navigator.serviceWorker.register('/forest-sw-v4.js',{scope:'/',updateViaCache:'none'});
  const checkUpdate=()=>{if(document.visibilityState==='visible')worker.then(r=>r.update()).catch(()=>{});};
  window.addEventListener('focus',checkUpdate);
  document.addEventListener('visibilitychange',checkUpdate);
