@@ -1,15 +1,7 @@
+/* 컬러 메뉴 아이콘(MenuIcon) 크기와 하단 메뉴 반응. 색은 tokens.css를 따른다. */
 .menu-art{display:inline-block;width:32px;height:32px;flex:none;vertical-align:middle;overflow:visible}
-.bottom-nav .menu-art{width:36px;height:36px;transition:transform .15s ease}
-.bottom-nav button{gap:4px;border:2px solid transparent;background:none}
-.bottom-nav button.active{background:#e5f6ff;border-color:#8cdaee;color:#176782}
+.bottom-nav .menu-art{width:34px;height:34px;transition:transform .15s ease}
 .bottom-nav button:hover .menu-art{transform:translateY(-2px)}
 .bottom-nav button:active .menu-art{transform:translateY(1px)}
-.header .brand-icon{background:none;box-shadow:none;width:42px;height:42px;overflow:hidden;border-radius:12px}
-.brand-icon img{width:100%;height:100%;object-fit:cover}
-.header-actions .menu-art{width:27px;height:27px}
-.forest-shortcut>.menu-art{width:42px;height:42px}
-.section-icon .menu-art{width:40px;height:40px}
-.mobile-summary .menu-art{width:26px;height:26px}
-.lesson-steps .menu-art{width:22px;height:22px}
-.modal>.menu-art{width:42px;height:42px}
+.header-actions .menu-art{width:26px;height:26px}
 @media(prefers-reduced-motion:reduce){.bottom-nav .menu-art{transition:none}.bottom-nav button:hover .menu-art,.bottom-nav button:active .menu-art{transform:none}}

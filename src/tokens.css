@@ -1,0 +1,69 @@
+/* 단어숲 디자인 토큰
+   색·글자·모서리·그림자·간격의 기준값을 이 파일 한 곳에서만 정한다.
+   다른 CSS 파일에서는 색상 코드(#...)나 임의의 px 값을 직접 쓰지 말고 아래 변수를 쓴다.
+   참고: 듀오링고 iOS 화면(Mobbin)의 "흰 바탕 + 강조색 1개 + 아래 띠로 만든 입체감" 원칙. */
+:root{
+ /* ── 색: 바탕과 표면 ── */
+ --bg:#fcfdf9;            /* 페이지 바탕 */
+ --surface:#ffffff;       /* 카드·버튼 표면 */
+ --surface-muted:#f3f6f0; /* 비활성·보조 표면 */
+
+ /* ── 색: 글자 (흰 바탕 대비: ink 11.7, ink-soft 5.4) ── */
+ --ink:#2b3a2f;
+ --ink-soft:#5d6d62;
+
+ /* ── 색: 선 (border-bottom을 굵게 하면 눌리는 입체감) ── */
+ --line:#e3e9df;
+ --line-strong:#d0d9cb;
+
+ /* ── 색: 강조색은 숲 초록 하나만 쓴다 (흰 글자 대비 4.9) ── */
+ --green:#348019;
+ --green-hover:#2f7a17;
+ --green-ledge:#245c10;   /* 초록 버튼 아래 띠 */
+ --green-text:#2f7a17;    /* 밝은 바탕 위 초록 글자 */
+ --green-50:#f1f8ea;      /* 아주 옅은 초록 바탕 */
+ --green-100:#dcefcc;
+ --green-200:#b9dd9c;
+
+ /* ── 색: 의미가 있는 보조색 (강조색이 아니라 상태 표시용) ── */
+ --gold:#f2b51d;          /* 별·도토리 보상 */
+ --gold-50:#fff6d9;
+ --gold-200:#f1dd9a;
+ --gold-text:#6b5413;
+ --coral:#c4462f;         /* 틀렸을 때 */
+ --coral-50:#fff1ec;
+ --coral-100:#f6d3c9;
+ --coral-ledge:#9a3322;
+ --coral-text:#a63b28;
+
+ /* ── 글자 크기 7단계 + 학습 단어 전용 ── */
+ --fs-xs:.75rem;    /* 12px 숫자 배지 등 아주 작은 표시 */
+ --fs-sm:.875rem;   /* 14px 보조 설명 */
+ --fs-md:1rem;      /* 16px 본문 */
+ --fs-lg:1.125rem;  /* 18px 버튼·카드 제목 */
+ --fs-xl:1.375rem;  /* 22px 섹션 제목 */
+ --fs-2xl:1.75rem;  /* 28px 화면 제목 */
+ --fs-3xl:2.125rem; /* 34px 큰 화면 제목 */
+ --fs-word:clamp(2.75rem,11vw,3.75rem); /* 학습 단어 */
+
+ --fw-regular:500;
+ --fw-bold:700;
+ --fw-heavy:800;
+
+ /* ── 모서리 3단계 ── */
+ --r-control:14px;  /* 버튼·입력·작은 칩 */
+ --r-card:20px;     /* 카드·패널·시트 */
+ --r-pill:999px;    /* 알약형 배지 */
+
+ /* ── 깊이 2단계 ── */
+ --ledge:4px;                                     /* 카드·버튼 아래 띠 두께 */
+ --shadow-float:0 8px 28px rgb(43 58 47 / .12);   /* 떠 있는 요소(하단 메뉴·시트·모달) */
+
+ /* ── 간격과 폭 ── */
+ --gutter:16px;        /* 휴대폰 좌우 여백 */
+ --page:1080px;        /* 홈 화면 최대 폭 */
+ --study:560px;        /* 학습 화면 최대 폭 */
+ --focus:#1f6fb2;      /* 키보드 포커스 테두리 */
+}
+@media(min-width:700px){:root{--gutter:24px}}
+@media(min-width:1000px){:root{--gutter:32px}}
