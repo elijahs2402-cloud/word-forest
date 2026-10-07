@@ -1,6 +1,7 @@
 import {afterEach,beforeEach,describe,expect,it,vi} from 'vitest';
 import {speak,stopSpeech,subscribeSpeech,pronunciationParts,pronunciationUrl,type SpeechState} from './audio';
 import {words} from './engine';
+import pronunciation from './pronunciation-manifest.json';
 class FakeAudio {
  static instances:FakeAudio[]=[];
  static playImplementation:()=>Promise<void>=()=>Promise.resolve();
@@ -11,7 +12,7 @@ class FakeAudio {
 }
 beforeEach(()=>{vi.stubGlobal('Audio',FakeAudio)});
 afterEach(()=>{stopSpeech();vi.unstubAllGlobals()});
-describe('Maya pronunciation files',()=>{
+describe('Recorded pronunciation files',()=>{
  it('releases a stalled player so learning can continue',()=>{
   vi.useFakeTimers();let state:SpeechState|undefined;const off=subscribeSpeech(s=>state=s);
   try{speak('cost');expect(state?.active).toBe(true);vi.advanceTimersByTime(15000);expect(state?.active).toBe(false);expect(state?.error).toContain('지연');}finally{off();stopSpeech();vi.useRealTimers()}
@@ -39,7 +40,7 @@ describe('Maya pronunciation files',()=>{
  it('uses recordings without calling browser TTS and preserves pitch at 0.7x',()=>{
   const tts={cancel:vi.fn(),speak:vi.fn()};vi.stubGlobal('speechSynthesis',tts);
   speak('go',.7);const player=FakeAudio.instances.at(-1)!;
-  expect(player.src).toContain('maya-v1/go.mp3');expect(player.playbackRate).toBe(.7);
+  expect(player.src).toContain(pronunciation.clips.go);expect(player.playbackRate).toBe(.7);
   expect(player.preservesPitch).toBe(true);expect(tts.speak).not.toHaveBeenCalled();
  });
  it('cancels previous audio and ignores stale playback events',()=>{
