@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "word-forest-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--host", "127.0.0.1", "--port", "5183", "--strictPort"],
+      "port": 5183,
+      "autoPort": false
+    }
+  ]
+}
