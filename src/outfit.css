@@ -1,4 +1,4 @@
-.capy-wear img{position:absolute;width:48%;height:auto;object-fit:contain;filter:drop-shadow(0 2px 2px #fff)}
+.capy-wear img{position:absolute;width:48%;height:auto;object-fit:contain;filter:none}
 .capy-wear .wear-crown,.capy-wear .wear-hat{left:39%;top:-13%;transform:translateX(-50%)}
 .capy-wear .wear-glasses{left:13%;top:23%;width:54%}
 .capy-wear .wear-bow{right:-3%;top:5%;width:35%}

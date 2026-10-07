@@ -1,0 +1,113 @@
+/* Product-readiness rules share the existing forest design tokens. */
+html,body {overscroll-behavior:none;}
+html {-webkit-text-size-adjust:100%;}
+button,[role="button"] {-webkit-touch-callout:none;}
+input,select,textarea {font-size:max(1rem,16px);}
+.panel p,.loading p {line-height:1.65;text-wrap:pretty;}
+h1,h2,h3 {text-wrap:balance;}
+.resume-lesson {margin:var(--space-4) auto;max-width:var(--studio-width);display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;}
+.resume-lesson p {margin-bottom:0;color:var(--ink-soft);}
+.resume-lesson .primary {width:auto;}
+.result .result-mascot {width:110px;height:110px;margin-block:var(--space-2);}
+.result .result-symbol {display:none;}
+.result h1 {font-size:var(--fs-2xl);}
+.study-top,.game-meta,.wallet,.parent-stats {font-variant-numeric:tabular-nums;}
+.lesson-completion-note {text-align:center;padding:var(--space-3);margin:0;color:var(--ink-soft);background:var(--green-50);line-height:1.5;}
+.speech-skip {display:block;margin:var(--space-2) auto;min-height:44px;}
+.forest-studio.studio-expanded {inset:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);margin:0;border-radius:0;padding:var(--space-3);max-width:none;width:auto;z-index:var(--z-modal);gap:var(--space-2);}
+.forest-studio.studio-expanded .studio-toolbar {display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:var(--space-2);margin:0;padding:var(--space-2) 0;flex-shrink:0;}
+.forest-studio.studio-expanded .studio-toolbar .studio-edit {order:0;min-width:0;}
+.forest-studio .studio-toolbar button {white-space:nowrap;padding-inline:var(--space-3);}
+.forest-studio.studio-expanded .studio-scene {height:clamp(180px,42dvh,540px);min-height:180px;max-height:540px;aspect-ratio:auto;}
+.forest-studio.studio-expanded .studio-editor-status {padding:0;font-size:var(--fs-sm);}
+.forest-studio.studio-expanded .studio-mode-tabs {margin:0;flex-shrink:0;}
+.forest-studio.studio-expanded .studio-tools {flex:1;min-height:90px;overflow:auto;overscroll-behavior:contain;padding:var(--space-2);}
+.forest-studio.studio-expanded .studio-tray>div,.forest-studio.studio-expanded .capy-closet>div {max-height:none;}
+.forest-studio .size-controls {display:flex;flex-wrap:wrap;margin:0;padding:var(--space-2);gap:var(--space-2);flex-shrink:0;}
+.forest-studio .size-controls input {flex:1;min-width:90px;}
+.forest-studio .size-controls strong {flex-basis:auto;}
+.position-controls {display:flex;flex-wrap:wrap;gap:var(--space-2);flex-shrink:0;}
+.position-controls button {flex:1;min-height:44px;width:auto;font-size:var(--fs-sm);padding:var(--space-2);}
+@media(max-width:699px){
+ .resume-lesson {margin-inline:var(--space-4);}
+ .forest-studio .studio-toolbar {gap:var(--space-2);}
+ .forest-studio .studio-toolbar .studio-edit {min-width:0;}
+ .forest-studio.studio-expanded .studio-mode-tabs button {font-size:var(--fs-md);}
+ .forest-studio.studio-expanded .size-controls button {padding-inline:var(--space-2);}
+ .forest-studio.studio-expanded .size-controls input {flex-basis:40%;}
+}
+@media(max-height:600px) and (orientation:landscape){
+ .forest-studio.studio-expanded {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,1fr);overflow:auto;}
+ .forest-studio.studio-expanded .studio-toolbar {grid-column:1/-1;}
+ .forest-studio.studio-expanded .studio-scene {height:55dvh;grid-row:2/6;}
+ .forest-studio.studio-expanded .studio-tools {max-height:40dvh;}
+}
+.forest-studio .studio-mode-tabs {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));}
+.forest-studio .studio-mode-tabs button,.forest-studio .size-controls button,
+.forest-studio .studio-tray button,.forest-studio .capy-closet button,
+.forest-studio .studio-instruction,.forest-studio .placement-label,
+.position-controls button {font-size:var(--fs-md);line-height:1.5;}
+.forest-studio.studio-expanded .studio-editor-status {font-size:var(--fs-md);line-height:1.5;}
+.forest-studio .studio-toolbar button {white-space:normal;overflow-wrap:break-word;}
+.forest-studio .studio-tray>div,.forest-studio .capy-closet>div {grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr));}
+.studio-live-status {position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.forest-studio [data-object]::before {content:"";position:absolute;top:50%;left:50%;width:100%;height:100%;min-width:44px;min-height:44px;transform:translate(-50%,-50%);}
+.bottom-nav button span {word-break:keep-all;text-wrap:balance;}
+.forest-studio.wardrobe-page {display:flex;gap:var(--space-3);overflow:auto;}
+.wardrobe-toolbar {display:flex;gap:var(--space-2);position:sticky;top:0;background:var(--bg);z-index:var(--z-header);padding-block:var(--space-2);flex-shrink:0;}
+.wardrobe-toolbar button {flex:1;min-width:0;font-size:var(--fs-md);}
+.wardrobe-page h1,.wardrobe-page p {margin:0;text-align:center;}
+.wardrobe-preview {display:grid;place-items:center;background:var(--green-50);border-radius:var(--r-card);min-height:240px;padding:var(--space-4);flex-shrink:0;}
+.wardrobe-preview .capy-dressup {position:relative;inset:auto;width:220px;max-width:75%;transform:none;}
+.wardrobe-preview .capy-dressup>img {width:100%;height:auto;display:block;}
+.wardrobe-options {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr));gap:var(--space-2);}
+.wardrobe-options button {display:flex;flex-direction:column;align-items:center;gap:var(--space-2);font-size:var(--fs-md);height:auto;}
+.wardrobe-options button[aria-pressed=true] {background:var(--green-50);border-color:var(--green);}
+.wardrobe-options img {width:72px;height:72px;object-fit:contain;}
+.wardrobe-options img {touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;}
+.wardrobe-options img:active {cursor:grabbing;}
+.capy-wear .wearable-piece {pointer-events:auto;touch-action:none;cursor:grab;}
+.capy-wear .wearable-piece.is-selected {outline:none;}
+.capy-wear .wearable-piece:focus-visible {outline:2px solid var(--green);outline-offset:3px;}
+.wear-adjust {background:var(--green-50);padding:var(--space-3);border-radius:var(--r-control);display:grid;gap:var(--space-2);flex-shrink:0;}
+.wear-adjust input {width:100%;min-height:44px;}
+.studio-notice {display:flex;align-items:center;gap:var(--space-2);background:var(--green-50);padding:var(--space-3);border-radius:var(--r-control);font-size:var(--fs-sm);line-height:1.6;}
+.studio-notice span {flex:1;min-width:0;}
+.studio-notice button {flex-shrink:0;}
+.studio-tray-label {display:flex;align-items:center;padding:var(--space-3);font-size:var(--fs-md);font-weight:var(--fw-bold);color:var(--green-text);}
+input[type=range] {accent-color:var(--green);cursor:pointer;}
+.wear-adjust label,.size-controls label {font-weight:var(--fw-medium);color:var(--ink-soft);}
+.wardrobe-options small {font-weight:var(--fw-medium);color:var(--ink-soft);}
+.collection-summary .text-btn {color:var(--green-text);}
+.forest-studio .capy-wear .wear-hat {left:var(--wear-hat-x,39%);top:var(--wear-hat-y,-13%);width:calc(48% * var(--wear-hat-scale,1));}
+.forest-studio .capy-wear .wear-crown {left:var(--wear-crown-x,39%);top:var(--wear-crown-y,-13%);width:calc(48% * var(--wear-crown-scale,1));}
+.forest-studio .capy-wear .wear-glasses {left:var(--wear-glasses-x,23%);top:var(--wear-glasses-y,3%);width:calc(54% * var(--wear-glasses-scale,1));}
+.forest-studio .capy-wear .wear-bow {left:var(--wear-bow-x,68%);top:var(--wear-bow-y,5%);right:auto;width:calc(35% * var(--wear-bow-scale,1));}
+.forest-studio .capy-wear .wear-scarf {left:var(--wear-scarf-x,18%);top:var(--wear-scarf-y,50%);width:calc(58% * var(--wear-scarf-scale,1));}
+.wardrobe-options small {font-size:var(--fs-sm);}
+/* One dock owns scrolling; artwork and save controls stay visible. */
+.forest-studio.studio-expanded:not(.wardrobe-page) {overflow:hidden;}
+.studio-dock {display:flex;flex-direction:column;gap:var(--space-2);min-width:0;}
+.forest-studio.studio-expanded .studio-dock {flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable;padding-bottom:var(--space-2);}
+.forest-studio .studio-dock .size-controls {order:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;}
+.studio-dock .size-controls strong {grid-column:1;}
+.studio-dock .size-controls label {grid-column:2/4;text-align:right;}
+.forest-studio .studio-dock .size-controls input {grid-column:1/-1;width:100%;min-width:0;min-height:44px;margin:0;}
+.forest-studio .studio-dock .size-controls button {width:auto;min-width:0;margin:0;padding:var(--space-2);white-space:normal;min-height:44px;}
+.studio-dock .position-controls {order:1;}
+.studio-dock .studio-mode-tabs {order:2;}
+.forest-studio.studio-expanded .studio-dock .studio-tools {order:3;overflow:visible;flex:none;min-height:0;max-height:none;}
+.forest-studio.studio-expanded .studio-dock .studio-tray>div,
+.forest-studio.studio-expanded .studio-dock .capy-closet>div {overflow:visible;max-height:none;grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr));}
+.studio-dock:focus-visible {outline:3px solid var(--focus);outline-offset:-3px;}
+.wardrobe-preview .wearable-piece {position:absolute;height:auto;display:block;}
+.wardrobe-preview .wearable-piece>img {position:static;width:100%;height:auto;display:block;pointer-events:none;filter:none;}
+.wardrobe-preview .wearable-piece::before {content:"";position:absolute;left:50%;top:50%;width:100%;height:100%;min-width:44px;min-height:44px;transform:translate(-50%,-50%);}
+.wardrobe-toolbar button {word-break:keep-all;overflow-wrap:normal;}
+.forest-studio.studio-expanded .studio-editor-status {font-size:var(--fs-sm);line-height:1.5;}
+.studio-notice {padding-block:var(--space-2);}
+.studio-dock .studio-tools {padding-block:var(--space-2);}
+@media(max-height:600px) and (orientation:landscape){
+ .forest-studio.studio-expanded:not(.wardrobe-page) .studio-scene {grid-row:2/4;}
+ .forest-studio.studio-expanded .studio-dock {grid-column:2;grid-row:3;}
+}

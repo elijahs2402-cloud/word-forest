@@ -1,0 +1,8 @@
+import {allGames,words,type Game} from './engine';
+import {checkpointStorage as sessionStorage} from './checkpoint-storage';
+export type LessonSession={view:'rule'|'cards'|'game'|'result';zone:number;card:number;flipped:boolean;roundIndex:number;games:Game[];game:Game;queue:number[];boss:boolean;review:boolean;runKey:number;result:{right:number;total:number;star:number;passed:boolean}};
+const key='word-forest-lesson-v1';
+const validGames:readonly Game[]=allGames;
+export function readLesson():LessonSession|null{try{const s=JSON.parse(sessionStorage.getItem(key)??'null');if(!s||!['rule','cards','game','result'].includes(s.view)||!Number.isInteger(s.zone)||s.zone<1||s.zone>10||!Number.isInteger(s.card)||s.card<0||s.card>=words.filter(w=>w.family===s.zone).length||!Number.isInteger(s.roundIndex)||s.roundIndex<0||s.roundIndex>3||!Array.isArray(s.games)||!s.games.every((g:Game)=>validGames.includes(g))||!validGames.includes(s.game)||!Array.isArray(s.queue)||!s.queue.every((id:number)=>words.some(w=>w.no===id))||s.view==='game'&&!s.queue.length||typeof s.flipped!=='boolean'||typeof s.boss!=='boolean'||typeof s.review!=='boolean'||!Number.isInteger(s.runKey)||!s.result||!Number.isFinite(s.result.right)||!Number.isFinite(s.result.total)||!Number.isFinite(s.result.star)||typeof s.result.passed!=='boolean')return null;return s;}catch{return null;}}
+export function saveLesson(s:LessonSession){try{sessionStorage.setItem(key,JSON.stringify(s));}catch{/* Learning remains usable when session storage is unavailable. */}}
+export function clearLesson(){try{sessionStorage.removeItem(key);sessionStorage.removeItem('word-forest-question-v1');}catch{}}

@@ -1,7 +1,19 @@
 /* 컬러 메뉴 아이콘(MenuIcon) 크기와 하단 메뉴 반응. 색은 tokens.css를 따른다. */
-.menu-art{display:inline-block;width:32px;height:32px;flex:none;vertical-align:middle;overflow:visible}
+.acorn-art{display:inline-block;width:24px;height:24px;object-fit:contain;vertical-align:middle;flex-shrink:0;user-select:none}
+.wallet .acorn-art{width:20px;height:20px}
+.illustration-art{display:inline-block;width:24px;height:24px;object-fit:contain;vertical-align:middle;flex-shrink:0;user-select:none}
+.day-chip .illustration-art{width:18px;height:18px}
+.stars .illustration-art{width:22px;height:22px}
+.stars .illustration-art:not(.earned){filter:grayscale(1);opacity:.3}
+.result .stars .illustration-art{width:44px;height:44px}
+.streak-row>.illustration-art{width:36px;height:36px}
+.combo .illustration-art{width:20px;height:20px}
+.listen-button .illustration-art{width:44px;height:44px}
+.leaves .illustration-art{position:absolute;left:calc(var(--i)*11%);top:45%;animation:leaf-fall .6s ease-out forwards;transform:rotate(calc(var(--i)*35deg))}
+.mobile-summary>div .illustration-art{width:16px;height:16px}
+.menu-art{display:inline-block;width:32px;height:32px;flex:none;vertical-align:middle;object-fit:contain;user-select:none}
 .bottom-nav .menu-art{width:34px;height:34px;transition:transform .15s ease}
-.bottom-nav button:hover .menu-art{transform:translateY(-2px)}
+@media(hover:hover) and (pointer:fine){.bottom-nav button:hover .menu-art{transform:translateY(-2px)}}
 .bottom-nav button:active .menu-art{transform:translateY(1px)}
 .header-actions .menu-art{width:26px;height:26px}
 @media(prefers-reduced-motion:reduce){.bottom-nav .menu-art{transition:none}.bottom-nav button:hover .menu-art,.bottom-nav button:active .menu-art{transform:none}}
