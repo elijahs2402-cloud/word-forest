@@ -87,12 +87,6 @@ main>section{animation:appear .25s ease-out}
 .forest-banner .tori{position:absolute;right:12px;bottom:24px;z-index:1;width:170px;height:200px}
 
 /* 꾸미기 바로가기 */
-.forest-shortcut{display:flex;align-items:center;gap:12px;width:100%;margin:16px 0 0;padding:14px 18px;border-radius:var(--r-inner);background:var(--surface);border:1px solid var(--line);text-align:left;color:var(--ink);font-size:var(--fs-lg)}
-@media (hover:hover) and (pointer:fine){.forest-shortcut:hover{background:var(--green-50)}}
-.forest-shortcut>span:nth-of-type(1){flex:1}
-.forest-shortcut small{display:block;font-size:var(--fs-sm);font-weight:var(--fw-regular);color:var(--ink-soft)}
-.forest-shortcut>svg:last-child{width:22px;height:22px;color:var(--ink-soft)}
-.forest-shortcut>.menu-art{width:44px;height:44px}
 
 /* ════════ 6. 구역 카드 ════════ */
 .map-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:32px 0 16px}
@@ -128,6 +122,12 @@ main>section{animation:appear .25s ease-out}
 /* ════════ 7. 홈 사이드바 ════════ */
 .sidebar{display:flex;flex-direction:column;gap:16px}
 .review-card,.panel{padding:var(--space-5);border-radius:var(--r-card);background:var(--surface);border:1px solid var(--line)}
+/* 홈 지도 위 복습 카드: 복습할 단어가 있을 때만 보인다 */
+.review-top{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px;margin-top:24px;border-color:var(--gold-200);background:var(--gold-50)}
+.review-top h2{margin:0;font-size:var(--fs-lg)}
+.review-top h2 b{color:var(--gold-text)}
+.review-top p{margin:2px 0 0;font-size:var(--fs-sm);color:var(--ink-soft)}
+.review-top .primary{grid-column:1/-1}
 .review-card h2{font-size:var(--fs-lg);margin-bottom:6px}
 .review-card h2 b{color:var(--green-text);font-size:var(--fs-2xl)}
 .review-card p:not(.eyebrow){font-size:var(--fs-sm);color:var(--ink-soft)}
@@ -529,6 +529,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .quest-reward{background:var(--gold-50);color:var(--gold-text);border:0;padding:12px;border-radius:var(--r-control)}
 /* Clear start / progress / next-action hierarchy through every learning step. */
 .studying{background:var(--surface);padding-bottom:32px}
+html:has(.studying),body:has(.studying){background:var(--surface)}
 .studying .header{background:var(--surface)}
 .studying main{padding-bottom:32px}
 .lesson-steps{gap:6px;margin-bottom:18px}
@@ -540,8 +541,8 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .rule-card{border:0;background:var(--surface);padding-bottom:0}
 .rule-card .word-pair{border:2px solid var(--green-100);background:var(--green-50)}
 .flashcard{border-color:var(--line-strong);border-bottom-width:6px}
-.flashcard-back{background:var(--blue-50)}
-.flashcard-back strong{color:var(--blue)}
+.flashcard-back{background:var(--green-50)}
+.flashcard-back strong{color:var(--green-text)}
 .question-card{border:0;background:var(--surface);margin-top:6px;min-height:200px}
 .question-word{font-weight:var(--fw-heavy)}
 .answer-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -678,8 +679,6 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .learning-details summary{cursor:pointer;font-weight:var(--fw-bold);min-height:44px;display:flex;align-items:center;color:var(--green)}
 .learning-details[open] summary{margin-bottom:16px}
 .learning-details .panel,.learning-details .review-card{margin-bottom:16px}
-.recommended-review .text-btn{font-size:var(--fs-sm);text-align:left;padding:8px 0}
-.forest-banner .recommended-review .text-btn:disabled{opacity:1;color:var(--green-100)}
 html{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none;color-scheme:light}
 button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .forest-studio .studio-scene{touch-action:pan-y pinch-zoom}
@@ -747,7 +746,7 @@ button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-cal
 .forest-studio .capy-closet button[aria-pressed=true] {border-color:var(--green);background:var(--green-50);}
 .forest-studio .size-controls {background:var(--green-50);border-radius:var(--r-inner);}
 .forest-studio .size-controls button {min-height:44px;font-size:var(--fs-sm);}
-.forest-studio .studio-toolbar {position:sticky;top:0;z-index:var(--z-header);background:var(--bg);padding-block:var(--space-2);margin-bottom:var(--space-3);}
+.forest-studio .studio-toolbar {position:sticky;top:0;z-index:var(--z-header);background:var(--surface);padding-block:var(--space-2);margin-bottom:var(--space-3);}
 .forest-studio.studio-expanded {display:flex;flex-direction:column;}
 .forest-studio.studio-expanded .studio-heading {display:none;}
 .forest-studio.studio-expanded .studio-scene {flex-shrink:0;}
@@ -779,9 +778,8 @@ h1,h2,h3 {text-wrap:balance;}
 .resume-lesson p {margin-bottom:0;color:var(--ink-soft);}
 .resume-lesson .primary {width:auto;}
 .study-top,.game-meta,.wallet,.parent-stats {font-variant-numeric:tabular-nums;}
-.speech-skip {display:block;margin:var(--space-2) auto;min-height:44px;}
 .forest-studio.studio-expanded {inset:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);margin:0;border-radius:0;padding:var(--space-3);max-width:none;width:auto;z-index:var(--z-modal);gap:var(--space-2);}
-.forest-studio.studio-expanded .studio-toolbar {display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:var(--space-2);margin:0;padding:var(--space-2) 0;flex-shrink:0;}
+.forest-studio.studio-expanded .studio-toolbar {background:var(--bg);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:var(--space-2);margin:0;padding:var(--space-2) 0;flex-shrink:0;}
 .forest-studio.studio-expanded .studio-toolbar .studio-edit {order:0;min-width:0;}
 .forest-studio .studio-toolbar button {padding-inline:var(--space-3);}
 .forest-studio.studio-expanded .studio-scene {height:clamp(180px,42dvh,540px);min-height:180px;max-height:540px;aspect-ratio:auto;}
