@@ -211,22 +211,30 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 /* ════════ 10. 미니게임 ════════ */
 .game-meta{display:flex;justify-content:space-between;margin:0 0 16px;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--ink-soft)}
 .timer{display:flex;align-items:center;gap:4px;color:var(--gold-text)}
-.game-title{font-size:var(--fs-2xl);margin-bottom:4px;text-align:left}
+.game-title{display:flex;align-items:center;gap:8px;font-size:var(--fs-2xl);margin-bottom:4px;text-align:left}
+.game-title .acorn-art{width:28px;height:28px}
 .game-help{font-size:var(--fs-md);color:var(--ink-soft);text-align:left}
 .boss-banner{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding:14px;border-radius:var(--r-card);background:var(--gold-50);text-align:left}
 .boss-banner>div{flex:1}
 .boss-banner p{margin:2px 0 8px;font-size:var(--fs-sm)}
 .boss-banner .asset{width:64px;height:64px}
-.question-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:16px 0;padding:24px;border-radius:var(--r-card);border-bottom-width:var(--ledge)}
+.question-card{container-type:inline-size;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:16px 0;padding:24px;border-radius:var(--r-card);border-bottom-width:var(--ledge)}
 .word-kind{font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--ink-soft)}
 .question-word{max-width:100%;margin:8px 0;font-size:var(--fs-word);line-height:1.15;letter-spacing:-.02em;overflow-wrap:anywhere}
 .meaning{font-size:var(--fs-lg);color:var(--ink-soft)}
 .pronunciation{position:absolute;right:8px;top:8px;color:var(--green-text)}
 .listen-button{width:136px;height:136px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:50%;background:var(--green);color:#fff;border-bottom:var(--ledge) solid var(--green-ledge);font-weight:var(--fw-bold)}
 .listen-button svg{width:44px;height:44px}
-.ox-pair{display:flex;align-items:center;gap:12px;margin-top:12px}
-.ox-pair span{font-size:var(--fs-sm);color:var(--ink-soft)}
-.ox-pair b{font-size:var(--fs-3xl)}
+/* O/X: 현재형과 과거형을 같은 크기로 나란히. 긴 단어는 카드 폭에 맞춰 글자를 줄인다 */
+.ox-pair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:8px;width:100%;margin-top:20px}
+.ox-word{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+.ox-word strong{font-size:min(var(--fs-word),calc((100cqi - 40px) / (var(--chars) * 1.2)));line-height:1.15;font-weight:var(--fw-heavy);letter-spacing:-.02em}
+.ox-arrow{width:24px;height:24px;margin-bottom:.9em;color:var(--ink-soft)}
+.ox-pair+.meaning{margin-top:12px}
+/* 7글자 이상(thought, understand 등)은 위아래로 쌓아 글자를 크게 유지 */
+.ox-pair.stacked{grid-template-columns:minmax(0,1fr);justify-items:center;gap:2px}
+.ox-pair.stacked .ox-arrow{transform:rotate(90deg);margin-bottom:0}
+.ox-pair.stacked .ox-word strong{font-size:min(var(--fs-word),calc(100cqi / (var(--chars) * .65)))}
 
 /* 선택지: 흰 카드 + 회색 테두리 + 아래 띠 */
 .answer-options{flex-wrap:wrap;gap:12px}
@@ -262,8 +270,6 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .feedback-heading .asset{flex-shrink:0}
 .feedback-heading b{font-size:var(--fs-xl);line-height:1.4;color:var(--green-text)}
 .feedback.retry .feedback-heading b{color:var(--coral-text)}
-.feedback>strong{display:block;margin:12px 0 0;overflow-wrap:anywhere}
-.feedback.retry>strong{color:var(--coral-text)}
 .feedback.retry .primary:not(:disabled){background:var(--coral);border-bottom-color:var(--coral-ledge)}
 @media (hover:hover) and (pointer:fine){.feedback.retry .primary:hover:not(:disabled){background:var(--coral-ledge)}}
 .game:has(.feedback){padding-bottom:240px}
@@ -546,9 +552,11 @@ html:has(.studying),body:has(.studying){background:var(--surface)}
 .question-card{border:0;background:var(--surface);margin-top:6px;min-height:200px}
 .question-word{font-weight:var(--fw-heavy)}
 .answer-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-.answer-btn{min-width:0;min-height:82px;border-bottom-width:5px}
+.answer-btn{position:relative;min-width:0;min-height:82px;border-bottom-width:5px}
 .answer-btn.revealed-correct:disabled{background:var(--green-100);border-color:var(--green-200);color:var(--green-text)}
 .answer-btn.revealed-other:disabled{background:var(--surface-muted);color:var(--ink-soft)}
+.answer-btn.revealed-wrong:disabled{background:var(--coral-100);border-color:var(--coral);color:var(--coral-text)}
+.reveal-mark{position:absolute;top:8px;right:8px;width:22px;height:22px}
 .answer-slots{border-style:solid;background:var(--surface-muted)}
 .letter-tile:disabled{color:transparent;background:var(--surface-muted);border-color:var(--line);opacity:1}
 .feedback{max-width:none;width:100%;padding:20px max(var(--gutter),calc((100% - var(--study))/2)) max(20px,env(safe-area-inset-bottom));border-radius:0;text-align:left;box-shadow:none;background:var(--green-100);border-top-color:var(--green-200)}
@@ -559,7 +567,6 @@ html:has(.studying),body:has(.studying){background:var(--surface)}
 .feedback.retry .feedback-mark{background:var(--coral)}
 .feedback-mark svg{width:18px;height:18px}
 .correct-answer-label{font-size:var(--fs-sm);font-weight:var(--fw-heavy);color:var(--coral-text);margin:10px 0 0}
-.feedback>strong{font-size:var(--fs-xl);margin-top:2px}
 .feedback .primary{margin-top:16px}
 .page-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
 .page-title-row h1{margin:0}
@@ -710,7 +717,9 @@ button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-cal
 .studio-mode-tabs button{flex:1;min-width:120px;min-height:48px}
 .studio-edit,.shop-toggle{margin-block:12px;min-height:48px}
 .forest-studio:not(:has(.studio-mode-tabs)) .studio-scene [data-object]{cursor:default;touch-action:pan-y}
-.feedback-word{font-size:var(--fs-sm);margin:8px 0 12px}
+.feedback-word{font-size:var(--fs-sm);margin:8px 0 12px;overflow-wrap:anywhere}
+.feedback-word b{font-size:var(--fs-xl);color:var(--green-text)}
+.feedback.retry .feedback-word b{color:var(--coral-text)}
 .result-mascot img{animation:mongshell-thanks 480ms ease-out 1}
 @keyframes mongshell-thanks{0%,100%{transform:translateY(0) rotate(0)}40%{transform:translateY(-6px) rotate(-3deg)}70%{transform:translateY(-2px) rotate(2deg)}}
 @media(prefers-reduced-motion:reduce){.result-mascot img{animation:none}}
