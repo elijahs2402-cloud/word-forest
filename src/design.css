@@ -216,21 +216,26 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .game-help{font-size:var(--fs-md);color:var(--ink-soft);text-align:left}
 .boss-banner{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding:14px;border-radius:var(--r-card);background:var(--gold-50);text-align:left}
 .boss-banner>div{flex:1}
-.boss-banner p{margin:2px 0 8px;font-size:var(--fs-sm)}
 .boss-banner .asset{width:64px;height:64px}
+.boss-banner progress,.boss-banner progress::-webkit-progress-bar{background:var(--surface)}
+.boss-banner progress{margin-top:8px}
+.boss-banner progress::-webkit-progress-value{background:var(--gold)}
+.boss-banner progress::-moz-progress-bar{background:var(--gold)}
+.boss-left{display:block;margin-top:6px;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--gold-text)}
 .question-card{container-type:inline-size;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:16px 0;padding:24px;border-radius:var(--r-card);border-bottom-width:var(--ledge)}
 .word-kind{font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--ink-soft)}
 .question-word{max-width:100%;margin:8px 0;font-size:var(--fs-word);line-height:1.15;letter-spacing:-.02em;overflow-wrap:anywhere}
 .meaning{font-size:var(--fs-lg);color:var(--ink-soft)}
-.pronunciation{position:absolute;right:8px;top:8px;color:var(--green-text)}
-.listen-button{width:136px;height:136px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:50%;background:var(--green);color:#fff;border-bottom:var(--ledge) solid var(--green-ledge);font-weight:var(--fw-bold)}
-.listen-button svg{width:44px;height:44px}
+.meaning-row{display:flex;align-items:center;justify-content:center;gap:2px}
+.pronunciation{color:var(--green-text)}
+.listen-button{width:136px;height:136px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:50%;background:var(--green-50);color:var(--green-text);border:2px solid var(--green-200);border-bottom:var(--ledge) solid var(--green-200);font-weight:var(--fw-bold)}
+.listen-button .illustration-art{width:56px;height:56px}
 /* O/X: 현재형과 과거형을 같은 크기로 나란히. 긴 단어는 카드 폭에 맞춰 글자를 줄인다 */
 .ox-pair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:8px;width:100%;margin-top:20px}
 .ox-word{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
 .ox-word strong{font-size:min(var(--fs-word),calc((100cqi - 40px) / (var(--chars) * 1.2)));line-height:1.15;font-weight:var(--fw-heavy);letter-spacing:-.02em}
 .ox-arrow{width:24px;height:24px;margin-bottom:.9em;color:var(--ink-soft)}
-.ox-pair+.meaning{margin-top:12px}
+.ox-pair+.meaning-row{margin-top:12px}
 /* 7글자 이상(thought, understand 등)은 위아래로 쌓아 글자를 크게 유지 */
 .ox-pair.stacked{grid-template-columns:minmax(0,1fr);justify-items:center;gap:2px}
 .ox-pair.stacked .ox-arrow{transform:rotate(90deg);margin-bottom:0}
@@ -248,7 +253,6 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .answer-slots{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;min-height:76px;margin:16px 0;padding:12px;border-radius:var(--r-control);border:2px dashed var(--line-strong)}
 .slot{min-width:20px;font-size:var(--fs-2xl);font-weight:var(--fw-heavy)}
 .slot.empty{min-width:32px;padding-bottom:2px;border-bottom:3px solid var(--green);color:var(--green-text)}
-.typed-answer{width:100%;font-size:var(--fs-2xl);font-weight:var(--fw-heavy);letter-spacing:.06em;overflow-wrap:anywhere}
 .tile-bank{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:16px}
 .letter-tile{width:52px;height:60px;border-radius:var(--r-control);background:var(--surface);border:2px solid var(--line);border-bottom-width:var(--ledge);color:var(--ink);font-size:var(--fs-2xl);font-weight:var(--fw-heavy)}
 .letter-tile:active:not(:disabled){transform:translateY(2px);border-bottom-width:2px}
@@ -542,8 +546,10 @@ html:has(.studying),body:has(.studying){background:var(--surface)}
 .lesson-steps span{border-radius:var(--r-control);background:var(--surface);border-bottom:3px solid var(--line);padding:5px 9px}
 .lesson-steps span.active{border-bottom-color:var(--green);background:var(--green-50)}
 .study-top{margin-bottom:4px}
-.study-wrap>progress{height:18px;margin-bottom:18px}
-.study-wrap>progress::-webkit-progress-value{background:var(--green);border-top:4px solid var(--green-200)}
+/* 학습 진행 막대: 진한 트랙 + 초록 채움 + 채움 안쪽의 얇은 하이라이트, 폭은 감속하며 차오름 */
+.lesson-bar{height:18px;margin-bottom:18px;border-radius:var(--r-pill);background:var(--line);overflow:hidden}
+.lesson-bar-fill{position:relative;display:block;height:100%;border-radius:var(--r-pill);background:var(--green);transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.lesson-bar-fill::after{content:'';position:absolute;top:4px;left:8px;right:8px;height:4px;border-radius:var(--r-pill);background:var(--green-200);opacity:.5}
 .rule-card{border:0;background:var(--surface);padding-bottom:0}
 .rule-card .word-pair{border:2px solid var(--green-100);background:var(--green-50)}
 .flashcard{border-color:var(--line-strong);border-bottom-width:6px}
@@ -552,12 +558,13 @@ html:has(.studying),body:has(.studying){background:var(--surface)}
 .question-card{border:0;background:var(--surface);margin-top:6px;min-height:200px}
 .question-word{font-weight:var(--fw-heavy)}
 .answer-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.answer-options.stacked{grid-template-columns:minmax(0,1fr)}
+.answer-options.stacked .answer-btn{min-height:64px}
 .answer-btn{position:relative;min-width:0;min-height:82px;border-bottom-width:5px}
 .answer-btn.revealed-correct:disabled{background:var(--green-100);border-color:var(--green-200);color:var(--green-text)}
 .answer-btn.revealed-other:disabled{background:var(--surface-muted);color:var(--ink-soft)}
 .answer-btn.revealed-wrong:disabled{background:var(--coral-100);border-color:var(--coral);color:var(--coral-text)}
 .reveal-mark{position:absolute;top:8px;right:8px;width:22px;height:22px}
-.answer-slots{border-style:solid;background:var(--surface-muted)}
 .letter-tile:disabled{color:transparent;background:var(--surface-muted);border-color:var(--line);opacity:1}
 .feedback{max-width:none;width:100%;padding:20px max(var(--gutter),calc((100% - var(--study))/2)) max(20px,env(safe-area-inset-bottom));border-radius:0;text-align:left;box-shadow:none;background:var(--green-100);border-top-color:var(--green-200)}
 .feedback.retry{background:var(--coral-100)}
@@ -723,7 +730,7 @@ button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-cal
 .result-mascot img{animation:mongshell-thanks 480ms ease-out 1}
 @keyframes mongshell-thanks{0%,100%{transform:translateY(0) rotate(0)}40%{transform:translateY(-6px) rotate(-3deg)}70%{transform:translateY(-2px) rotate(2deg)}}
 @media(prefers-reduced-motion:reduce){.result-mascot img{animation:none}}
-.game .button-row{position:sticky;bottom:16px;background:var(--bg);padding:8px 0;z-index:3}
+.game .button-row{position:sticky;bottom:16px;background:var(--surface);padding:8px 0;z-index:3}
 .game:has(.feedback) .button-row{visibility:hidden}
 @media(max-width:699px){.learning-details{margin-top:12px}.forest-banner h2{font-size:var(--fs-xl)}.studio-mode-tabs button{font-size:var(--fs-sm)}.game{padding-bottom:160px}}
 .studio-instruction{color:var(--ink-soft);font-size:var(--fs-sm);line-height:1.6;margin:8px 0 12px;text-wrap:pretty}
