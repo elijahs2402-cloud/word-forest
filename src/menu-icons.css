@@ -12,7 +12,7 @@
 .leaves .illustration-art{position:absolute;left:calc(var(--i)*11%);top:45%;animation:leaf-fall .6s ease-out forwards;transform:rotate(calc(var(--i)*35deg))}
 .mobile-summary>div .illustration-art{width:16px;height:16px}
 .menu-art{display:inline-block;width:32px;height:32px;flex:none;vertical-align:middle;object-fit:contain;user-select:none}
-.bottom-nav .menu-art{width:34px;height:34px;transition:transform .15s ease}
+.bottom-nav .menu-art{width:34px;height:34px;transition:transform var(--motion-press) var(--ease-ui)}
 @media(hover:hover) and (pointer:fine){.bottom-nav button:hover .menu-art{transform:translateY(-2px)}}
 .bottom-nav button:active .menu-art{transform:translateY(1px)}
 .header-actions .menu-art{width:26px;height:26px}
