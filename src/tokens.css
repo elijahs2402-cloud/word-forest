@@ -4,45 +4,50 @@
    참고: 듀오링고 iOS 화면(Mobbin)의 "흰 바탕 + 강조색 1개 + 아래 띠로 만든 입체감" 원칙. */
 :root{
  /* ── 색: 바탕과 표면 ── */
- --bg:#f7f8f3;            /* 따뜻한 종이 같은 바탕 */
- --surface:#ffffff;       /* 카드·버튼 표면 */
- --surface-muted:#edf1eb; /* 비활성·보조 표면 */
+ --bg:oklch(97.7% 0.007 115.7);            /* 따뜻한 종이 같은 바탕 */
+ --surface:oklch(99.5% 0.004 145); /* 카드·버튼 표면 (순백 대신 숲빛이 아주 살짝 도는 흰색) */
+ --surface-muted:oklch(95.3% 0.009 134.9); /* 비활성·보조 표면 */
 
  /* ── 색: 글자 (대비는 실제 표면색과 함께 검증한다) ── */
- --ink:#253c32;
- --ink-soft:#566b60;
+ --ink:oklch(33.4% 0.034 165.4);
+ --ink-soft:oklch(50.7% 0.031 162.3);
 
  /* ── 색: 선 (border-bottom을 굵게 하면 눌리는 입체감) ── */
- --line:#dce5db;
- --line-strong:#c7d5c8;
+ --line:oklch(91.2% 0.016 142.6);
+ --line-strong:oklch(85.9% 0.023 147.4);
 
  /* ── 색: 기본 행동은 숲 초록, 보조색은 정보·상태에만 사용 ── */
- --green:#27674f;
- --green-hover:#205b45;
- --green-ledge:#194b39;
- --green-text:#27674f;
- --green-50:#edf5ec;
- --green-100:#dbead8;
- --green-200:#adcbaa;
- --hero:#245b48;
- --hero-line:#3c715c;
+ --green:oklch(46.5% 0.077 165.4);
+ --green-hover:oklch(42.6% 0.072 165.3);
+ --green-ledge:oklch(37.3% 0.062 166.1);
+ --green-text:oklch(46.5% 0.077 165.4);
+ --green-50:oklch(96.2% 0.015 142.2);
+ --green-100:oklch(92.1% 0.029 140.5);
+ --green-200:oklch(81.1% 0.056 142.6);
+ --hero:oklch(42.8% 0.067 167.7);
+ --hero-line:oklch(50.5% 0.067 166.1);
  /* 파랑은 강조색이 아니라 "정답 고르는 중(선택 상태)" 표시에만 쓴다 */
- --blue:#246e89;
- --blue-50:#edf6f9;
- --blue-200:#b6d4de;
+ --blue:oklch(50.5% 0.083 226.5);
+ --blue-50:oklch(96.7% 0.010 219.6);
+ --blue-200:oklch(85.1% 0.035 219.9);
 
  /* ── 색: 의미가 있는 보조색 (강조색이 아니라 상태 표시용) ── */
- --gold:#d4a132;          /* 별·도토리 보상 */
- --gold-50:#fff6d9;
- --gold-200:#f1dd9a;
- --gold-text:#6b5413;
- --coral:#c4462f;         /* 틀렸을 때 */
- --coral-50:#fff1ec;
- --coral-100:#f6d3c9;
- --coral-ledge:#9a3322;
- --coral-text:#a63b28;
- --highlight:#e1efb8;      /* 발음 중인 단어 형광펜 */
- --scrim:rgb(30 45 34 / .45); /* 모달 뒤 어둡게 */
+ --gold:oklch(73.8% 0.135 82.5);          /* 별·도토리 보상 */
+ --gold-50:oklch(97.3% 0.039 92.7);
+ --gold-200:oklch(89.9% 0.088 93.4);
+ --gold-text:oklch(45.7% 0.085 88.0);
+ --coral:oklch(56.5% 0.166 32.5);         /* 틀렸을 때 */
+ --coral-50:oklch(96.8% 0.017 40.8);
+ --coral-100:oklch(89.4% 0.042 36.5);
+ --coral-ledge:oklch(47.0% 0.141 31.9);
+ --coral-text:oklch(50.1% 0.145 32.3);
+ --highlight:oklch(92.8% 0.073 119.4);      /* 발음 중인 단어 형광펜 */
+ --on-green:var(--surface);   /* 초록 바탕 위 글자·아이콘 */
+ --scrim-forest:oklch(31.3% 0.051 162.1);       /* 숲 배너 사진 위 어두운 막(불투명도는 쓰는 곳에서) */
+ --scrim-forest-strong:oklch(31.3% 0.051 162.1 / .97);
+ --scrim-forest-mid:oklch(31.3% 0.051 162.1 / .89);
+ --scrim-forest-fade:oklch(31.3% 0.051 162.1 / .2);
+ --scrim:oklch(28.0% 0.029 152.6 / .45); /* 모달 뒤 어둡게 */
 
  /* ── 글자 크기 7단계 + 학습 단어 전용 ── */
  --fs-xs:.75rem;    /* 12px 숫자 배지 등 아주 작은 표시 */
@@ -53,6 +58,10 @@
  --fs-2xl:1.75rem;  /* 28px 화면 제목 */
  --fs-3xl:2.125rem; /* 34px 큰 화면 제목 */
  --fs-word:clamp(2.75rem,11vw,3.75rem); /* 학습 단어 */
+
+ /* ── 글꼴: 한글 UI는 Pretendard, 영어 학습 단어는 아이 읽기용 Andika(1층 a·g) ── */
+ --font-ui:Pretendard,system-ui,sans-serif;
+ --font-word:Andika,Pretendard,system-ui,sans-serif;
 
  --fw-regular:500;
  --fw-medium:600;
@@ -68,14 +77,14 @@
 
  /* ── 깊이: 아래 띠 + 그림자 2종 ── */
  --ledge:4px;                                     /* 카드·버튼 아래 띠 두께 */
- --shadow-float:0 8px 28px rgb(37 60 50 / .1);
- --shadow-card:0 3px 12px rgb(37 60 50 / .035);
+ --shadow-float:0 8px 28px oklch(33.4% 0.034 165.4 / .1);
+ --shadow-card:0 3px 12px oklch(33.4% 0.034 165.4 / .035);
 
  /* ── 간격과 폭 ── */
  --gutter:16px;        /* 휴대폰 좌우 여백 */
  --page:1160px;        /* 홈 화면 최대 폭 */
  --study:560px;        /* 학습 화면 최대 폭 */
- --focus:#1f6fb2;      /* 키보드 포커스 테두리 */
+ --focus:oklch(52.9% 0.129 248.8);      /* 키보드 포커스 테두리 */
  --space-1:4px;
  --space-2:8px;
  --space-3:12px;

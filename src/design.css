@@ -7,9 +7,13 @@
 
 /* ════════ 1. 기본 ════════ */
 @font-face{font-family:Pretendard;src:url('/fonts/PretendardVariable.woff2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:Andika;src:url('/fonts/Andika-Regular-latin.woff2') format('woff2');font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Andika;src:url('/fonts/Andika-Bold-latin.woff2') format('woff2');font-weight:700;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
 *{box-sizing:border-box}
-html{font-family:Pretendard,system-ui,sans-serif;font-size:16px;color:var(--ink);background:var(--bg)}
+html{font-family:var(--font-ui);font-size:16px;color:var(--ink);background:var(--bg)}
 body{margin:0;line-height:1.6;background:var(--bg)}
+/* 영어 학습 단어는 아이 읽기용 글꼴 (1층 a·g) */
+[lang="en"]{font-family:var(--font-word)}
 h1,h2,h3,p{margin-top:0;word-break:keep-all;overflow-wrap:break-word}
 h1,h2,h3{color:var(--ink);font-weight:var(--fw-heavy);letter-spacing:-.025em;line-height:1.3}
 h1{font-size:var(--fs-2xl);margin-bottom:16px}
@@ -33,7 +37,7 @@ button:disabled{cursor:default}
 
 /* ════════ 2. 버튼 (듀오링고식: 아래 띠가 눌리며 줄어든다) ════════ */
 .primary,.secondary{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:56px;padding:12px 20px;border-radius:var(--r-control);font-size:var(--fs-lg);font-weight:var(--fw-heavy);line-height:1.4;transition:background var(--motion-ui),transform var(--motion-press) var(--ease-ui)}
-.primary{background:var(--green);color:#fff;border-bottom:var(--ledge) solid var(--green-ledge)}
+.primary{background:var(--green);color:var(--on-green);border-bottom:var(--ledge) solid var(--green-ledge)}
 @media (hover:hover) and (pointer:fine){.primary:hover:not(:disabled){background:var(--green-hover)}}
 .secondary{background:var(--surface);color:var(--green-text);border:2px solid var(--line);border-bottom-width:var(--ledge)}
 @media (hover:hover) and (pointer:fine){.secondary:hover:not(:disabled){background:var(--green-50)}}
@@ -77,13 +81,13 @@ main>section{animation:appear .25s ease-out}
 /* 오늘의 학습 배너: 듀오링고 유닛 헤더처럼 초록 덩어리 + 흰 버튼 */
 .forest-banner{position:relative;overflow:hidden;min-height:260px;padding:28px;border-radius:var(--r-card);background:var(--hero);border:1px solid var(--hero-line);color:var(--surface)}
 .forest-banner>div{position:relative;z-index:2;max-width:calc(100% - 170px)}
-.forest-banner .eyebrow{color:#fff;opacity:1}
+.forest-banner .eyebrow{color:var(--on-green);opacity:1}
 .forest-banner h2{color:var(--surface);font-size:clamp(1.5rem,2.8vw,2rem);margin-bottom:12px;line-height:1.3}
 .forest-banner p:not(.eyebrow){color:var(--surface);margin-bottom:0;line-height:1.65}
 .forest-banner .start-learning{margin:20px 0 16px;max-width:280px;background:var(--surface);color:var(--green-text);border-bottom-color:var(--green-200)}
 @media (hover:hover) and (pointer:fine){.forest-banner .start-learning:hover:not(:disabled){background:var(--green-50)}}
 .map-count{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:var(--fs-lg);font-weight:var(--fw-heavy)}
-.map-count small{font-size:var(--fs-sm);font-weight:var(--fw-regular);color:#fff}
+.map-count small{font-size:var(--fs-sm);font-weight:var(--fw-regular);color:var(--on-green)}
 .forest-banner .tori{position:absolute;right:12px;bottom:24px;z-index:1;width:170px;height:200px}
 
 /* 꾸미기 바로가기 */
@@ -98,7 +102,7 @@ main>section{animation:appear .25s ease-out}
 @media (hover:hover) and (pointer:fine){.zone:hover:not(:disabled){transform:translateY(-2px);border-color:var(--green-200)}}
 .zone:active:not(:disabled){transform:translateY(2px);border-bottom-width:2px}
 .zone.current{border-color:var(--green);background:var(--green-50)}
-.zone.current:after{content:'추천';position:absolute;right:16px;top:16px;padding:2px 10px;border-radius:var(--r-pill);background:var(--green);color:#fff;font-size:var(--fs-xs);font-weight:var(--fw-heavy)}
+.zone.current:after{content:'추천';position:absolute;right:16px;top:16px;padding:2px 10px;border-radius:var(--r-pill);background:var(--green);color:var(--on-green);font-size:var(--fs-xs);font-weight:var(--fw-heavy)}
 .zone.locked{opacity:.6}
 .zone-art{position:relative;display:flex;justify-content:center;height:150px;border-radius:var(--r-control);background:var(--zone-cover) center/cover var(--surface-muted)}
 .zone-art .asset{align-self:flex-end;width:76px;height:90px}
@@ -125,22 +129,21 @@ main>section{animation:appear .25s ease-out}
 /* 홈 지도 위 복습 카드: 복습할 단어가 있을 때만 보인다 */
 .review-top{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px;margin-top:24px;border-color:var(--gold-200);background:var(--gold-50)}
 .review-top h2{margin:0;font-size:var(--fs-lg)}
-.review-top h2 b{color:var(--gold-text)}
+.review-count{margin:0;min-width:56px;text-align:center;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--gold-text);line-height:1.1}
+.review-count b{display:block;font-size:var(--fs-3xl);font-weight:var(--fw-heavy);font-variant-numeric:tabular-nums}
 .review-top p{margin:2px 0 0;font-size:var(--fs-sm);color:var(--ink-soft)}
 .review-top .primary{grid-column:1/-1}
 .review-card h2{font-size:var(--fs-lg);margin-bottom:6px}
 .review-card h2 b{color:var(--green-text);font-size:var(--fs-2xl)}
 .review-card p:not(.eyebrow){font-size:var(--fs-sm);color:var(--ink-soft)}
 .review-card .eyebrow{margin-top:14px}
-.section-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:var(--r-control);background:var(--green-50)}
-.section-icon .menu-art{width:36px;height:36px}
 .panel h2{font-size:var(--fs-lg);font-weight:var(--fw-bold);margin-bottom:var(--space-4)}
 .streak-row{display:flex;align-items:center;gap:12px}
 .streak-row>svg{width:36px;height:36px;color:var(--gold)}
 .streak-row p{margin:2px 0 0;font-size:var(--fs-sm);color:var(--ink-soft)}
 .week-days{display:flex;justify-content:space-between;gap:4px;margin:16px 0 12px}
 .week-days>span{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--surface-muted);color:var(--ink-soft);font-size:var(--fs-sm);font-weight:var(--fw-bold)}
-.week-days>span.done{background:var(--green);color:#fff}
+.week-days>span.done{background:var(--green);color:var(--on-green)}
 .week-days svg{width:16px;height:16px}
 .section-title{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .section-title h2{margin:0}
@@ -149,7 +152,7 @@ main>section{animation:appear .25s ease-out}
 .quest{display:flex;gap:10px;font-size:var(--fs-sm);font-weight:var(--fw-bold)}
 .quest small{margin-left:auto;color:var(--ink-soft);font-size:var(--fs-sm)}
 .check-circle{width:24px;height:24px;flex-shrink:0;border:2px solid var(--line-strong);border-radius:50%;display:grid;place-items:center}
-.check-circle.done{background:var(--green);border-color:var(--green);color:#fff}
+.check-circle.done{background:var(--green);border-color:var(--green);color:var(--on-green)}
 .check-circle svg{width:14px;height:14px}
 .quest-reward{margin:16px 0 0;padding-top:14px;border-top:2px solid var(--line);font-size:var(--fs-sm)}
 .tori-note{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:var(--r-card);background:var(--gold-50);color:var(--gold-text)}
@@ -228,6 +231,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .meaning{font-size:var(--fs-lg);color:var(--ink-soft)}
 .meaning-row{display:flex;align-items:center;justify-content:center;gap:2px}
 .pronunciation{color:var(--green-text)}
+.pronunciation svg,.missed-words svg,.flashcard-listen svg{width:24px;height:24px}
 .listen-button{width:136px;height:136px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:50%;background:var(--green-50);color:var(--green-text);border:2px solid var(--green-200);border-bottom:var(--ledge) solid var(--green-200);font-weight:var(--fw-bold)}
 .listen-button .illustration-art{width:56px;height:56px}
 /* O/X: 현재형과 과거형을 같은 크기로 나란히. 긴 단어는 카드 폭에 맞춰 글자를 줄인다 */
@@ -290,7 +294,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .result-path{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin:0 0 8px;padding:0;list-style:none}
 .result-path li{display:flex;align-items:center;gap:4px;padding:6px 12px;border-radius:var(--r-pill);background:var(--surface-muted);color:var(--ink-soft);font-size:var(--fs-sm);font-weight:var(--fw-bold)}
 .result-path li.done{background:var(--green-50);color:var(--green-text)}
-.result-path li.current{background:var(--green);color:#fff}
+.result-path li.current{background:var(--green);color:var(--on-green)}
 .result-path svg{width:14px;height:14px}
 .result .result-mascot{width:120px;height:120px;margin:8px auto}
 .result h1{max-width:420px;margin:0 auto 8px;font-size:var(--fs-2xl);color:var(--green-text)}
@@ -320,7 +324,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .collect-card{padding:18px 14px;background:var(--surface);border:2px solid var(--line);border-bottom-width:var(--ledge);text-align:center}
 .collect-card .asset{width:120px;height:120px;max-width:100%;margin:0 auto 8px}
 .collect-card h3{font-size:var(--fs-lg)}
-.collect-card p{margin:0;font-size:var(--fs-sm);color:var(--ink-soft)}
+.collection-hint{margin:-8px 0 16px;font-size:var(--fs-sm);color:var(--ink-soft)}
 .collect-card .primary,.collect-card .secondary{min-height:48px;font-size:var(--fs-md)}
 .collect-card.unknown{background:var(--surface-muted);border-color:var(--line)}
 .collect-card.unknown h3{font-size:var(--fs-md);color:var(--ink-soft)}
@@ -460,6 +464,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
  .collect-card{padding:14px 10px}
  .collect-card .asset{width:96px;height:96px}
  .collect-card h3{font-size:var(--fs-md)}
+ .collection-tabs button{font-size:var(--fs-md)}
  /* 하단 메뉴는 화면 바닥에 붙는 막대 */
  .bottom-nav{left:0;bottom:0;transform:none;width:100%;max-width:none;padding:6px 12px max(8px,env(safe-area-inset-bottom));border-radius:var(--r-inner) var(--r-inner) 0 0;border-width:1px 0 0;box-shadow:none}
  .bottom-nav button{flex-direction:column;gap:2px;min-height:60px}
@@ -511,7 +516,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 /* Flow-level refinements on top of the user's consolidated design system.
    Reference shapes are original; no Duolingo artwork is copied. */
 .view-home .home-top{margin-bottom:var(--panel-gap)}
-.view-home .forest-banner{border-radius:var(--r-card);padding-bottom:var(--panel-gap);background-image:linear-gradient(90deg,rgba(21,57,41,.97) 0%,rgba(21,57,41,.89) 52%,rgba(21,57,41,.2) 100%),url('/art/higgsfield-forest/zone-01.webp');background-size:cover;background-position:center}
+.view-home .forest-banner{border-radius:var(--r-card);padding-bottom:var(--panel-gap);background-image:linear-gradient(90deg,var(--scrim-forest-strong) 0%,var(--scrim-forest-mid) 52%,var(--scrim-forest-fade) 100%),url('/art/higgsfield-forest/zone-01.webp');background-size:cover;background-position:center}
 .view-home .map-heading{align-items:flex-start}
 .view-home .map-heading>span{padding:6px 10px;border-radius:var(--r-control);background:var(--green-50);color:var(--green-text)}
 /* The unit list is a journey, not another repeated book grid. All units remain open. */
@@ -519,7 +524,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .view-home .zone-map:before{content:'';position:absolute;top:24px;bottom:24px;left:66px;border-left:4px dashed var(--green-100);pointer-events:none}
 .view-home .zone{flex-direction:row;align-items:center;gap:20px;padding:20px;text-align:left;border-width:1px;border-color:var(--line);background:var(--surface);min-height:148px;box-shadow:var(--shadow-card)}
 .view-home .zone:nth-child(even){margin-left:28px}
-.view-home .zone.current{border-color:var(--green);background:var(--green-50);box-shadow:inset 4px 0 var(--green)}
+.view-home .zone.current{border-color:var(--green);background:var(--green-50)}
 .view-home .zone.current:after{content:'여기서 시작';top:-12px;right:20px;box-shadow:none}
 .view-home .zone-art{width:var(--unit-art);height:var(--unit-art);flex-shrink:0;border-radius:var(--path-round);border:4px solid var(--green-100);border-bottom-width:7px;overflow:hidden}
 .view-home .zone-art .asset{width:64px;height:78px}
@@ -642,7 +647,7 @@ html:has(.studying),body:has(.studying){background:var(--surface)}
 .view-decorate .collect-card button.primary .acorn-art{width:28px;height:28px;padding:3px;background:var(--gold-50);border-radius:50%;box-sizing:border-box;box-shadow:0 0 0 1px var(--gold-200)}
 .zone-expand{width:100%;margin:0 0 24px}
 .collection-tabs{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
-.collection-tabs button{flex:1;min-height:48px}
+.collection-tabs button{flex:1;min-width:0;min-height:48px;white-space:nowrap;padding-inline:var(--space-3)}
 .collect-card.unknown .asset{opacity:.65;filter:grayscale(1)}
 .view-collection .collect-card .asset{width:100%}
 .view-collection .collect-card .asset img{width:100%;height:100%;object-fit:contain}
@@ -674,7 +679,7 @@ html:has(.studying),body:has(.studying){background:var(--surface)}
 .studio-expanded .studio-tools{display:flex;gap:12px;flex-wrap:wrap}
 .studio-expanded .studio-tray,.studio-expanded .capy-closet{flex:1;min-width:140px}
 .studio-expanded .studio-tray>div,.studio-expanded .capy-closet>div{display:flex;flex-wrap:nowrap;overflow-x:auto;padding:8px 0}
-.studio-drag-ghost{position:fixed;left:0;top:0;width:80px;height:80px;object-fit:contain;pointer-events:none;z-index:10000;background:none;border:0;border-radius:0;box-shadow:none}
+.studio-drag-ghost{position:fixed;left:0;top:0;width:80px;height:80px;object-fit:contain;pointer-events:none;z-index:var(--z-drag);background:none;border:0;border-radius:0;box-shadow:none}
 .studio-object-image{width:100%;height:100%;object-fit:contain;pointer-events:none}
 .forest-studio .free-deco,.forest-studio .movable-capy{transition:none;animation:none;background:none;border:0;border-radius:0;box-shadow:none}
 .forest-studio .studio-tools{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));min-width:0}
@@ -768,7 +773,6 @@ button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-cal
 .forest-studio.studio-expanded .studio-scene {flex-shrink:0;}
 .forest-studio.studio-expanded .studio-tools {overflow-y:auto;}
 .forest-studio.studio-expanded .studio-tray>div,.forest-studio.studio-expanded .capy-closet>div {display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));overflow-x:hidden;}
-.forest-studio .studio-drag-ghost,.studio-drag-ghost {z-index:var(--z-drag);}
 .answer-confirm {margin-top:var(--space-4);}
 .answer-btn.answer-selected {background:var(--blue-50);border-color:var(--blue);color:var(--blue);}
 .view-home .zone .capy-base img {animation:none;}
