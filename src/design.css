@@ -347,7 +347,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .free-deco.selected{outline:3px solid var(--surface);outline-offset:3px;border-radius:50%}
 .deco-remove{position:absolute;z-index:5;right:-10px;top:-12px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--surface);color:var(--coral-text);box-shadow:var(--shadow-float)}
 .deco-remove svg{width:18px;height:18px}
-.capy-dressup{position:absolute;z-index:2;right:5%;bottom:8%;width:18%;min-width:92px;aspect-ratio:1}
+.capy-dressup{position:absolute;z-index:2;isolation:isolate;right:5%;bottom:8%;width:18%;min-width:92px;aspect-ratio:1}
 .capy-dressup>.asset{width:100%;height:100%}
 .capy-wear{position:absolute;inset:0;pointer-events:none}
 .studio-tools{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr);gap:24px}
@@ -870,8 +870,9 @@ h1,h2,h3 {text-wrap:balance;}
 .studio-start {width:100%;}
 .wardrobe-page h1,.wardrobe-page p {margin:0;text-align:center;}
 .wardrobe-preview {display:grid;place-items:center;background:var(--green-50);border-radius:var(--r-card);min-height:240px;padding:var(--space-4);flex-shrink:0;}
-.wardrobe-preview .capy-dressup {position:relative;inset:auto;width:220px;max-width:75%;transform:none;}
+.wardrobe-preview .capy-dressup {position:relative;isolation:isolate;inset:auto;width:220px;max-width:75%;transform:none;}
 .wardrobe-preview .capy-dressup>img {width:100%;height:auto;display:block;}
+.wardrobe-tabs {align-self:flex-start;flex-wrap:wrap;}
 .wardrobe-options {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr));gap:var(--space-2);}
 .wardrobe-options button {display:flex;flex-direction:column;align-items:center;gap:var(--space-2);font-size:var(--fs-md);height:auto;}
 .wardrobe-options button[aria-pressed=true] {background:var(--green-50);border-color:var(--green);}
@@ -889,11 +890,6 @@ h1,h2,h3 {text-wrap:balance;}
 input[type=range] {accent-color:var(--green);cursor:pointer;}
 .wear-adjust label,.size-controls label {font-weight:var(--fw-medium);color:var(--ink-soft);}
 .wardrobe-options small {font-weight:var(--fw-medium);color:var(--ink-soft);}
-.forest-studio .capy-wear .wear-hat {left:var(--wear-hat-x,39%);top:var(--wear-hat-y,-13%);width:calc(48% * var(--wear-hat-scale,1));}
-.forest-studio .capy-wear .wear-crown {left:var(--wear-crown-x,39%);top:var(--wear-crown-y,-13%);width:calc(48% * var(--wear-crown-scale,1));}
-.forest-studio .capy-wear .wear-glasses {left:var(--wear-glasses-x,23%);top:var(--wear-glasses-y,3%);width:calc(54% * var(--wear-glasses-scale,1));}
-.forest-studio .capy-wear .wear-bow {left:var(--wear-bow-x,68%);top:var(--wear-bow-y,5%);right:auto;width:calc(35% * var(--wear-bow-scale,1));}
-.forest-studio .capy-wear .wear-scarf {left:var(--wear-scarf-x,18%);top:var(--wear-scarf-y,50%);width:calc(58% * var(--wear-scarf-scale,1));}
 .wardrobe-options small {font-size:var(--fs-sm);}
 /* One dock owns scrolling; artwork and save controls stay visible. */
 .forest-studio.studio-expanded:not(.wardrobe-page) {overflow:hidden;}
