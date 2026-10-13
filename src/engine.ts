@@ -3,7 +3,7 @@ export const {words,families}=data;
 export type Word=typeof words[number];
 export type Progress={box:number;due:string;wrong:number;seen:number;lastWrong?:string};
 export type Game='choice'|'ox'|'match'|'blank'|'tiles'|'listen'|'reverse';
-export const gameNames:Record<Game,string>={choice:'둘 중 골라요',ox:'O/X 도토리',match:'짝꿍 찾기',blank:'빈칸 채우기',tiles:'뒤죽박죽 타일',listen:'듣고 골라요',reverse:'거꾸로 숲길'};
+export const gameNames:Record<Game,string>={choice:'둘 중 골라요',ox:'맞는 짝일까?',match:'짝꿍 찾기',blank:'빈칸 채우기',tiles:'뒤죽박죽 타일',listen:'듣고 골라요',reverse:'거꾸로 숲길'};
 export const allGames=(Object.keys(gameNames) as Game[]).filter(game=>game!=='match');
 export function validate(){if(words.length!==68||new Set(words.map(w=>w.present)).size!==68||words.some(w=>w.family<1||w.family>10))throw Error('학습 데이터가 올바르지 않습니다.');}
 validate();
@@ -246,7 +246,18 @@ export const decoItems:{slug:string;name:string}[]=[
  {slug:'gift-box',name:'선물 상자'},
  {slug:'birthday-cake',name:'생일 케이크'},
  {slug:'star-lamp',name:'별 조명'},
- {slug:'sandbox',name:'모래놀이 통'}
+ {slug:'sandbox',name:'모래놀이 통'},
+ {slug:'today-garden-easel',name:'야외 이젤'},
+ {slug:'today-wind-chime',name:'풍경종'},
+ {slug:'today-trampoline',name:'트램펄린'},
+ {slug:'today-bubble-machine',name:'비눗방울 기계'},
+ {slug:'today-leaf-beanbag',name:'나뭇잎 빈백'},
+ {slug:'today-weather-vane',name:'풍향계'},
+ {slug:'today-gramophone',name:'축음기'},
+ {slug:'today-outdoor-chalkboard',name:'야외 칠판'},
+ {slug:'today-drying-rack',name:'손수건 건조대'},
+ {slug:'today-woodland-oak',name:'숲 참나무'},
+ {slug:'today-simple-tree',name:'동그란 나무'}
 ];
 export const bosses=forestFriends.map(f=>f.name);
 export const hiddenAnimals=hiddenFriends.map(f=>f.name);

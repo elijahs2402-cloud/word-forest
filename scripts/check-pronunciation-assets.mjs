@@ -11,7 +11,7 @@ for(const [word,path] of Object.entries(clips)){
  // ffmpeg returns its level report on stderr; inspect it separately below.
  if(error.status!==undefined){bad.push({word,reason:'decode'});continue;}
  }
- try{const child=await import('node:child_process');const result=child.spawnSync('ffmpeg',['-hide_banner','-nostats','-i','output/maya-original-audio/'+path.split('/').at(-1),'-af','volumedetect','-f','null','NUL'],{encoding:'utf8',windowsHide:true});const match=result.stderr.match(/max_volume:\s*([\-\d.]+) dB/);if(result.status!==0||!match||Number(match[1])< -45)bad.push({word,reason:'silent source',peak:match?.[1]});}catch{bad.push({word,reason:'source check'});}
+ try{const child=await import('node:child_process');const result=child.spawnSync('ffmpeg',['-hide_banner','-nostats','-i','public/'+path,'-af','volumedetect','-f','null','NUL'],{encoding:'utf8',windowsHide:true});const match=result.stderr.match(/max_volume:\s*([\-\d.]+) dB/);if(result.status!==0||!match||Number(match[1])< -45)bad.push({word,reason:'silent asset',peak:match?.[1]});}catch{bad.push({word,reason:'asset check'});}
 }
 console.log(JSON.stringify({checked:Object.keys(clips).length,bad}));
 if(bad.length)process.exitCode=1;

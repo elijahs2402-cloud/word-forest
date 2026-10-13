@@ -23,5 +23,7 @@ export function validateRecord(value:unknown):Saved {
  if(!Object.values(result.forestLayout).every(p=>record(p)&&number(p.x)&&number(p.y)&&(p.scale===undefined||number(p.scale))&&(p.z===undefined||typeof p.z==='number'&&Number.isFinite(p.z))))throw Error('소품 배치가 올바르지 않습니다.');
  for(const key of ['seconds','decoLayout','zoneStars'] as const)if(!Object.values(result[key]).every(number))throw Error('기록 값이 올바르지 않습니다.');
  if(!Object.values(result.daily).every(d=>record(d)&&Object.values(d).every(number)))throw Error('하루 기록이 올바르지 않습니다.');
+ if(!/^studio$|^zone-(0[1-9]|10)$/.test(result.forestBackground))result.forestBackground='studio';
  return result;
+ 
 }
