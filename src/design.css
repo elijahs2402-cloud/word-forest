@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..800&display=swap');
+
 /* 단어숲 통합 스타일
    예전 style.css · premium.css · abc-design.css · story-design.css 네 겹을 하나로 합쳤고,
    이후 다듬기 파일 3개(duolingo-refinement · forest-studio-refinement · readiness)도 17~19절로 합쳤다.
@@ -7,12 +9,11 @@
 
 /* ════════ 1. 기본 ════════ */
 @font-face{font-family:Pretendard;src:url('/fonts/PretendardVariable.woff2') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:Andika;src:url('/fonts/Andika-Regular-latin.woff2') format('woff2');font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
-@font-face{font-family:Andika;src:url('/fonts/Andika-Bold-latin.woff2') format('woff2');font-weight:700;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
 *{box-sizing:border-box}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 html{font-family:var(--font-ui);font-size:16px;color:var(--ink);background:var(--bg)}
 body{margin:0;line-height:1.6;background:var(--bg)}
-/* 영어 학습 단어는 아이 읽기용 글꼴 (1층 a·g) */
+/* 영어 학습 단어는 Google Sans, 한글은 Pretendard로 표시한다. */
 [lang="en"]{font-family:var(--font-word)}
 h1,h2,h3,p{margin-top:0;word-break:keep-all;overflow-wrap:break-word}
 h1,h2,h3{color:var(--ink);font-weight:var(--fw-heavy);letter-spacing:-.025em;line-height:1.3}
@@ -88,7 +89,7 @@ main>section{animation:appear .25s ease-out}
 .home-top h1{margin:0;font-size:var(--fs-3xl)}
 .day-chip{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--r-pill);background:var(--green-50);color:var(--green-text);font-size:var(--fs-sm);font-weight:var(--fw-heavy);white-space:nowrap}
 .day-chip svg{width:18px;height:18px}
-.dashboard{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--space-6);align-items:start}
+.dashboard{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-6);align-items:start}
 
 /* 오늘의 학습 배너: 듀오링고 유닛 헤더처럼 초록 덩어리 + 흰 버튼 */
 .forest-banner{position:relative;overflow:hidden;min-height:260px;padding:28px;border-radius:var(--r-card);background:var(--hero);border:1px solid var(--hero-line);color:var(--surface)}
@@ -131,17 +132,18 @@ main>section{animation:appear .25s ease-out}
 .stars .earned{color:var(--gold)}
 
 /* ════════ 7. 홈 사이드바 ════════ */
-.sidebar{display:flex;flex-direction:column;gap:16px}
+.sidebar{display:flex;flex-direction:column;gap:16px;width:100%;margin-top:24px}
 .review-card,.panel{padding:var(--space-5);border-radius:var(--r-card);background:var(--surface);border:1px solid var(--line)}
 /* 홈 지도 위 복습 카드: 복습할 단어가 있을 때만 보인다 */
-.review-top{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px;margin-top:24px;border-color:var(--gold-200);background:var(--gold-50)}
+.review-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;margin-top:24px;border-color:var(--gold-200);background:var(--gold-50)}
 .review-top h2{margin:0;font-size:var(--fs-lg)}
 .review-count{margin:0;min-width:56px;text-align:center;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--gold-text);line-height:1.1}
 .review-count b{display:block;font-size:var(--fs-3xl);font-weight:var(--fw-heavy);font-variant-numeric:tabular-nums}
 .review-top p{margin:2px 0 0;font-size:var(--fs-sm);color:var(--ink-soft)}
-.review-top .primary{grid-column:1/-1}
+.review-top .secondary{width:auto;min-height:48px;font-size:var(--fs-md)}
+@media(max-width:699px){.review-top{grid-template-columns:1fr}.review-top .secondary{width:100%}}
 .review-card h2{font-size:var(--fs-lg);margin-bottom:6px}
-.review-card h2 b{color:var(--green-text);font-size:var(--fs-2xl)}
+.review-card h2 b{color:var(--green-text);font-size:inherit;margin-left:4px}
 .review-card p:not(.eyebrow){font-size:var(--fs-sm);color:var(--ink-soft)}
 .review-card .eyebrow{margin-top:14px}
 .panel h2{font-size:var(--fs-lg);font-weight:var(--fw-bold);margin-bottom:var(--space-4)}
@@ -192,6 +194,16 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .study-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--ink-soft)}
 .combo{display:flex;align-items:center;gap:4px;color:var(--gold-text);white-space:nowrap}
 .combo svg{width:20px;height:20px;color:var(--gold)}
+.game-progress-top{display:grid;grid-template-columns:1fr auto 1fr}
+.game-progress-top>button{justify-self:start}
+.game-progress-top>.question-progress-label{justify-self:end;margin:0;white-space:nowrap}
+.combo-row{display:flex;justify-content:flex-end;align-items:center;min-height:36px;margin-top:4px}
+.combo-row .combo{padding:4px 10px;border-radius:var(--r-pill);background:var(--gold-50);font-size:var(--fs-sm)}
+.question-progress-label{margin:0 0 4px;text-align:right;font-size:var(--fs-sm);color:var(--ink-soft)}
+.completed-answer{display:flex;flex-direction:column;align-items:center;gap:8px;margin:16px 0;padding:20px;border-radius:var(--r-control);background:var(--green-50)}
+.completed-answer>span{font-size:var(--fs-sm);color:var(--ink-soft)}
+.completed-answer>strong{font-size:var(--fs-3xl);line-height:1.2;color:var(--green-text);overflow-wrap:anywhere;max-width:100%}
+.completed-answer>del{color:var(--coral-text);font-size:var(--fs-lg)}
 
 /* 규칙 안내 */
 .rule-card{padding:0 20px 20px;overflow:hidden;border-radius:var(--r-card);border-bottom-width:var(--ledge)}
@@ -225,13 +237,17 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .game-title .acorn-art{width:28px;height:28px}
 .game-help{font-size:var(--fs-md);color:var(--ink-soft);text-align:left}
 .boss-banner{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding:14px;border-radius:var(--r-card);background:var(--gold-50);text-align:left}
-.boss-banner>div{flex:1}
-.boss-banner .asset{width:64px;height:64px}
+.boss-banner>div{flex:1;min-width:0}
+.boss-banner .asset{width:88px;height:88px;flex-shrink:0}
+.boss-card-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.boss-progress-label{margin:0;font-size:var(--fs-sm);color:var(--gold-text);font-weight:var(--fw-bold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.combo-row+.boss-banner{margin-top:12px}
+@media(max-width:399px){.boss-banner .asset{width:72px;height:72px}}
 .boss-banner progress,.boss-banner progress::-webkit-progress-bar{background:var(--surface)}
 .boss-banner progress{margin-top:8px}
 .boss-banner progress::-webkit-progress-value{background:var(--gold)}
 .boss-banner progress::-moz-progress-bar{background:var(--gold)}
-.boss-left{display:block;margin-top:6px;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--gold-text)}
+.boss-left{display:block;margin-top:8px;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--gold-text)}
 .question-card{container-type:inline-size;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:16px 0;padding:24px;border-radius:var(--r-card);border-bottom-width:var(--ledge)}
 .word-kind{font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--ink-soft)}
 .question-word{max-width:100%;margin:8px 0;font-size:var(--fs-word);line-height:1.15;letter-spacing:-.02em;overflow-wrap:anywhere}
@@ -242,7 +258,9 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .listen-button{width:136px;height:136px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:50%;background:var(--green-50);color:var(--green-text);border:2px solid var(--green-200);border-bottom:var(--ledge) solid var(--green-200);font-weight:var(--fw-bold)}
 .listen-button .illustration-art{width:56px;height:56px}
 /* O/X: 현재형과 과거형을 같은 크기로 나란히. 긴 단어는 카드 폭에 맞춰 글자를 줄인다 */
-.ox-pair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:8px;width:100%;margin-top:20px}
+.ox-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:end;gap:48px;width:100%;margin-top:20px}
+.ox-pronunciation{position:relative;display:inline-flex;align-items:center;max-width:100%}
+.ox-pronunciation .pronunciation{position:absolute;left:calc(100% + 4px);top:50%;transform:translateY(-50%)}
 .ox-word{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
 .ox-word strong{font-size:min(var(--fs-word),calc((100cqi - 40px) / (var(--chars) * 1.2)));line-height:1.15;font-weight:var(--fw-heavy);letter-spacing:-.02em}
 .ox-arrow{width:24px;height:24px;margin-bottom:.9em;color:var(--ink-soft)}
@@ -250,7 +268,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 /* 7글자 이상(thought, understand 등)은 위아래로 쌓아 글자를 크게 유지 */
 .ox-pair.stacked{grid-template-columns:minmax(0,1fr);justify-items:center;gap:2px}
 .ox-pair.stacked .ox-arrow{transform:rotate(90deg);margin-bottom:0}
-.ox-pair.stacked .ox-word strong{font-size:min(var(--fs-word),calc(100cqi / (var(--chars) * .65)))}
+.ox-pair.stacked .ox-word strong{font-size:min(var(--fs-word),calc((100cqi - 104px) / (var(--chars) * .65)))}
 
 /* 선택지: 흰 카드 + 회색 테두리 + 아래 띠 */
 .answer-options{flex-wrap:wrap;gap:12px}
@@ -261,9 +279,9 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .ox small{display:block;margin-top:2px;font-size:var(--fs-sm)}
 
 /* 글자 조립 */
-.answer-slots{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;min-height:76px;margin:16px 0;padding:12px;border-radius:var(--r-control);border:2px dashed var(--line-strong)}
-.slot{min-width:20px;font-size:var(--fs-2xl);font-weight:var(--fw-heavy)}
-.slot.empty{min-width:32px;padding-bottom:2px;border-bottom:3px solid var(--green);color:var(--green-text)}
+.answer-slots{display:flex;flex-wrap:wrap;align-items:baseline;align-content:center;justify-content:center;gap:6px;min-height:76px;margin:16px 0;padding:12px;border-radius:var(--r-control);border:2px dashed var(--line-strong)}
+.slot{min-width:20px;padding-bottom:2px;border-bottom:3px solid transparent;line-height:1.25;font-size:var(--fs-2xl);font-weight:var(--fw-heavy)}
+.slot.empty{min-width:32px;border-bottom-color:var(--green);color:var(--green-text)}
 .tile-bank{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:16px}
 .letter-tile{width:52px;height:60px;border-radius:var(--r-control);background:var(--surface);border:2px solid var(--line);border-bottom-width:var(--ledge);color:var(--ink);font-size:var(--fs-2xl);font-weight:var(--fw-heavy)}
 .letter-tile:active:not(:disabled){transform:translateY(2px);border-bottom-width:2px}
@@ -298,17 +316,21 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 /* 결과 */
 /* 결과 화면: 레슨 진행 → 몽쉘 → 제목·별 → 점수 2칸 → 헷갈린 단어 → 버튼 */
 .result{padding-block:16px 24px}
-.result-path{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin:0 0 8px;padding:0;list-style:none}
+.result-path{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
 .result-path li{display:flex;align-items:center;gap:4px;padding:6px 12px;border-radius:var(--r-pill);background:var(--surface-muted);color:var(--ink-soft);font-size:var(--fs-sm);font-weight:var(--fw-bold)}
 .result-path li.done{background:var(--green-50);color:var(--green-text)}
+.result-path li.next{border:1px solid var(--green-200);background:var(--surface);color:var(--green-text)}
+.result-path li.next small{font-size:inherit;font-weight:var(--fw-regular)}
+.result-next-note{margin:16px auto 12px;color:var(--ink-soft);font-size:var(--fs-md);text-align:center}
+@media(min-width:700px) and (min-height:1000px) and (orientation:portrait){.result{padding-top:clamp(32px,6vh,80px)}}
 .result-path li.current{background:var(--green);color:var(--on-green)}
 .result-path svg{width:14px;height:14px}
-.result .result-mascot{width:120px;height:120px;margin:8px auto}
-.result h1{max-width:420px;margin:0 auto 8px;font-size:var(--fs-2xl);color:var(--green-text)}
-.result .stars{margin:4px 0 12px;gap:10px}
+.result .result-mascot{width:120px;height:120px;margin:0 auto 24px}
+.result h1{max-width:420px;margin:0 auto 20px;font-size:var(--fs-2xl);color:var(--green-text)}
+.result .stars{margin:0 0 20px;gap:12px}
 .result .stars svg{width:44px;height:44px}
-.result-note{margin:0 0 4px;color:var(--ink-soft)}
-.result-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
+.result-note{margin:0 auto 24px;color:var(--ink-soft)}
+.result-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
 .result-stats>div{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px;border-radius:var(--r-inner);border:2px solid var(--green-100);background:var(--green-50)}
 .result-stats span{display:flex;align-items:center;gap:4px;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--green-text)}
 .result-stats strong{font-size:var(--fs-2xl);font-variant-numeric:tabular-nums;letter-spacing:-.03em;color:var(--green-text)}
@@ -323,8 +345,8 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .missed-words b{color:var(--green-text)}
 .missed-words svg{width:18px;height:18px;color:var(--ink-soft)}
 .missed-words button>:last-child{margin-left:auto;width:22px;height:22px;color:var(--green-text)}
-.result .primary{margin-top:8px}
-.result>.secondary{margin-top:12px}
+.result .primary{margin-top:16px}
+.result>.secondary{margin-top:16px}
 
 /* ════════ 11. 도감·상점 카드 ════════ */
 .collection-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
@@ -341,15 +363,17 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .starter-gift p{margin:0 0 12px;color:var(--gold-text)}
 .forest-studio{margin-bottom:var(--space-5);padding:var(--space-5);border-radius:var(--r-card);background:var(--surface);border:1px solid var(--line)}
 .studio-scene{position:relative;overflow:hidden;aspect-ratio:16/9;border-radius:var(--r-control);background:url('/art/higgsfield-forest/studio.webp') center/cover no-repeat;touch-action:none}
-.free-deco{position:absolute;z-index:3;width:13%;max-width:112px;min-width:62px;aspect-ratio:1;transform:translate(-50%,-50%);cursor:grab;touch-action:none;user-select:none}
+.free-deco{position:absolute;z-index:3;width:13%;max-width:none;min-width:62px;aspect-ratio:1;transform:translate(-50%,-50%);cursor:grab;touch-action:none;user-select:none}
 .free-deco:active{cursor:grabbing}
 .free-deco .asset{width:100%;height:100%;pointer-events:none}
 .free-deco.selected{outline:3px solid var(--surface);outline-offset:3px;border-radius:50%}
 .deco-remove{position:absolute;z-index:5;right:-10px;top:-12px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--surface);color:var(--coral-text);box-shadow:var(--shadow-float)}
 .deco-remove svg{width:18px;height:18px}
-.capy-dressup{position:absolute;z-index:2;isolation:isolate;right:5%;bottom:8%;width:18%;min-width:92px;aspect-ratio:1}
+.capy-dressup{position:absolute;z-index:2;isolation:isolate;right:5%;bottom:8%;width:18%;min-width:92px;aspect-ratio:auto}
+.capy-dressup>.studio-object-image{display:block;width:100%;height:auto;object-fit:contain}
 .capy-dressup>.asset{width:100%;height:100%}
 .capy-wear{position:absolute;inset:0;pointer-events:none}
+.capy-wear>img{position:absolute;height:auto;display:block;object-fit:contain}
 .studio-tools{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr);gap:24px}
 .studio-tray,.capy-closet{margin-top:16px}
 .studio-tray>strong,.capy-closet>strong{display:block;margin-bottom:10px;font-size:var(--fs-lg)}
@@ -399,7 +423,11 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .modal label{display:block;margin:16px 0;font-size:var(--fs-sm);font-weight:var(--fw-bold)}
 .modal input{display:block;width:100%;min-height:56px;margin-top:8px;padding:10px 16px;border-radius:var(--r-control);border:2px solid var(--line-strong);background:var(--surface-muted);font-size:var(--fs-2xl);letter-spacing:.3em}
 .modal input:focus{border-color:var(--green)}
-.toast{position:fixed;z-index:var(--z-toast);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;width:540px;max-width:calc(100% - 24px);padding:12px 12px 12px 16px;border-radius:var(--r-card);background:var(--surface);border:2px solid var(--green-100);box-shadow:var(--shadow-float);font-size:var(--fs-sm);font-weight:var(--fw-bold);line-height:1.5}
+.toast{position:fixed;z-index:var(--z-toast);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;width:fit-content;max-width:min(540px,calc(100% - 32px));padding:10px 10px 10px 16px;border-radius:var(--r-card);background:var(--surface);border:1px solid var(--line-strong);box-shadow:var(--shadow-float);font-size:var(--fs-md);font-weight:var(--fw-bold);line-height:1.5;color:var(--ink)}
+.toast-symbol{display:flex;align-items:center;justify-content:center;width:36px;height:36px;flex-shrink:0;color:var(--green-text)}
+.toast-message{flex:1;min-width:0;overflow-wrap:anywhere}
+.toast-close{flex-shrink:0;color:var(--ink-soft)}
+@media(prefers-reduced-motion:reduce){.toast{transform:translateX(-50%) !important}}
 .toast>svg{flex-shrink:0;color:var(--green)}
 
 /* ════════ 15. 그림(에셋)과 몽쉘 움직임 ════════ */
@@ -435,7 +463,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 /* 태블릿 (700~999px): 한 단 구성, 사이드바 패널은 두 칸 */
 @media(max-width:999px){
  .dashboard{grid-template-columns:1fr}
- .sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sidebar{display:flex}
  .collection-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
  .studio-tools{grid-template-columns:1fr;gap:8px}
 }
@@ -578,8 +606,16 @@ html:has(.studying),body:has(.studying){background:var(--surface)}
 .letter-tile:disabled{color:transparent;background:var(--surface-muted);border-color:var(--line);opacity:1}
 .feedback{max-width:none;width:100%;padding:20px max(var(--gutter),calc((100% - var(--study))/2)) max(20px,env(safe-area-inset-bottom));border-radius:0;text-align:left;box-shadow:none;background:var(--green-100);border-top-color:var(--green-200)}
 .feedback.retry{background:var(--coral-100)}
-.feedback-heading{position:relative;gap:10px;min-height:44px;padding-right:52px}
-.feedback-heading .asset{position:absolute;right:0;bottom:0;width:44px;height:48px}
+.question-pronunciation{display:grid;grid-template-columns:minmax(44px,1fr) minmax(0,auto) minmax(44px,1fr);align-items:center;column-gap:8px;width:100%;max-width:100%}
+.question-pronunciation .question-word{grid-column:2;min-width:0;overflow-wrap:anywhere;text-align:center}
+.question-pronunciation .pronunciation{grid-column:3;justify-self:start;flex-shrink:0}
+.feedback-heading{position:relative;gap:12px;min-height:56px;padding-right:84px}
+.feedback-heading .asset{position:absolute;right:0;top:0;width:72px;height:80px}
+.feedback-word{padding-right:84px}
+@media(min-width:700px) and (min-height:1000px) and (orientation:portrait){
+ .game-listen .question-card,.game-ox .question-card{margin-top:clamp(24px,5vh,64px);min-height:240px;}
+ .game-listen .answer-options{margin-top:16px;}
+}
 .feedback-mark{width:28px;height:28px;display:grid;place-items:center;flex-shrink:0;border-radius:50%;background:var(--green);color:var(--surface)}
 .feedback.retry .feedback-mark{background:var(--coral)}
 .feedback-mark svg{width:18px;height:18px}
@@ -633,7 +669,7 @@ html:has(.studying),body:has(.studying){background:var(--surface)}
  .view-home .zone h3{font-size:var(--fs-lg)}
  .view-home .zone-text{flex:1}
  .view-home .zone-progress{margin-top:auto}
- .sidebar{position:sticky;top:88px}
+ .sidebar{position:static}
 }
 @media(max-width:699px){
  .view-home .zone-map{padding:8px 0 18px}
@@ -696,7 +732,7 @@ button.collect-card:active{transform:translateY(2px)}
 .forest-studio .free-deco,.forest-studio .movable-capy{transition:none;animation:none;background:none;border:0;border-radius:0;box-shadow:none}
 .forest-studio .studio-tools{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));min-width:0}
 .forest-studio .studio-tray,.forest-studio .capy-closet{min-width:0;max-width:100%}
-.forest-studio .studio-tray>div,.forest-studio .capy-closet>div{display:grid;gap:8px;overflow:visible;max-width:100%;min-width:0}
+.forest-studio .studio-tray>div,.forest-studio .capy-closet>div{display:grid;gap:12px;grid-auto-rows:1fr;align-items:stretch;overflow:visible;max-width:100%;min-width:0}
 .forest-studio .studio-tray button,.forest-studio .capy-closet button{min-width:0;width:100%;flex-direction:column;white-space:normal}
 .forest-studio .studio-tray button,.forest-studio .studio-tray button:active:not(:disabled),.forest-studio .capy-closet button,.forest-studio .capy-closet button:active:not(:disabled){transform:none}
 .studio-tray button img{width:54px;height:54px;object-fit:contain;pointer-events:none}
@@ -707,7 +743,16 @@ button.collect-card:active{transform:translateY(2px)}
 .view-collection .collect-card .asset{height:clamp(128px,30vw,168px)}
 .studio-tray strong,.capy-closet strong{display:block}
 .learning-details{background:var(--surface);border-radius:var(--r-card);padding:16px}
-.learning-details summary{cursor:pointer;font-weight:var(--fw-bold);min-height:44px;display:flex;align-items:center;color:var(--green)}
+.learning-details{width:100%;padding:var(--space-4);border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.learning-details summary{cursor:pointer;font-weight:var(--fw-bold);min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--green-text);list-style:none}
+.learning-details summary::-webkit-details-marker{display:none}
+.learning-details summary strong,.learning-details summary small{display:block}
+.learning-details summary small{font-size:var(--fs-sm);font-weight:var(--fw-regular);color:var(--ink-soft);margin-top:4px}
+.learning-details summary:focus-visible{outline:3px solid var(--focus);outline-offset:4px;border-radius:var(--r-control)}
+.action-icon{width:24px;height:24px;flex-shrink:0;vertical-align:middle}
+.goal-chevron{width:24px;height:24px;flex-shrink:0}
+.flip-hint .action-icon,.studio-undo .action-icon{width:24px;height:24px}
+.learning-details[open] .goal-chevron{transform:rotate(180deg)}
 .learning-details[open] summary{margin-bottom:16px}
 .learning-details .panel,.learning-details .review-card{margin-bottom:16px}
 html{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none;color-scheme:light}
@@ -715,7 +760,7 @@ button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-cal
 .forest-studio .studio-scene{touch-action:pan-y pinch-zoom}
 .studio-expanded,.modal,.feedback{overscroll-behavior:contain}
 .header{padding-top:calc(12px + env(safe-area-inset-top,0px));padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
-.toast{top:calc(12px + env(safe-area-inset-top,0px))}
+.toast{top:calc(80px + env(safe-area-inset-top,0px))}
 .studio-expanded{top:calc(8px + env(safe-area-inset-top,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px))}
 .modal-backdrop{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(pointer:coarse){input,textarea,select{font-size:max(16px,1rem)}}
@@ -726,10 +771,8 @@ button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-cal
 .studio-toolbar button{width:auto;margin:0;min-height:48px}
 .studio-toolbar .studio-expand,.studio-toolbar .studio-undo{flex:0 1 auto;padding-inline:18px}
 .learning-details summary{gap:12px;justify-content:space-between}
-.learning-details summary:after{content:'+';font-size:var(--fs-xl);font-weight:var(--fw-regular)}
-.learning-details[open] summary:after{content:'−'}
 .learning-details summary:focus-visible{outline:3px solid var(--green);outline-offset:4px;border-radius:var(--r-control)}
-.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(6.5rem,1fr));gap:var(--space-2)}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(6.5rem,1fr));gap:12px;grid-auto-rows:1fr;align-items:stretch}
 .shop-card{display:flex;flex-direction:column;align-items:center;gap:4px;padding:var(--space-2);border-radius:var(--r-control);background:var(--surface);border:2px solid var(--line);text-align:center}
 .shop-card .asset{width:56px;height:56px}
 .shop-card .asset img{width:100%;height:100%;object-fit:contain}
@@ -751,9 +794,10 @@ button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-cal
 .forest-studio:not(:has(.studio-mode-tabs)) .studio-scene [data-object]{cursor:default;touch-action:pan-y}
 .feedback-word{font-size:var(--fs-sm);margin:8px 0 12px;overflow-wrap:anywhere}
 .feedback-word b{font-size:var(--fs-xl);color:var(--green-text)}
+.feedback-word>span{display:block;margin-top:4px;color:var(--ink-soft)}
 .feedback.retry .feedback-word b{color:var(--coral-text)}
-.result-mascot img{animation:mongshell-thanks 480ms ease-out 1}
-@keyframes mongshell-thanks{0%,100%{transform:translateY(0) rotate(0)}40%{transform:translateY(-6px) rotate(-3deg)}70%{transform:translateY(-2px) rotate(2deg)}}
+.result-mascot img{animation:mongshell-thanks 220ms var(--ease-ui) 1}
+@keyframes mongshell-thanks{from{transform:scale(.97);opacity:0}to{transform:scale(1);opacity:1}}
 @media(prefers-reduced-motion:reduce){.result-mascot img{animation:none}}
 .game .button-row{position:sticky;bottom:16px;background:var(--surface);padding:8px 0;z-index:3}
 .game:has(.feedback) .button-row{visibility:hidden}
@@ -771,7 +815,7 @@ button,[role=button]{-webkit-user-select:none;user-select:none;-webkit-touch-cal
 .speaking-word{background:var(--highlight);border-radius:var(--r-mark);text-decoration:underline;text-underline-offset:4px}
 /* ════════ 18. 숲 꾸미기 편집기 (예전 forest-studio-refinement.css) ════════ */
 .forest-studio {max-width:var(--studio-width);margin-inline:auto;min-width:0;}
-.forest-studio .studio-scene {border-radius:var(--r-card);aspect-ratio:4/3;min-height:260px;max-height:540px;box-shadow:var(--shadow-float);}
+.forest-studio .studio-scene {border-radius:var(--r-card);aspect-ratio:16/9;min-height:0;max-height:none;height:auto;width:100%;box-shadow:var(--shadow-float);}
 .studio-editor-status {grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--space-3);padding:var(--space-4) 0;color:var(--ink-soft);font-size:var(--fs-sm);}
 .studio-editor-status span {min-width:0;overflow-wrap:anywhere;}
 .studio-editor-status button {width:auto;min-height:44px;}
@@ -816,15 +860,18 @@ button,[role="button"] {-webkit-touch-callout:none;}
 input,select,textarea {font-size:max(1rem,16px);}
 .panel p,.loading p {line-height:1.65;text-wrap:pretty;}
 h1,h2,h3 {text-wrap:balance;}
-.resume-lesson {margin:var(--space-4) auto;max-width:var(--studio-width);display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;}
+.resume-lesson {margin:0 0 var(--space-5);width:100%;display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;}
+.resume-lesson>div {flex:1;min-width:180px;}
+.forest-banner .banner-example {font-size:var(--fs-lg);font-weight:var(--fw-bold);margin-bottom:var(--space-3);}
 .resume-lesson p {margin-bottom:0;color:var(--ink-soft);}
 .resume-lesson .primary {width:auto;}
 .study-top,.game-meta,.wallet,.parent-stats {font-variant-numeric:tabular-nums;}
 .forest-studio.studio-expanded {inset:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);margin:0;border-radius:0;padding:var(--space-3);max-width:none;width:auto;z-index:var(--z-modal);gap:var(--space-2);}
-.forest-studio.studio-expanded .studio-toolbar {background:var(--bg);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.4fr);gap:var(--space-2);margin:0;padding:var(--space-2) 0;flex-shrink:0;}
-.forest-studio.studio-expanded .studio-toolbar .studio-edit {order:0;min-width:0;}
+.forest-studio.studio-expanded .studio-toolbar {background:var(--bg);display:flex;flex-wrap:nowrap;align-items:center;gap:var(--space-2);margin:0;padding:var(--space-2) 0;flex-shrink:0;}
+.forest-studio.studio-expanded .studio-toolbar .studio-edit {order:0;flex:0 0 clamp(100px,25vw,220px);min-width:0;width:clamp(100px,25vw,220px);margin-left:auto;}
+.forest-studio.studio-expanded .studio-toolbar .studio-undo{flex:0 0 auto;padding-inline:8px}
 .forest-studio .studio-toolbar button {padding-inline:var(--space-3);}
-.forest-studio.studio-expanded .studio-scene {height:clamp(180px,42dvh,540px);min-height:180px;max-height:540px;aspect-ratio:auto;}
+.forest-studio.studio-expanded .studio-scene {height:auto;min-height:0;max-height:none;aspect-ratio:16/9;width:100%;}
 .forest-studio.studio-expanded .studio-editor-status {padding:0;}
 .forest-studio.studio-expanded .studio-mode-tabs {margin:0;flex-shrink:0;}
 .forest-studio.studio-expanded .studio-tools {flex:1;min-height:90px;overflow:auto;overscroll-behavior:contain;padding:var(--space-2);}
@@ -835,7 +882,7 @@ h1,h2,h3 {text-wrap:balance;}
 .position-controls {display:flex;flex-wrap:wrap;gap:var(--space-2);flex-shrink:0;}
 .position-controls button {flex:1;min-height:44px;width:auto;font-size:var(--fs-sm);padding:var(--space-2);}
 @media(max-width:699px){
- .resume-lesson {margin-inline:var(--space-4);}
+ .resume-lesson {margin-inline:0;}
  .forest-studio .studio-toolbar {gap:var(--space-2);}
  .forest-studio .studio-toolbar .studio-edit {min-width:0;}
  .forest-studio.studio-expanded .studio-mode-tabs button {font-size:var(--fs-md);}
@@ -845,10 +892,10 @@ h1,h2,h3 {text-wrap:balance;}
 @media(max-height:600px) and (orientation:landscape){
  .forest-studio.studio-expanded {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,1fr);overflow:auto;}
  .forest-studio.studio-expanded .studio-toolbar {grid-column:1/-1;}
- .forest-studio.studio-expanded .studio-scene {height:55dvh;grid-row:2/6;}
+ .forest-studio.studio-expanded .studio-scene {height:auto;grid-row:2/6;}
  .forest-studio.studio-expanded .studio-tools {max-height:40dvh;}
 }
-.forest-studio .studio-mode-tabs {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));}
+.forest-studio .studio-mode-tabs {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));}
 .forest-studio .studio-mode-tabs button,.forest-studio .size-controls button,
 .forest-studio .studio-tray button,.forest-studio .capy-closet button,
 .forest-studio .studio-instruction,.forest-studio .placement-label,
@@ -858,31 +905,37 @@ h1,h2,h3 {text-wrap:balance;}
 .studio-live-status {position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
 .forest-studio [data-object]::before {content:"";position:absolute;top:50%;left:50%;width:100%;height:100%;min-width:44px;min-height:44px;transform:translate(-50%,-50%);}
 .bottom-nav button span {word-break:keep-all;text-wrap:balance;}
-.forest-studio.wardrobe-page {display:flex;gap:var(--space-3);overflow:auto;}
-.wardrobe-toolbar {display:flex;gap:var(--space-2);position:sticky;top:0;background:var(--bg);z-index:var(--z-header);padding-block:var(--space-2);flex-shrink:0;}
-.wardrobe-toolbar button {flex:1;min-width:0;font-size:var(--fs-md);}
-.studio-switch {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:var(--space-3);}
+.forest-studio.wardrobe-page {display:flex;gap:var(--space-3);overflow:hidden;}
+.wardrobe-workspace{display:flex;flex-direction:column;gap:16px;flex:1;min-height:0;overflow:hidden;}
+.wardrobe-catalog{display:flex;flex-direction:column;gap:16px;min-width:0;min-height:0;flex:1;overflow:hidden;}
+.wardrobe-toolbar {display:flex;gap:var(--space-2);background:var(--bg);padding-block:var(--space-2);flex-shrink:0;border-top:1px solid var(--line);}
+.wardrobe-toolbar button {flex:none;min-width:0;font-size:var(--fs-md);}
+.wardrobe-toolbar .primary{margin-left:auto;width:clamp(180px,30vw,260px);}
+.studio-switch {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:0;align-self:center;width:min(100%,400px);padding:4px;background:var(--surface-muted);border-radius:var(--r-pill);}
+.studio-switch button {border:0!important;border-bottom:0!important;box-shadow:none!important;border-radius:var(--r-pill);background:transparent;color:var(--ink-soft);}
+.studio-switch button[aria-pressed=true] {background:var(--green)!important;color:var(--on-green)!important;}
 .studio-switch button {min-height:44px;margin:0;}
 /* 바꾼 내용이 있을 때 취소 확인 줄 */
-.forest-studio.studio-expanded .studio-toolbar.studio-confirm {grid-template-columns:repeat(2,minmax(0,1fr));}
+.forest-studio.studio-expanded .studio-toolbar.studio-confirm {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
 .studio-confirm>span {grid-column:1/-1;font-weight:var(--fw-bold);color:var(--coral-text);}
 @media(max-width:339px){.studio-undo .tool-label{display:none}}
 .studio-start {width:100%;}
 .wardrobe-page h1,.wardrobe-page p {margin:0;text-align:center;}
-.wardrobe-preview {display:grid;place-items:center;background:var(--green-50);border-radius:var(--r-card);min-height:240px;padding:var(--space-4);flex-shrink:0;}
+.wardrobe-preview {display:grid;place-items:center;background:transparent;border-radius:0;min-height:360px;padding:100px 48px 48px;flex-shrink:0;overflow:visible;}
 .wardrobe-preview .capy-dressup {position:relative;isolation:isolate;inset:auto;width:220px;max-width:75%;transform:none;}
 .wardrobe-preview .capy-dressup>img {width:100%;height:auto;display:block;}
-.wardrobe-tabs {align-self:flex-start;flex-wrap:wrap;}
-.wardrobe-options {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr));gap:var(--space-2);}
-.wardrobe-options button {display:flex;flex-direction:column;align-items:center;gap:var(--space-2);font-size:var(--fs-md);height:auto;}
+.wardrobe-tabs {align-self:flex-start;flex-wrap:wrap;flex-shrink:0;order:-1;}
+.wardrobe-options {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr));gap:12px;grid-auto-rows:max-content;align-items:stretch;overflow-y:auto;min-height:0;flex:1;align-content:start;overscroll-behavior:contain;scrollbar-gutter:stable;}
+.outfit-clear .action-icon{width:96px;height:96px;padding:30px;flex-shrink:0;}
+.wardrobe-options button {display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;font-size:var(--fs-md);height:auto;min-height:172px;padding:16px 10px;align-self:stretch;margin:0;overflow:visible;}
 .wardrobe-options button[aria-pressed=true] {background:var(--green-50);border-color:var(--green);}
-.wardrobe-options img {width:72px;height:72px;object-fit:contain;}
+.wardrobe-options img {display:block;width:100%;max-width:96px;height:96px;min-height:96px;object-fit:contain;flex-shrink:0;}
 .wardrobe-options img {touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;}
 .wardrobe-options img:active {cursor:grabbing;}
 .capy-wear .wearable-piece {pointer-events:auto;touch-action:none;cursor:grab;}
 .capy-wear .wearable-piece.is-selected {outline:none;}
 .capy-wear .wearable-piece:focus-visible {outline:2px solid var(--green);outline-offset:3px;}
-.wear-adjust {background:var(--green-50);padding:var(--space-3);border-radius:var(--r-control);display:grid;gap:var(--space-2);flex-shrink:0;}
+.wear-adjust {position:absolute;z-index:3;right:20px;bottom:96px;width:min(280px,calc(100% - 40px));background:var(--surface);box-shadow:var(--shadow-float);padding:var(--space-3);border-radius:var(--r-control);display:grid;gap:var(--space-2);flex-shrink:0;}
 .wear-adjust input {width:100%;min-height:44px;}
 .studio-notice {display:flex;align-items:center;gap:var(--space-2);background:var(--green-50);padding:var(--space-3);border-radius:var(--r-control);font-size:var(--fs-sm);line-height:1.6;}
 .studio-notice span {flex:1;min-width:0;}
@@ -894,26 +947,85 @@ input[type=range] {accent-color:var(--green);cursor:pointer;}
 /* One dock owns scrolling; artwork and save controls stay visible. */
 .forest-studio.studio-expanded:not(.wardrobe-page) {overflow:hidden;}
 .studio-dock {display:flex;flex-direction:column;gap:var(--space-2);min-width:0;}
-.forest-studio.studio-expanded .studio-dock {flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable;padding-bottom:var(--space-2);}
-.forest-studio .studio-dock .size-controls {order:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;}
-.studio-dock .size-controls strong {grid-column:1;}
-.studio-dock .size-controls label {grid-column:2/4;text-align:right;}
-.forest-studio .studio-dock .size-controls input {grid-column:1/-1;width:100%;min-width:0;min-height:44px;margin:0;}
+.forest-studio.studio-expanded .studio-dock {flex:1;min-height:0;overflow:hidden;padding-bottom:var(--space-2);}
+.forest-studio .studio-dock .size-controls {order:0;display:grid;grid-template-columns:minmax(80px,1fr) repeat(3,auto);align-items:center;}
+.selection-heading{grid-column:1/-1;display:flex;align-items:center;gap:12px;min-width:0;}
+.studio-dock .size-controls label {text-align:left;white-space:nowrap;}
+.forest-studio .studio-dock .size-controls input {grid-column:1;width:100%;min-width:0;min-height:44px;margin:0;}
+@media(max-width:599px){.forest-studio .studio-dock .size-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.forest-studio .studio-dock .size-controls input{grid-column:1/-1}}
 .forest-studio .studio-dock .size-controls button {width:auto;min-width:0;margin:0;padding:var(--space-2);white-space:normal;min-height:44px;}
 .studio-dock .position-controls {order:1;}
 .studio-dock .studio-mode-tabs {order:2;}
-.forest-studio.studio-expanded .studio-dock .studio-tools {order:3;overflow:visible;flex:none;min-height:0;max-height:none;}
+.forest-studio.studio-expanded .studio-dock .studio-tools {order:3;overflow-y:auto;overflow-x:hidden;flex:1;min-height:0;max-height:none;overscroll-behavior:contain;scrollbar-gutter:stable;}
 .forest-studio.studio-expanded .studio-dock .studio-tray>div,
 .forest-studio.studio-expanded .studio-dock .capy-closet>div {overflow:visible;max-height:none;grid-template-columns:repeat(auto-fill,minmax(5.5rem,1fr));}
 .studio-dock:focus-visible {outline:3px solid var(--focus);outline-offset:-3px;}
+.object-resize,.object-menu-trigger{position:fixed;z-index:1001;width:44px;height:44px;display:grid;place-items:center;background:var(--surface);border:2px solid var(--green);color:var(--green-text);border-radius:var(--r-control);box-shadow:var(--shadow-float);font-size:24px;font-weight:var(--fw-bold);padding:0;}
+.object-resize{cursor:nwse-resize;touch-action:none;width:48px;height:48px;padding:0;background:transparent;border:0;border-radius:50%;box-shadow:none;}
+.resize-disc{width:36px;height:36px;display:grid;place-items:center;background:#fff4d8;border:2px solid var(--green);border-radius:50%;box-shadow:var(--shadow-card);}
+.resize-disc svg{width:20px;height:20px;transform:rotate(-45deg);}
+.studio-scene .is-selected{outline:2px solid var(--green);outline-offset:4px;border-radius:12px;}
+.object-size-steps{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
+.object-size-steps button{display:flex;align-items:center;justify-content:center;gap:4px;}
+.letter-enter{display:inline-block;animation:letter-hop 140ms var(--ease-ui) both;}
+@keyframes letter-hop{0%{transform:translateY(3px);opacity:.65}55%{transform:translateY(-1px);opacity:1}100%{transform:translateY(0);opacity:1}}
+.completed-answer{transition:opacity 120ms var(--ease-ui);}
+@starting-style{.completed-answer{opacity:.6}}
+@media(prefers-reduced-motion:reduce){.letter-enter{animation:none;}}
+.object-popover{position:fixed;z-index:1002;width:220px;max-height:calc(100dvh - 16px);overflow:auto;display:flex;flex-direction:column;gap:8px;padding:12px;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r-card);box-shadow:var(--shadow-float);}
+.object-popover .selection-heading{display:flex;flex-wrap:wrap;gap:4px 8px;}
+.object-popover input{width:100%;min-height:44px;margin:0;}
+.object-popover button{min-height:44px;width:100%;}
+.object-edit-sheet{position:absolute;z-index:1002;bottom:88px;left:50%;transform:translateX(-50%);width:min(520px,calc(100% - 24px));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 8px;padding:12px;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r-card);box-shadow:var(--shadow-float);}
+.object-edit-sheet .selection-heading{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.object-edit-sheet input{grid-column:1/-1;width:100%;min-height:44px;margin:0;}
+.object-edit-sheet button{min-height:44px;padding:4px;font-size:var(--fs-sm);}
+@media (orientation:landscape) and (max-height:500px){.object-edit-sheet{bottom:100px;}}
+.background-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;}
+.background-options button{display:flex;flex-direction:column;gap:8px;padding:8px;font-size:var(--fs-sm);}
+.background-options img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-control);}
+.background-options button[aria-pressed=true]{border-color:var(--green);background:var(--green-50);}
 .wardrobe-preview .wearable-piece {position:absolute;height:auto;display:block;}
 .wardrobe-preview .wearable-piece>img {position:static;width:100%;height:auto;display:block;pointer-events:none;filter:none;}
 .wardrobe-preview .wearable-piece::before {content:"";position:absolute;left:50%;top:50%;width:100%;height:100%;min-width:44px;min-height:44px;transform:translate(-50%,-50%);}
 .wardrobe-toolbar button {word-break:keep-all;overflow-wrap:normal;}
+.wardrobe-options button>span{word-break:keep-all;overflow-wrap:normal;line-height:1.4;min-height:2.8em;display:grid;place-items:center;}
+.forest-studio.studio-expanded:not(.wardrobe-page){display:flex;flex-direction:column;}
+.forest-studio.studio-expanded>.studio-switch{flex-shrink:0;}
+.forest-studio.studio-expanded>.studio-toolbar{border-top:1px solid var(--line);flex-shrink:0;}
+@media(orientation:landscape) and (min-width:700px){
+ .forest-studio.studio-expanded:not(.wardrobe-page){display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.55fr);grid-template-rows:auto minmax(0,1fr) auto;}
+ .forest-studio.studio-expanded>.studio-switch{grid-column:1/-1;justify-self:center;}
+ .forest-studio.studio-expanded>.studio-scene{grid-column:1;grid-row:2;height:auto;width:min(100%,calc((100dvh - 170px)*16/9));aspect-ratio:16/9;align-self:center;justify-self:center;max-height:none;min-height:0;}
+ .forest-studio.studio-expanded>.studio-dock{grid-column:2;grid-row:2;}
+ .forest-studio.studio-expanded>.studio-toolbar{grid-column:1/-1;grid-row:3;}
+ .wardrobe-workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.65fr);overflow:hidden;}
+ .wardrobe-catalog{overflow:hidden;padding-right:8px;}
+ .wardrobe-preview .capy-dressup{width:min(300px,calc((100dvh - 280px)*.65));}
+}
 .forest-studio.studio-expanded .studio-editor-status {font-size:var(--fs-sm);line-height:1.5;}
 .studio-notice {padding-block:var(--space-2);}
 .studio-dock .studio-tools {padding-block:var(--space-2);}
 @media(max-height:600px) and (orientation:landscape){
- .forest-studio.studio-expanded:not(.wardrobe-page) .studio-scene {grid-row:2/4;}
- .forest-studio.studio-expanded .studio-dock {grid-column:2;grid-row:3;}
+ .forest-studio.studio-expanded:not(.wardrobe-page) .studio-scene {grid-row:2;}
+ .forest-studio.studio-expanded .studio-dock {grid-column:2;grid-row:2;}
+ .wardrobe-preview{min-height:0;height:100%;padding:40px 16px 12px;}
+ .wardrobe-preview .capy-dressup{width:min(160px,calc((100dvh - 205px)*.65));max-width:75%;}
+ .wardrobe-workspace{grid-template-columns:minmax(0,1fr) minmax(280px,1fr);}
+ .wardrobe-options button{min-height:136px;padding:8px;gap:4px;}
+ .wardrobe-options img,.outfit-clear .action-icon{height:72px;min-height:72px;width:72px;}
+ .outfit-clear .action-icon{padding:20px;}
+ .wardrobe-options button>span{min-height:2.4em;font-size:var(--fs-sm);}
+ .shop-card{padding:6px;gap:4px;}
+ .shop-card>img{height:52px;width:60px;object-fit:contain;}
+ .shop-card>b{font-size:var(--fs-sm);}
+ .forest-studio .studio-dock .size-controls{position:absolute;left:24px;bottom:96px;width:min(390px,calc(50% - 36px));z-index:4;box-shadow:var(--shadow-float);}
+}
+@media(max-width:599px) and (orientation:portrait){
+ .forest-studio.studio-expanded .studio-toolbar .tool-label{display:none;}
+ .forest-studio.studio-expanded .studio-mode-tabs button{padding:8px 4px;min-height:44px;}
+ .forest-studio .studio-dock .size-controls{gap:4px;padding:8px;}
+ .forest-studio .studio-dock .size-controls button{padding:4px;font-size:var(--fs-sm);}
+ .wardrobe-preview{min-height:0;height:clamp(240px,35dvh,320px);padding:58px 32px 24px;}
+ .wardrobe-preview .capy-dressup{width:150px;}
 }

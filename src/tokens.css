@@ -60,8 +60,8 @@
  --fs-word:clamp(2.75rem,11vw,3.75rem); /* 학습 단어 */
 
  /* ── 글꼴: 한글 UI는 Pretendard, 영어 학습 단어는 아이 읽기용 Andika(1층 a·g) ── */
- --font-ui:Pretendard,system-ui,sans-serif;
- --font-word:Andika,Pretendard,system-ui,sans-serif;
+ --font-ui:'Google Sans',Pretendard,system-ui,sans-serif;
+ --font-word:'Google Sans',Pretendard,system-ui,sans-serif;
 
  --fw-regular:500;
  --fw-medium:600;
