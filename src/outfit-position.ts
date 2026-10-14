@@ -121,11 +121,17 @@ export const outfitThumbnailFile=(id:string)=>id.startsWith('hood-')&&!id.starts
 export function outfitStyle(item:string,layout:Record<string,OutfitPosition>){const o=outfitItems.find(i=>i.id===item);const p=layout[item]??outfitDefaults[item];return {left:p.x+'%',top:p.y+'%',right:'auto',width:(o?.w??48)*p.scale+'%',transform:o?.slot==='head'?'translateX(-50%)':'none',zIndex:o?.slot==='back'?-1:undefined};}
 
 export const wornOutfitFiles:Record<string,string>={
- 'today-overalls':'art/mongshell-v3/worn-overalls-v2.png',
- 'today-knit-vest':'art/mongshell-v3/worn-knit-vest-v1.png',
- 'today-raincoat':'art/mongshell-v3/worn-raincoat-v1.png',
- 'today-pajamas':'art/mongshell-v3/worn-pajamas-v1.png',
- 'today-explorer-jacket':'art/mongshell-v3/worn-explorer-jacket-v1.png'
+ 'today-overalls':'art/mongshell-v3/Gemini-hood-overalls-cutout-v2.png',
+ 'today-knit-vest':'art/mongshell-v3/Gemini-hood-knit-vest-cutout-v2.png',
+ 'today-raincoat':'art/mongshell-v3/Gemini-hood-raincoat-cutout-v2.png',
+ 'today-pajamas':'art/mongshell-v3/Gemini-hood-pajamas-cutout-v2.png',
+ 'today-explorer-jacket':'art/mongshell-v3/Gemini-hood-explorer-jacket-cutout-v2.png',
+ 'hood-strawberry':'art/mongshell-v3/Gemini-hood-strawberry-cutout-v2.png',
+ 'hood-blueberry':'art/mongshell-v3/Gemini-hood-blueberry-cutout-v2.png',
+ 'hood-lemon':'art/mongshell-v3/Gemini-hood-lemon-cutout-v2.png',
+ 'hood-pear':'art/mongshell-v3/Gemini-hood-pear-cutout-v2.png',
+ 'hood-grape':'art/mongshell-v3/Gemini-hood-grape-cutout-v2.png',
+ 'hood-peach':'art/mongshell-v3/Gemini-hood-peach-cutout-v2.png'
 };
 export const isCharacterOutfit=(id:string)=>Object.hasOwn(wornOutfitFiles,id)||outfitItems.some(o=>o.id===id&&o.slot==='character');
 export const characterOutfitFile=(ids:string[])=>{const id=[...ids].reverse().find(isCharacterOutfit);return id?(wornOutfitFiles[id]??outfitFile(id)):'art/mongshell-v3/base.png'};
