@@ -1,0 +1,51 @@
+{
+  "canvas": [
+    1000,
+    1000
+  ],
+  "viewport": {
+    "left": 225,
+    "top": 175,
+    "width": 551,
+    "height": 670
+  },
+  "resized": false,
+  "assets": [
+    {
+      "id": "hood-strawberry",
+      "composite": "base-strawberry-hood-photoshop-furfade-1000-v2.png",
+      "layer": "strawberry-hood-photoshop-layer-furfade-1000-v2.png",
+      "runtime": "hood-strawberry-fitted-v1.png"
+    },
+    {
+      "id": "hood-blueberry",
+      "composite": "base-blueberry-hood-photoshop-furfade-1000-v4.png",
+      "layer": "blueberry-hood-photoshop-layer-furfade-1000-v4.png",
+      "runtime": "hood-blueberry-fitted-v1.png"
+    },
+    {
+      "id": "hood-lemon",
+      "composite": "base-lemon-hood-photoshop-1000-v1.png",
+      "layer": "lemon-hood-photoshop-layer-1000-v1.png",
+      "runtime": "hood-lemon-fitted-v1.png"
+    },
+    {
+      "id": "hood-pear",
+      "composite": "base-pear-hood-photoshop-1000-v1.png",
+      "layer": "pear-hood-photoshop-layer-1000-v1.png",
+      "runtime": "hood-pear-fitted-v1.png"
+    },
+    {
+      "id": "hood-grape",
+      "composite": "base-grape-hood-photoshop-1000-v1.png",
+      "layer": "grape-hood-photoshop-layer-1000-v1.png",
+      "runtime": "hood-grape-fitted-v1.png"
+    },
+    {
+      "id": "hood-peach",
+      "composite": "base-peach-hood-photoshop-1000-v1.png",
+      "layer": "peach-hood-photoshop-layer-1000-v1.png",
+      "runtime": "hood-peach-fitted-v1.png"
+    }
+  ]
+}

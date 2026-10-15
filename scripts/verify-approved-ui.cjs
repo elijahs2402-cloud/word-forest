@@ -27,14 +27,14 @@ const assert=require('node:assert/strict');
   for(const name of variants){
    await page.getByRole('button',{name,exact:true}).click();
    const image=page.locator('.wardrobe-preview .capy-dressup>img');
-   await image.evaluate(i=>i.decode());assert.match(await image.getAttribute('src'),/-cutout-v2\.png$/);
+   await image.evaluate(i=>i.decode());assert.match(await image.getAttribute('src'),/-(cutout-v2|fitted-v1)\.png$/);
    assert.equal(await page.locator('.wardrobe-preview .capy-wear>span').count(),0);
   }
   await page.getByRole('button',{name:'의상 해제',exact:true}).click();
   await page.getByRole('button',{name:'블루베리 후드',exact:true}).click();
   if(viewport.width===393)await page.screenshot({path:'output/restored-wardrobe-phone.png'});
   await page.getByRole('button',{name:'저장하고 숲으로',exact:true}).click();
-  assert.match(await page.locator('[data-object="-1"]>img').getAttribute('src'),/blueberry-cutout-v2/);
+  assert.match(await page.locator('[data-object="-1"]>img').getAttribute('src'),/hood-blueberry-fitted-v1/);
   assert.equal(await page.locator('.studio-instruction').count(),0);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);
   console.log(JSON.stringify({viewport,variants:11,toolbarBelowScene:true,resize:48,errors}));await context.close();

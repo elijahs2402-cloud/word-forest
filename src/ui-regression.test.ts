@@ -3,10 +3,10 @@ import {readFileSync,existsSync} from 'node:fs';
 import {wornOutfitFiles,outfitThumbnailFile} from './outfit-position';
 const source=(file:string)=>readFileSync('src/'+file,'utf8');
 describe('approved UI regression guards',()=>{
- it('uses all eleven v2 costumes and clothing-only catalog images',()=>{
+ it('uses six approved fitted hoodies, five existing costumes and clothing-only catalog images',()=>{
   expect(Object.keys(wornOutfitFiles)).toHaveLength(11);
   for(const [id,path] of Object.entries(wornOutfitFiles)){
-   expect(path).toMatch(/-cutout-v2\.png$/);expect(existsSync('public/'+path)).toBe(true);
+   expect(path).toMatch(id.startsWith('hood-')?/-fitted-v1\.png$/:/-cutout-v2\.png$/);expect(existsSync('public/'+path)).toBe(true);
    expect(outfitThumbnailFile(id)).not.toBe(path);expect(existsSync('public/'+outfitThumbnailFile(id))).toBe(true);
   }
  });

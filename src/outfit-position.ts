@@ -126,12 +126,12 @@ export const wornOutfitFiles:Record<string,string>={
  'today-raincoat':'art/mongshell-v3/Gemini-hood-raincoat-cutout-v2.png',
  'today-pajamas':'art/mongshell-v3/Gemini-hood-pajamas-cutout-v2.png',
  'today-explorer-jacket':'art/mongshell-v3/Gemini-hood-explorer-jacket-cutout-v2.png',
- 'hood-strawberry':'art/mongshell-v3/Gemini-hood-strawberry-cutout-v2.png',
- 'hood-blueberry':'art/mongshell-v3/Gemini-hood-blueberry-cutout-v2.png',
- 'hood-lemon':'art/mongshell-v3/Gemini-hood-lemon-cutout-v2.png',
- 'hood-pear':'art/mongshell-v3/Gemini-hood-pear-cutout-v2.png',
- 'hood-grape':'art/mongshell-v3/Gemini-hood-grape-cutout-v2.png',
- 'hood-peach':'art/mongshell-v3/Gemini-hood-peach-cutout-v2.png'
+ 'hood-strawberry':'art/mongshell-v3/hood-strawberry-fitted-v1.png',
+ 'hood-blueberry':'art/mongshell-v3/hood-blueberry-fitted-v1.png',
+ 'hood-lemon':'art/mongshell-v3/hood-lemon-fitted-v1.png',
+ 'hood-pear':'art/mongshell-v3/hood-pear-fitted-v1.png',
+ 'hood-grape':'art/mongshell-v3/hood-grape-fitted-v1.png',
+ 'hood-peach':'art/mongshell-v3/hood-peach-fitted-v1.png'
 };
 export const isCharacterOutfit=(id:string)=>Object.hasOwn(wornOutfitFiles,id)||outfitItems.some(o=>o.id===id&&o.slot==='character');
 export const characterOutfitFile=(ids:string[])=>{const id=[...ids].reverse().find(isCharacterOutfit);return id?(wornOutfitFiles[id]??outfitFile(id)):'art/mongshell-v3/base.png'};
