@@ -371,6 +371,10 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 .deco-remove svg{width:18px;height:18px}
 .capy-dressup{position:absolute;z-index:2;isolation:isolate;right:5%;bottom:8%;width:18%;min-width:92px;aspect-ratio:auto}
 .capy-dressup>.studio-object-image{display:block;width:100%;height:auto;object-fit:contain}
+/* Display the full 1000-square source at a common scale; files are never cropped.
+   Keep the established accessory frame (551x670 at 225,175) stable. */
+.capy-dressup.master-canvas{aspect-ratio:551/670}
+.forest-studio .capy-dressup.master-canvas>img{position:absolute;width:181.488203%;max-width:none;height:auto;left:-40.834846%;top:-26.119403%;pointer-events:none}
 .capy-dressup>.asset{width:100%;height:100%}
 .capy-wear{position:absolute;inset:0;pointer-events:none}
 .capy-wear>img{position:absolute;height:auto;display:block;object-fit:contain}
@@ -437,6 +441,7 @@ progress::-moz-progress-bar{background:var(--green);border-radius:var(--r-pill)}
 /* 배경 제거로 반투명해진 그림의 불투명도를 복원한다 */
 .asset-char img,.asset-animal img,.asset-deco img{filter:url(#solid-asset);mix-blend-mode:normal}
 .asset-char.clean-asset img{filter:none}
+.asset-char.master-canvas>img{width:149.253731%;height:149.253731%;max-width:none;flex-shrink:0}
 .asset[class*="capy-"]{transform-origin:50% 88%}
 .asset[class*="capy-"] img{transform-origin:inherit}
 .capy-base img,.capy-think img,.capy-sleep img{will-change:transform}
@@ -922,7 +927,7 @@ h1,h2,h3 {text-wrap:balance;}
 .studio-start {width:100%;}
 .wardrobe-page h1,.wardrobe-page p {margin:0;text-align:center;}
 .wardrobe-preview {display:grid;place-items:center;background:transparent;border-radius:0;min-height:360px;padding:100px 48px 48px;flex-shrink:0;overflow:visible;}
-.wardrobe-preview .capy-dressup {position:relative;isolation:isolate;inset:auto;width:220px;max-width:75%;transform:none;}
+.wardrobe-preview .capy-dressup {position:relative;isolation:isolate;inset:auto;width:260px;max-width:75%;transform:none;}
 .wardrobe-preview .capy-dressup>img {width:100%;height:auto;display:block;}
 .wardrobe-tabs {align-self:flex-start;flex-wrap:wrap;flex-shrink:0;order:-1;}
 .wardrobe-options {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr));gap:12px;grid-auto-rows:max-content;align-items:stretch;overflow-y:auto;min-height:0;flex:1;align-content:start;overscroll-behavior:contain;scrollbar-gutter:stable;}
@@ -1010,7 +1015,7 @@ input[type=range] {accent-color:var(--green);cursor:pointer;}
  .forest-studio.studio-expanded:not(.wardrobe-page) .studio-scene {grid-row:2;}
  .forest-studio.studio-expanded .studio-dock {grid-column:2;grid-row:2;}
  .wardrobe-preview{min-height:0;height:100%;padding:40px 16px 12px;}
- .wardrobe-preview .capy-dressup{width:min(160px,calc((100dvh - 205px)*.65));max-width:75%;}
+ .wardrobe-preview .capy-dressup{width:min(180px,calc((100dvh - 205px)*.8));max-width:75%;}
  .wardrobe-workspace{grid-template-columns:minmax(0,1fr) minmax(280px,1fr);}
  .wardrobe-options button{min-height:136px;padding:8px;gap:4px;}
  .wardrobe-options img,.outfit-clear .action-icon{height:72px;min-height:72px;width:72px;}
@@ -1027,5 +1032,5 @@ input[type=range] {accent-color:var(--green);cursor:pointer;}
  .forest-studio .studio-dock .size-controls{gap:4px;padding:8px;}
  .forest-studio .studio-dock .size-controls button{padding:4px;font-size:var(--fs-sm);}
  .wardrobe-preview{min-height:0;height:clamp(240px,35dvh,320px);padding:58px 32px 24px;}
- .wardrobe-preview .capy-dressup{width:150px;}
+ .wardrobe-preview .capy-dressup{width:180px;}
 }

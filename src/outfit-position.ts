@@ -126,13 +126,15 @@ export const wornOutfitFiles:Record<string,string>={
  'today-raincoat':'art/mongshell-v3/Gemini-hood-raincoat-cutout-v2.png',
  'today-pajamas':'art/mongshell-v3/Gemini-hood-pajamas-cutout-v2.png',
  'today-explorer-jacket':'art/mongshell-v3/Gemini-hood-explorer-jacket-cutout-v2.png',
- 'hood-strawberry':'art/mongshell-v3/hood-strawberry-fitted-v1.png',
- 'hood-blueberry':'art/mongshell-v3/hood-blueberry-fitted-v1.png',
- 'hood-lemon':'art/mongshell-v3/hood-lemon-fitted-v1.png',
- 'hood-pear':'art/mongshell-v3/hood-pear-fitted-v1.png',
- 'hood-grape':'art/mongshell-v3/hood-grape-fitted-v1.png',
- 'hood-peach':'art/mongshell-v3/hood-peach-fitted-v1.png'
+ 'hood-strawberry':'art/mongshell-v3/base-strawberry-hood-photoshop-furfade-1000-v2.png',
+ 'hood-blueberry':'art/mongshell-v3/base-blueberry-hood-photoshop-furfade-1000-v4.png',
+ 'hood-lemon':'art/mongshell-v3/base-lemon-hood-photoshop-1000-v1.png',
+ 'hood-pear':'art/mongshell-v3/base-pear-hood-photoshop-1000-v1.png',
+ 'hood-grape':'art/mongshell-v3/base-grape-hood-photoshop-1000-v1.png',
+ 'hood-peach':'art/mongshell-v3/base-peach-hood-photoshop-1000-v1.png'
 };
 export const isCharacterOutfit=(id:string)=>Object.hasOwn(wornOutfitFiles,id)||outfitItems.some(o=>o.id===id&&o.slot==='character');
 export const characterOutfitFile=(ids:string[])=>{const id=[...ids].reverse().find(isCharacterOutfit);return id?(wornOutfitFiles[id]??outfitFile(id)):'art/mongshell-v3/base.png'};
+// 1000-square masters share one display transform; accessory coordinates remain stable.
+export const isMasterCharacterFile=(path:string)=>path.endsWith('/base.png')||Object.entries(wornOutfitFiles).some(([id,file])=>id.startsWith('hood-')&&path.endsWith(file));
 export function equipOutfit(ids:string[],id:string,toggle=false){if(toggle&&ids.includes(id))return ids.filter(x=>x!==id);const slot=outfitItems.find(o=>o.id===id)?.slot;const rest=slot==='character'||slot==='body'?ids.filter(x=>{const s=outfitItems.find(o=>o.id===x)?.slot;return s!=='character'&&s!=='body'}):ids;return rest.includes(id)?rest:[...rest,id];}

@@ -24,7 +24,7 @@ import SpeechFeedback from './SpeechFeedback';
 import './outfit.css';
 import MenuIcon from './MenuIcon';
 import ForestStudio from './ForestStudio';
-import {characterOutfitFile} from './outfit-position';
+import {characterOutfitFile,isMasterCharacterFile} from './outfit-position';
 import RecordTools from './RecordTools';
 import {readLesson,saveLesson,clearLesson} from './lesson-session';
 import {readQuestion,saveQuestion,clearQuestion} from './question-session';
@@ -48,7 +48,7 @@ const friendName=(i:number)=>i<friendCount?(awakeNames[i+1]??bosses[i]):hiddenAn
 // 몽쉘 자세별 그림: 기본·옆모습은 png, 나머지 표정은 Higgsfield로 만든 webp
 const capyPoses=new Set(['happy','cheer','oops','think','sleep','wave']);
 const capyArt=(path:string)=>{const pose=path.split('/').pop()!;const mapped:Record<string,string>={base:'base',side:'side',wave:'wave',happy:'cheer',cheer:'cheer',think:'think',oops:'base',sleep:'sleep'};return `/art/mongshell-v3/${mapped[pose]??'base'}.png`};
-function Asset({path,alt,kind='tree',className=''}:{path:string;alt:string;kind?:string;className?:string}){const worn=useStore(s=>s.capyOutfit);const [failed,setFailed]=useState(false);useEffect(()=>setFailed(false),[path]);const clean=kind==='char',pose=kind==='char'?` capy-${path.split('/').pop()}`:'',hasImage=!failed&&(clean||availableAssets.has(path+'.png'));return <span className={'asset asset-'+kind+' '+className+pose+(clean?' clean-asset':'')}>{hasImage?<img draggable={false} src={clean?publicUrl(worn.some(id=>id.startsWith('hood-'))?characterOutfitFile(worn):capyArt(path)):assetUrls.get(path+'.png')} alt={alt} loading={kind==='char'?'eager':'lazy'} decoding="async" onError={()=>setFailed(true)}/>:kind==='char'?<Acorn weight="duotone"/>:kind==='animal'?<PawPrint weight="duotone"/>:kind==='deco'?<Flower weight="duotone"/>:path.endsWith('stage-1')?<Acorn weight="duotone"/>:path.endsWith('stage-2')?<Plant weight="duotone"/>:<Tree weight={path.endsWith('stage-4')?'fill':'duotone'}/>}</span>}
+function Asset({path,alt,kind='tree',className=''}:{path:string;alt:string;kind?:string;className?:string}){const worn=useStore(s=>s.capyOutfit);const [failed,setFailed]=useState(false);useEffect(()=>setFailed(false),[path]);const clean=kind==='char',pose=kind==='char'?` capy-${path.split('/').pop()}`:'',hasImage=!failed&&(clean||availableAssets.has(path+'.png'));return <span className={'asset asset-'+kind+' '+className+pose+(clean?' clean-asset':'')+(clean&&isMasterCharacterFile(worn.some(id=>id.startsWith('hood-'))?characterOutfitFile(worn):capyArt(path))?' master-canvas':'')}>{hasImage?<img draggable={false} src={clean?publicUrl(worn.some(id=>id.startsWith('hood-'))?characterOutfitFile(worn):capyArt(path)):assetUrls.get(path+'.png')} alt={alt} loading={kind==='char'?'eager':'lazy'} decoding="async" onError={()=>setFailed(true)}/>:kind==='char'?<Acorn weight="duotone"/>:kind==='animal'?<PawPrint weight="duotone"/>:kind==='deco'?<Flower weight="duotone"/>:path.endsWith('stage-1')?<Acorn weight="duotone"/>:path.endsWith('stage-2')?<Plant weight="duotone"/>:<Tree weight={path.endsWith('stage-4')?'fill':'duotone'}/>}</span>}
 const capyMoments=[
  {path:'char/base',alt:'가만히 숨 쉬는 카피바라',label:'몽쉘이 느긋하게 숨을 쉬고 있어요'},
  {path:'char/side',alt:'주변을 둘러보는 카피바라',label:'몽쉘이 숲 친구를 찾고 있어요'},
