@@ -72,7 +72,7 @@ export const outfitItems:{id:string;name:string;slot:OutfitSlot;x:number;y:numbe
  {id:'today-round-glasses',name:'펠트 동그란 안경',slot:'face',x:24,y:15,w:52},
  {id:'today-bow',name:'빨간 리본',slot:'side',x:65,y:4,w:28},
  {id:'today-scarf',name:'크림 목도리',slot:'neck',x:22,y:44,w:56},
- {id:'today-leaf-cape',name:'나뭇잎 망토',slot:'back',x:7,y:40,w:86},
+ {id:'today-leaf-cape',name:'나뭇잎 망토',slot:'back',x:-4.5372,y:39.55224,w:108.89292},
  {id:'today-bag',name:'작은 가방',slot:'neck',x:35,y:42,w:43},
  {id:'today-acorn-necklace',name:'새 도토리 목걸이',slot:'neck',x:32,y:43,w:36},
  {id:'today-strawberry-clip',name:'딸기 머리핀',slot:'side',x:66,y:5,w:22},
@@ -121,8 +121,8 @@ export function resetNewSelectionScale(previous:string|null,item:string,layout:R
 export const outfitIds=outfitItems.map(o=>o.id);
 // 처음 5종은 png, 새 옷은 webp 그림
 const pngOutfits=new Set(['crown','hat','glasses','bow','scarf']);
-export const outfitFile=(id:string)=>id==='cape'?'outfit/cape-adjustable-o.png':id==='lei'?'outfit/lei-adjustable-v2.png':id==='scarf'?'outfit/scarf-adjustable-v2.png':id==='goggles'?'outfit/goggles-fitted-o.png':id.startsWith('hood-')?`art/mongshell-v3/${id}.png`:`outfit/${id}-fitted.${pngOutfits.has(id)||id.startsWith('today-')?'png':'webp'}`;
-export const outfitThumbnailFile=(id:string)=>id==='cape'?'outfit/cape-fitted.webp':id==='scarf'?'outfit/scarf-fitted.png':id==='lei'?'outfit/lei-fitted.webp':id.startsWith('hood-')&&!id.startsWith('hood-pose-')?`outfit/${id}-only-v1.png`:outfitFile(id);
+export const outfitFile=(id:string)=>id==='today-leaf-cape'?'outfit/leaf-cape-adjustable-v1.png':id==='cape'?'outfit/cape-adjustable-o.png':id==='lei'?'outfit/lei-adjustable-v2.png':id==='scarf'?'outfit/scarf-adjustable-v2.png':id==='goggles'?'outfit/goggles-fitted-o.png':id.startsWith('hood-')?`art/mongshell-v3/${id}.png`:`outfit/${id}-fitted.${pngOutfits.has(id)||id.startsWith('today-')?'png':'webp'}`;
+export const outfitThumbnailFile=(id:string)=>id==='today-leaf-cape'?'outfit/today-leaf-cape-fitted.png':id==='cape'?'outfit/cape-fitted.webp':id==='scarf'?'outfit/scarf-fitted.png':id==='lei'?'outfit/lei-fitted.webp':id.startsWith('hood-')&&!id.startsWith('hood-pose-')?`outfit/${id}-only-v1.png`:outfitFile(id);
 // Image aspect ratios let the inverse original-face alpha stay registered in the
 // 1000px master even when the user moves or scales an individual neck accessory.
 const neckImageRatios:Record<string,number>={scarf:1,'bow-tie':.6171875,lei:1.2929293,'bell-collar':.65625,medal:1.3379791,bib:.9505208,'pearl-necklace':.7786458,tie:1.7534247,bandana:.7604167,'acorn-necklace':1.2673267,'sailor-collar':.8098958,'daisy-chain':.6640625,'star-medal':1.2842809,'heart-locket':.8515625,'knit-scarf':1.2427184,'today-scarf':.7027379,'today-bag':1.2244094,'today-acorn-necklace':1.2241630};
@@ -135,23 +135,23 @@ export function outfitStyle(item:string,layout:Record<string,OutfitPosition>,fro
  const previous=previousScarf[item],oldScarf=saved&&previous&&Math.abs(saved.x-previous.x)<.01&&Math.abs(saved.y-previous.y)<.01&&Math.abs(saved.scale-previous.scale)<.01;
  const p=oldScarf||oldGoggles?outfitDefaults[item]:oldGlasses?{...saved,y:outfitDefaults.glasses.y}:saved??outfitDefaults[item],width=(o?.w??48)*p.scale;
  const scarfHeight=item==='knit-scarf'?.58:1;
- const imageRatio=(item==='scarf'?319/413:item==='lei'?216/454:neckImageRatios[item]??(item==='cape'?995/1581:item==='today-leaf-cape'?517/967:1))*scarfHeight;
+ const imageRatio=(item==='scarf'?319/413:item==='lei'?216/454:neckImageRatios[item]??(item==='cape'?995/1581:item==='today-leaf-cape'?331/600:1))*scarfHeight;
  const maskWidth=width*5.51,maskHeight=maskWidth*imageRatio;
  const glassesMask=glassesOcclusionImage(item);
- const mask=front&&item==='cape'?{
+ const mask=front&&(item==='cape'||item==='today-leaf-cape')?{
   maskImage:`url("${import.meta.env.BASE_URL}art/mongshell-v3/cape-hand-occlusion.png")`,
   maskMode:'alpha' as const,maskRepeat:'no-repeat',maskSize:`${100000/maskWidth}% ${100000/maskHeight}%`,
   maskPosition:`${(225+p.x*5.51)/(1000-maskWidth)*100}% ${(175+p.y*6.7)/(1000-maskHeight)*100}%`
  }:glassesMask?{
   maskImage:glassesMask,
   maskMode:'alpha' as const,maskRepeat:'no-repeat',maskSize:'100% 100%'
- }:o?.slot==='neck'||front&&item!=='cape'?{
+ }:o?.slot==='neck'||front&&item!=='cape'&&item!=='today-leaf-cape'?{
   maskImage:`url("${import.meta.env.BASE_URL}art/mongshell-v3/accessory-face-occlusion.png")`,
   maskMode:'alpha' as const,maskRepeat:'no-repeat',
   maskSize:`${100000/maskWidth}% ${100000/maskHeight}%`,
   maskPosition:`${(225+p.x*5.51)/(1000-maskWidth)*100}% ${(175+p.y*6.7)/(1000-maskHeight)*100}%`
  }:{};
- return {left:p.x+'%',top:p.y+'%',right:'auto',width:width+'%',...(scarfHeight!==1?{aspectRatio:String(1/imageRatio)}:{}),transform:o?.slot==='head'?'translateX(-50%)':'none',zIndex:o?.slot==='back'&&!front?-1:1,...(front?{clipPath:item==='cape'?'none':'polygon(20% 0,80% 0,70% 36%,30% 36%)',pointerEvents:'none' as const}:{}),...mask};
+ return {left:p.x+'%',top:p.y+'%',right:'auto',width:width+'%',...(scarfHeight!==1?{aspectRatio:String(1/imageRatio)}:{}),transform:o?.slot==='head'?'translateX(-50%)':'none',zIndex:o?.slot==='back'&&!front?-1:1,...(front?{clipPath:item==='cape'||item==='today-leaf-cape'?'none':'polygon(20% 0,80% 0,70% 36%,30% 36%)',pointerEvents:'none' as const}:{}),...mask};
 }
 
 export const wornOutfitFiles:Record<string,string>={

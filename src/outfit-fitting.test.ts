@@ -42,8 +42,7 @@ describe('front-view outfit fitting',()=>{
    expect(outfitStyle(id,{}).zIndex).toBe(-1);
    const front=outfitStyle(id,{},true);
    expect(front.zIndex).toBe(1);
-   if(id==='cape'){expect(front.clipPath).toBe('none');expect(front.maskImage).toContain('cape-hand-occlusion.png');}
-   else {expect(front.clipPath).toContain('polygon');expect(front.maskImage).toContain('accessory-face-occlusion.png');}
+   expect(front.clipPath).toBe('none');expect(front.maskImage).toContain('cape-hand-occlusion.png');
    expect(front.pointerEvents).toBe('none');
   }
  });
