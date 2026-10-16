@@ -1,0 +1,357 @@
+{
+  "crown": {
+    "x": 48.098,
+    "y": -36.284,
+    "scale": 1.69106
+  },
+  "hat": {
+    "x": 49.827,
+    "y": -44.881,
+    "scale": 1.84889
+  },
+  "glasses": {
+    "x": 18.55,
+    "y": 2.1,
+    "scale": 1.091
+  },
+  "bow": {
+    "x": 61.006,
+    "y": -0.692,
+    "scale": 0.91217
+  },
+  "scarf": {
+    "x": 11.615,
+    "y": 33.582,
+    "scale": 1
+  },
+  "straw-hat": {
+    "x": 50,
+    "y": -33.347,
+    "scale": 2
+  },
+  "beanie": {
+    "x": 50.103,
+    "y": -55.337,
+    "scale": 1.77743
+  },
+  "flower-crown": {
+    "x": 50,
+    "y": -16.486,
+    "scale": 1.41304
+  },
+  "wizard-hat": {
+    "x": 50,
+    "y": -34.477,
+    "scale": 1.28261
+  },
+  "party-hat": {
+    "x": 50,
+    "y": -49.527,
+    "scale": 1.34091
+  },
+  "chef-hat": {
+    "x": 50,
+    "y": -36.105,
+    "scale": 1.95
+  },
+  "pirate-hat": {
+    "x": 50,
+    "y": -28.258,
+    "scale": 2
+  },
+  "bunny-ears": {
+    "x": 50,
+    "y": -43.424,
+    "scale": 1.85
+  },
+  "acorn-cap": {
+    "x": 50,
+    "y": -40.782,
+    "scale": 1.77273
+  },
+  "santa-hat": {
+    "x": 50,
+    "y": -35.771,
+    "scale": 1.77273
+  },
+  "heart-glasses": {
+    "x": 24,
+    "y": 17,
+    "scale": 1.18182
+  },
+  "star-glasses": {
+    "x": 24,
+    "y": 17,
+    "scale": 1.18182
+  },
+  "goggles": {
+    "x": 12.7,
+    "y": 5.5,
+    "scale": 1.4
+  },
+  "flower-glasses": {
+    "x": 24,
+    "y": 17,
+    "scale": 1.18182
+  },
+  "daisy-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "butterfly-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "strawberry-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "leaf-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "bow-tie": {
+    "x": 36.5,
+    "y": 47,
+    "scale": 1.03846
+  },
+  "lei": {
+    "x": 8.348,
+    "y": 35.075,
+    "scale": 1
+  },
+  "bell-collar": {
+    "x": 21,
+    "y": 45,
+    "scale": 1.52632
+  },
+  "medal": {
+    "x": 36.5,
+    "y": 47,
+    "scale": 1.22727
+  },
+  "bib": {
+    "x": 21,
+    "y": 45,
+    "scale": 1.8125
+  },
+  "cape": {
+    "x": -7.2595,
+    "y": 34.32836,
+    "scale": 1
+  },
+  "cat-ears": {
+    "x": 50,
+    "y": -20.348,
+    "scale": 1.68182
+  },
+  "sun-hat": {
+    "x": 50,
+    "y": -32.781,
+    "scale": 1.69231
+  },
+  "frog-hat": {
+    "x": 50,
+    "y": -32.263,
+    "scale": 1.77273
+  },
+  "leaf-crown": {
+    "x": 50,
+    "y": -16.728,
+    "scale": 1.47727
+  },
+  "mushroom-hat": {
+    "x": 50,
+    "y": -26.416,
+    "scale": 1.77273
+  },
+  "graduation-cap": {
+    "x": 50,
+    "y": -28.087,
+    "scale": 1.77273
+  },
+  "earmuffs": {
+    "x": 50,
+    "y": -12.861,
+    "scale": 1.42308
+  },
+  "halo": {
+    "x": 50,
+    "y": -48.719,
+    "scale": 1.67647
+  },
+  "round-glasses": {
+    "x": 24,
+    "y": 17,
+    "scale": 1.18182
+  },
+  "mask": {
+    "x": 24,
+    "y": 17,
+    "scale": 1.13043
+  },
+  "mustache": {
+    "x": 36,
+    "y": 32,
+    "scale": 1.07692
+  },
+  "blush": {
+    "x": 23.5,
+    "y": 28,
+    "scale": 1.325
+  },
+  "rainbow-glasses": {
+    "x": 24,
+    "y": 17,
+    "scale": 1.18182
+  },
+  "monocle": {
+    "x": 48.5,
+    "y": 18,
+    "scale": 1.7
+  },
+  "heart-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "star-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "cherry-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "feather-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1.25
+  },
+  "rose-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "clover-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "ribbon-pink": {
+    "x": 63.5,
+    "y": 3,
+    "scale": 0.96429
+  },
+  "moon-pin": {
+    "x": 67,
+    "y": 3,
+    "scale": 1
+  },
+  "pearl-necklace": {
+    "x": 21,
+    "y": 36,
+    "scale": 1.8125
+  },
+  "tie": {
+    "x": 36.5,
+    "y": 47,
+    "scale": 1.5
+  },
+  "bandana": {
+    "x": 21,
+    "y": 45,
+    "scale": 1.70588
+  },
+  "acorn-necklace": {
+    "x": 21,
+    "y": 36,
+    "scale": 2.23077
+  },
+  "sailor-collar": {
+    "x": 21,
+    "y": 45,
+    "scale": 1.38095
+  },
+  "daisy-chain": {
+    "x": 21,
+    "y": 36,
+    "scale": 1.70588
+  },
+  "star-medal": {
+    "x": 36.5,
+    "y": 47,
+    "scale": 1.22727
+  },
+  "heart-locket": {
+    "x": 36.5,
+    "y": 38,
+    "scale": 1.125
+  },
+  "knit-scarf": {
+    "x": 12,
+    "y": 34,
+    "scale": 1.72727
+  },
+  "fairy-wings": {
+    "x": -12.5,
+    "y": 23,
+    "scale": 1.78571
+  },
+  "today-crown": {
+    "x": 50,
+    "y": -25.675,
+    "scale": 1.36851
+  },
+  "today-beret": {
+    "x": 50,
+    "y": -28.076,
+    "scale": 1.43285
+  },
+  "today-flower-band": {
+    "x": 50,
+    "y": -23.435,
+    "scale": 1.28966
+  },
+  "today-round-glasses": {
+    "x": 23.722,
+    "y": 16.772,
+    "scale": 1.01068
+  },
+  "today-bow": {
+    "x": 63.35,
+    "y": 2.877,
+    "scale": 0.97496
+  },
+  "today-scarf": {
+    "x": 10.484,
+    "y": 34.57,
+    "scale": 1.41126
+  },
+  "today-leaf-cape": {
+    "x": -4.25,
+    "y": 32,
+    "scale": 1.26166
+  },
+  "today-bag": {
+    "x": 24.668,
+    "y": 44.727,
+    "scale": 1.17825
+  },
+  "today-acorn-necklace": {
+    "x": 20.572,
+    "y": 35.648,
+    "scale": 1.63491
+  },
+  "today-strawberry-clip": {
+    "x": 66.859,
+    "y": 2.884,
+    "scale": 0.9219
+  }
+}

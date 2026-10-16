@@ -18,9 +18,9 @@ describe('approved original-base hood release',()=>{
  it('uses the same square master for the bare base and all six hoodies',()=>{
   expect(dimensions('base.png')).toEqual([1000,1000]);
   for(const ids of [[],...release.assets.map((x:{id:string})=>[x.id])])expect(isMasterCharacterFile(characterOutfitFile(ids))).toBe(true);
-  expect(isMasterCharacterFile(characterOutfitFile(['today-overalls']))).toBe(false);
+  expect(isMasterCharacterFile(characterOutfitFile(['today-overalls']))).toBe(true);
  });
- it('does not replace other body clothing in this release',()=>{
-  expect(wornOutfitFiles['today-overalls']).toBe('art/mongshell-v3/Gemini-hood-overalls-cutout-v2.png');
+ it('uses the latest original-base overalls master',()=>{
+  expect(wornOutfitFiles['today-overalls']).toBe('art/mongshell-v3/base-forest-overalls-tailored-1000-v9.png');
  });
 });

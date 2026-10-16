@@ -6,7 +6,8 @@ describe('approved UI regression guards',()=>{
  it('uses six approved fitted hoodies, five existing costumes and clothing-only catalog images',()=>{
   expect(Object.keys(wornOutfitFiles)).toHaveLength(11);
   for(const [id,path] of Object.entries(wornOutfitFiles)){
-   expect(path).toMatch(id.startsWith('hood-')?/-1000-v\d+\.png$/:/-cutout-v2\.png$/);expect(existsSync('public/'+path)).toBe(true);
+   expect(path).toMatch(id.startsWith('hood-')?/-1000-v\d+\.png$/:/\.png$/);expect(existsSync('public/'+path)).toBe(true);
+   const png=readFileSync('public/'+path);expect([png.readUInt32BE(16),png.readUInt32BE(20)]).toEqual([1000,1000]);
    expect(outfitThumbnailFile(id)).not.toBe(path);expect(existsSync('public/'+outfitThumbnailFile(id))).toBe(true);
   }
  });

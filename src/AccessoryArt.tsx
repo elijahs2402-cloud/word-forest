@@ -1,0 +1,4 @@
+export default function AccessoryArt({id,src}:{id:string;src:string}){
+ return <><img src={src} alt="" draggable={false}/>{id==='heart-glasses'&&<svg className="accessory-lens-overlay" viewBox="0 0 384 142" aria-hidden="true"><path fill="#251f20" d="M40 44 Q52 10 90 40 Q133 8 155 42 Q171 80 100 116 Q54 94 40 44Z M344 44 Q332 10 294 40 Q251 8 229 42 Q213 80 284 116 Q330 94 344 44Z"/></svg>}</>;
+}
+export function GoggleStrap(){return <svg className="goggle-headstrap" viewBox="225 175 551 670" aria-hidden="true"><defs><mask id="goggle-head-occlusion"><path fill="white" fillRule="evenodd" d="M0 0H1000V1000H0Z M310 350a185 173 0 1 0 370 0a185 173 0 1 0-370 0Z"/></mask></defs><ellipse cx="495" cy="332" rx="196" ry="92" fill="none" stroke="#416d9f" strokeWidth="17" mask="url(#goggle-head-occlusion)"/></svg>}
