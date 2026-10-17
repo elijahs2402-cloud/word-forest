@@ -944,7 +944,10 @@ h1,h2,h3 {text-wrap:balance;}
 .goggle-headstrap{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
 .capy-wear .wearable-piece.is-selected {outline:none;}
 .capy-wear .wearable-piece:focus-visible {outline:2px solid var(--green);outline-offset:3px;}
-.wear-adjust {position:absolute;z-index:3;right:20px;bottom:96px;width:min(280px,calc(100% - 40px));background:var(--surface);box-shadow:var(--shadow-float);padding:var(--space-3);border-radius:var(--r-control);display:grid;gap:var(--space-2);flex-shrink:0;}
+.wear-adjust {position:static;width:100%;box-sizing:border-box;background:var(--surface);box-shadow:none;padding:8px;border:1px solid var(--line-strong);border-radius:var(--r-control);display:grid;grid-template-columns:minmax(0,1fr) auto auto auto auto;align-items:center;gap:4px 8px;flex-shrink:0;}
+.wear-adjust strong {min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.wear-adjust .tool {min-width:44px;min-height:44px;padding:4px 8px;white-space:nowrap;}
+.wear-adjust input {grid-column:1/-1;grid-row:2;margin:0;}
 .wear-adjust input {width:100%;min-height:44px;}
 .studio-notice {display:flex;align-items:center;gap:var(--space-2);background:var(--green-50);padding:var(--space-3);border-radius:var(--r-control);font-size:var(--fs-sm);line-height:1.6;}
 .studio-notice span {flex:1;min-width:0;}

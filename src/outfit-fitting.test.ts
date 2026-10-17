@@ -14,10 +14,11 @@ describe('front-view outfit fitting',()=>{
   expect(outfitThumbnailFile('scarf')).toBe('outfit/scarf-fitted.png');
   expect(outfitThumbnailFile('lei')).toBe('outfit/lei-fitted.webp');
  });
- it('resets a different selected item to 100% while preserving positions and the previous item',()=>{
+ it('preserves each adjusted size across selection changes and starts new items at 100%',()=>{
   const layout={hat:{x:40,y:5,scale:2},glasses:{x:25,y:10,scale:1.8}};
   const next=resetNewSelectionScale('hat','glasses',layout);
-  expect(next.glasses).toEqual({x:25,y:10,scale:1});expect(next.hat).toEqual(layout.hat);
+  expect(next.glasses).toEqual({x:25,y:10,scale:1.8});expect(next.hat).toEqual(layout.hat);
+  expect(resetNewSelectionScale('glasses','hat',next).hat.scale).toBe(2);
   expect(resetNewSelectionScale('glasses','glasses',layout)).toBe(layout);
   expect(resetNewSelectionScale(null,'monocle',{}).monocle.scale).toBe(1);
  });

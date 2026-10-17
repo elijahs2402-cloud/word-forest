@@ -115,7 +115,7 @@ export const fittedOutfitPositions:Record<string,OutfitPosition>={
 };
 export const outfitDefaults:Record<string,OutfitPosition>=Object.fromEntries(outfitItems.map(o=>[o.id,(accessoryFits as Record<string,OutfitPosition>)[o.id]??fittedOutfitPositions[o.id]??{x:o.slot==='head'?50:o.x,y:o.y,scale:1}]));
 export function resetNewSelectionScale(previous:string|null,item:string,layout:Record<string,OutfitPosition>){
- return previous===item?layout:{...layout,[item]:{...(layout[item]??outfitDefaults[item]),scale:1}};
+ return previous===item||layout[item]?layout:{...layout,[item]:{...outfitDefaults[item],scale:1}};
 }
 // 몽쉘 옷 이름 목록 — 저장 기록 검사에도 쓴다
 export const outfitIds=outfitItems.map(o=>o.id);
