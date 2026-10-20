@@ -19,12 +19,6 @@
  .home-companion .companion-greeting,.feedback.success .feedback-heading .asset,.result .result-mascot{animation:none}
  .studying .leaves{display:none}
 }
-.first-adventure{text-align:center;max-width:580px;margin:0 auto 24px;padding:24px}
-.first-adventure .home-companion{height:220px;padding-top:24px}
-.first-adventure .home-companion .capy-dressup{width:150px}
-.first-adventure .primary{width:100%;margin:12px 0}
-.first-word-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
-.first-word-options button{font-size:1.3rem;min-height:56px}
 .companion-banner .companion-guidance{order:1!important;max-width:30ch!important;margin:8px auto 0;line-height:1.6}
 .companion-quick-actions{order:6}
 .companion-quick-actions:empty{display:none}
@@ -81,3 +75,15 @@
  .wardrobe-preview{height:150px;padding:24px 20px 8px}
  .wardrobe-preview .capy-dressup{width:92px}
 }
+/* 첫 체험: 홈 탐험 카드 안에서 평소 카드와 같은 순서(제목 → 몽쉘 → 설명·버튼)로 놓는다 */
+.companion-banner .first-adventure{display:contents}
+.companion-banner .first-step{order:0}
+.companion-banner .first-title{order:1;margin:8px 0 0;outline:none}
+.companion-banner .first-title:focus-visible{outline:2px solid var(--surface);outline-offset:4px;border-radius:4px}
+.companion-banner .first-body{order:4;display:flex;flex-direction:column;align-items:center;width:100%;max-width:360px}
+.companion-banner .first-body p{order:0;margin:0;line-height:1.65}
+.companion-banner .first-body .start-learning{order:0;margin:20px 0 4px}
+.first-word-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;margin:16px 0 8px}
+.first-word-options button{font-size:1.3rem;min-height:56px;background:var(--surface);color:var(--green-text);border-color:var(--surface)}
+.companion-banner .first-body .first-hint{font-size:var(--fs-sm);opacity:.92}
+.companion-banner .first-skip{color:var(--surface);text-decoration:underline;text-underline-offset:3px;min-height:44px;margin-top:4px}
