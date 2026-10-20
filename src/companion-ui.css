@@ -1,0 +1,83 @@
+/* Companion-first home and a steady, unobstructed fitting room. */
+.home-companion[role=button]{cursor:pointer;border-radius:var(--r-card);outline-offset:-4px}
+.home-companion[role=button]:focus-visible{outline:3px solid var(--green)}
+.home-companion .companion-greeting{animation:companion-nod 380ms ease-out 1;transform-origin:50% 80%}
+.feedback.success .feedback-heading .asset{animation:companion-celebrate 300ms ease-out 1}
+.result .result-mascot{animation:companion-nod 400ms ease-out 1;transform-origin:50% 80%}
+.result .result-mascot img{animation:none}
+@keyframes companion-nod{0%,100%{transform:rotate(0deg)}35%{transform:rotate(-3deg)}70%{transform:rotate(2deg)}}
+@keyframes companion-celebrate{0%,100%{transform:translateY(0)}45%{transform:translateY(-4px)}}
+.studying .asset-char img{animation:none}
+.studying .combo-row{min-height:24px}
+.studying .game-title{font-size:clamp(1.25rem,4vw,1.6rem);margin-bottom:4px}
+.view-home .mobile-summary{display:none}
+.view-home .review-top{padding:16px;margin-block:16px}
+.view-home .review-top h2{font-size:1rem}
+.view-home .review-top p{display:none}
+.view-home .map-count{font-size:var(--fs-sm);gap:16px}
+@media(prefers-reduced-motion:reduce){
+ .home-companion .companion-greeting,.feedback.success .feedback-heading .asset,.result .result-mascot{animation:none}
+ .studying .leaves{display:none}
+}
+.first-adventure{text-align:center;max-width:580px;margin:0 auto 24px;padding:24px}
+.first-adventure .home-companion{height:220px;padding-top:24px}
+.first-adventure .home-companion .capy-dressup{width:150px}
+.first-adventure .primary{width:100%;margin:12px 0}
+.first-word-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.first-word-options button{font-size:1.3rem;min-height:56px}
+.companion-banner .companion-guidance{order:1!important;max-width:30ch!important;margin:8px auto 0;line-height:1.6}
+.companion-quick-actions{order:6}
+.companion-quick-actions:empty{display:none}
+.companion-quick-actions button{min-height:44px;margin:0 0 12px}
+.adventure-record{text-align:left;margin:20px 0}
+.adventure-record summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:var(--fw-bold)}
+.adventure-record h2,.reward-to-forest h2{font-size:1.2rem;text-wrap:balance}
+.record-words{list-style:none;padding:0;margin:16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.record-words li{display:flex;flex-direction:column;background:var(--bg);padding:10px 12px;border-radius:var(--r-control)}
+.record-words small,.reward-to-forest small{color:var(--ink-soft)}
+.reward-to-forest{text-align:center;border-top:1px solid var(--line);padding-top:20px;margin:20px 0}
+.reward-to-forest button{width:100%;min-height:48px}
+.reward-to-forest small{display:block;margin-top:12px;line-height:1.6}
+.view-home .home-top{margin-bottom:16px}
+.view-home .home-top h1{font-size:clamp(1.4rem,4vw,2rem)}
+.view-home .home-top .mobile-br{display:none}
+.view-home .resume-lesson{padding:12px 16px;gap:8px;margin-bottom:16px}
+.view-home .resume-lesson>div>b,.view-home .resume-lesson>button.primary{display:none}
+.view-home .resume-lesson p{margin:0}
+.forest-banner.companion-banner{display:flex;flex-direction:column;align-items:center;padding:28px;min-height:520px;text-align:center}
+.forest-banner.companion-banner>div{max-width:100%}
+.companion-banner>div:first-child{display:contents}
+.companion-banner .eyebrow{order:0;margin:0}
+.companion-banner h2{order:3;max-width:100%;font-size:clamp(1.25rem,3vw,1.65rem);margin:8px 0}
+.companion-banner .banner-example{display:none}
+.companion-banner p:not(.eyebrow){order:4;max-width:100%}
+.companion-banner .start-learning{order:5;width:100%;max-width:360px;margin:20px 0 12px}
+.companion-banner .map-count{order:6;justify-content:center}
+.home-companion{order:2;display:grid;place-items:center;width:100%;height:290px;padding:42px 36px 10px}
+.home-companion .capy-dressup{position:relative;inset:auto;width:200px;max-width:70%;min-width:0;transform:none}
+.home-companion .capy-dressup>img{display:block;width:100%;height:auto}
+.home-companion .capy-dressup.master-canvas>img{position:absolute;width:181.488203%;max-width:none;left:-40.834846%;top:-26.119403%;pointer-events:none}
+.home-companion .wearable-piece{position:absolute;display:block}
+.home-companion .wearable-piece>img{display:block;width:100%;height:auto}
+.home-companion .wear-scarf>img,.home-companion .wear-knit-scarf>img{height:100%;object-fit:fill}
+.wardrobe-selection{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;flex-shrink:0;color:var(--ink-soft)}
+.wardrobe-selection>span{min-width:0;font-weight:var(--fw-bold)}
+.wardrobe-selection button{min-height:44px;white-space:nowrap}
+.wardrobe-options button{position:relative}
+.wardrobe-options .wear-equipped{display:flex;align-items:center;justify-content:center;gap:4px;color:var(--green-text);font-weight:var(--fw-bold)}
+.wear-equipped svg{width:16px;height:16px}
+.wardrobe-options button[aria-pressed=true]{border-width:2px}
+@media(max-width:699px){
+ .forest-banner.companion-banner{min-height:480px;padding:24px 20px}
+ .wardrobe-preview{height:clamp(210px,33dvh,300px);min-height:0;padding:52px 32px 20px}
+ .wardrobe-preview .capy-dressup{width:170px}
+ .wardrobe-catalog{gap:8px}
+ .wardrobe-tabs{flex-wrap:nowrap;overflow-x:auto;max-width:100%;width:100%}
+ .wardrobe-tabs button{flex-shrink:0;min-height:44px}
+ .wear-adjust{grid-template-columns:minmax(0,1fr) repeat(3,auto)}
+ .wear-adjust strong{display:none}
+}
+@media(max-height:550px) and (max-width:699px){
+ .wardrobe-preview{height:150px;padding:24px 20px 8px}
+ .wardrobe-preview .capy-dressup{width:92px}
+}

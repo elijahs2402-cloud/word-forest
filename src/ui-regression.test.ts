@@ -14,7 +14,9 @@ describe('approved UI regression guards',()=>{
  it('retains wardrobe and forest rendering, clear card and removed small labels',()=>{
   const s=source('ForestStudio.tsx');
   for(const text of ['characterOutfitFile(wardrobeDraft)','characterOutfitFile(outfit)','outfitThumbnailFile(item)','outfit-clear','wardrobe-workspace','hood-pose-'])expect(s).toContain(text);
-  for(const text of ['착용 중','입히기','소품 그림을 숲으로 끌어','그림을 숲으로 끌어 놓으면'])expect(s).not.toContain(text);
+  for(const text of ['입히기','소품 그림을 숲으로 끌어','그림을 숲으로 끌어 놓으면'])expect(s).not.toContain(text);
+  for(const text of ['wear-equipped','착용 중','wearAdjustOpen','크기·위치 조절','이 종류 벗기기'])expect(s).toContain(text);
+  expect(s).not.toContain('equipOutfit(current,item,true)');
  });
  it('retains corner resizing, edit sheet, background selection and bottom toolbar',()=>{
   const s=source('ForestStudio.tsx');
